@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/id_ll_content_select_all"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:padding="@dimen/content_padding"
+            android:visibility="gone">
+            <CheckBox
+                android:id="@+id/content_select_all_checkbox"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_gravity="center"
+                android:checked="true"
+                android:buttonTint="@color/wds_colorPrimary"
+                android:layout_marginLeft="@dimen/content_image_margin"/>
+            <com.pervacio.wds.CustomTextView
+
+                android:layout_gravity="center_vertical"
+                style="@style/textStyle_subheading_bold"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/select_all_apps"/>
+
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/datatypeDetails_list"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@color/black_overlay"
+            android:scrollbarSize="5dp"
+            android:scrollbars="vertical" />
+    </LinearLayout>
+
+</RelativeLayout>

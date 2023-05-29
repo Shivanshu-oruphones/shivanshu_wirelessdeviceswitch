@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no" />
+	<meta charset="utf-8">	
+
+	<script src="jsrp.js"></script>
+
+	<script src="mmrsutils.js"></script>
+	<script src="mmrssrp.js"></script>
+</head>
+
+<script type="text/javascript">	
+
+    function onLoad()
+    {    
+        MMRSSRP.onLoad();
+    }
+
+    function doSRPInitClient(aUsername, aPassword)
+    {
+        MMRSSRP.doSRPInitClient(aUsername, aPassword);
+    }
+
+    function doSRPInitServer(aUsername, aPassword)
+    {
+        MMRSSRP.doSRPInitServer(aUsername, aPassword);
+    }
+</script>
+
+
+
+<BODY onLoad='onLoad()'>
+
+<h1>SRP</h1>
+
+
+</BODY>
+</html>

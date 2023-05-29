@@ -1,0 +1,61 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WelcomePageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/wds_main_bg_gray">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contentDetailsSummary_list"
+        android:background="@color/white"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:layout_alignParentTop="true"
+        android:layout_above="@+id/btnsLayout"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/btnsLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/timeTakenToTransfer"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/default_padding"
+            android:textColor="@color/black" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/uniqueTransactionId"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/default_padding" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/mediaNotTransferText"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/default_padding"
+            android:visibility="gone" />
+
+
+        <include layout="@layout/summarypage_buttons"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"/>
+
+    </LinearLayout>
+
+</RelativeLayout>
+

@@ -1,0 +1,133 @@
+apply plugin: 'com.android.application'
+// apply plugin: 'com.android.library'
+
+android {
+    lintOptions {
+        abortOnError false
+    }
+
+    signingConfigs {
+        debug_signing {
+            keyAlias 'cmd_debug_keystore'
+            keyPassword 'debugpassword'
+            storeFile file('../cmd_debug_keystore.jks')
+            storePassword 'debugpassword'
+        }
+    }
+    compileSdkVersion 26
+    buildToolsVersion '26.0.2'
+    flavorDimensions "default"
+    defaultConfig {
+        applicationId "com.pervacio.wds"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName project.buildVersion
+    }
+    buildTypes {
+        def BDATE = new Date().format('MM.dd.yyyy')
+        debug {
+            buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
+        }
+        release {
+            buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
+            minifyEnabled false
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
+        }
+    }
+
+    productFlavors {
+        pervacio {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+        }
+        sprint {
+            applicationId "com.sprint.contenttransfer"
+            manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        sprintMSDS {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        tms {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        privatelabel {
+            applicationId "com.mobilecopy.transfer"
+            manifestPlaceholders = [appLabel: "MobileCopy"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        bell {
+            applicationId "com.pervacio.wct"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        orange {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Kopia Danych"]
+            dimension "default"
+            targetSdkVersion 22
+        }
+        o2 {
+            applicationId "com.pervacio.wct"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        playstore {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Pervacio Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+    }
+
+    sourceSets {
+        sprintMSDS {
+            res.srcDirs = ['src/sprint/res']
+        }
+    }
+
+
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    compile files('libs/jmdns-3.4.1.jar')
+    compile "android.arch.work:work-runtime:1.0.0-alpha04"
+    //compile(name: 'zxing-android-embedded-release', ext: 'aar')
+    compile 'com.journeyapps:zxing-android-embedded:3.5.0' // upgrading to new version of zxing
+    compile 'com.pervacio.crashreportlib:crashreportlib@aar'
+    compile 'com.android.support:support-v4:26.1.0'
+    compile 'com.android.support:appcompat-v7:26.1.0'
+    compile 'com.android.support:recyclerview-v7:26.1.0'
+    //compile 'com.google.zxing:core:3.2.1'
+    compile 'com.android.support:design:26.1.0'
+    compile 'com.google.code.gson:gson:2.7'
+    compile 'com.google.android.gms:play-services-drive:7.0.0'
+    // downgraded the version 8.4 to 7.0 for geofencing.
+    //compile 'com.google.android.gms:play-services-ads:7.0.0' //commenting as we are not using now
+    compile 'com.google.android.gms:play-services-location:7.0.0'
+    compile 'com.squareup.retrofit2:retrofit:2.0.2'
+    compile 'com.squareup.retrofit2:converter-gson:2.0.2'
+    compile 'com.github.mjdev:libaums:0.5.5'
+    compile 'com.android.support.constraint:constraint-layout:1.1.3'
+    compile 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
+}

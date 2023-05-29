@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/activity_terms_and_conditions"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/main_bg_gray">
+
+    <com.pervacio.wds.CustomButton
+        android:id="@+id/btn_negative"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_weight="0.5"
+        android:background="@drawable/secondary_button"
+        android:gravity="center"
+        android:text="@string/button_i_disagree"
+        android:fontFamily="@string/font_medium"
+        android:textColor="@color/black" />
+
+    <com.pervacio.wds.CustomButton
+        android:id="@+id/btn_postive"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:layout_margin="@dimen/margin_small"
+        android:layout_weight="0.5"
+        android:fontFamily="@string/font_medium"
+        android:background="@drawable/primary_button"
+        android:gravity="center"
+        android:text="@string/button_i_agree"
+        android:textColor="@color/white" />
+
+    <!-- <android.support.v7.widget.AppCompatButton
+         android:id="@+id/btn_postive"
+         style="@style/primary_button"
+         android:layout_width="0dp"
+         android:layout_height="50dp"
+         android:layout_weight="0.5"
+         android:text="@string/button_i_agree"
+         android:textColor="@color/white" />-->
+</LinearLayout>

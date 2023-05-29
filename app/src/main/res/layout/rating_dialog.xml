@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <ImageView
+            android:id="@+id/img_app_icon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/em_margin_top"
+            android:src="@drawable/ic_launcher" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/tv_app_name"
+            style="@style/textStyle_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/em_margin_top"
+            android:gravity="center"
+            android:text="@string/str_rateapp_msg" />
+
+        <com.pervacio.wds.CustomTextView
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:text="@string/str_tap_a_star" />
+
+        <RatingBar
+            android:id="@+id/rating_bar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/em_margin_top" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/em_margin_top"
+            android:weightSum="1"
+            android:orientation="horizontal">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/btn_cancel"
+                style="@style/textStyle_button"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="@string/str_not_now" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/btn_ratenow"
+                style="@style/textStyle_button"
+                android:layout_width="0dp"
+                android:layout_height="35dp"
+                android:layout_gravity="center"
+                android:layout_weight="0.5"
+                android:gravity="center"
+                android:text="@string/str_rate_now" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+</RelativeLayout>

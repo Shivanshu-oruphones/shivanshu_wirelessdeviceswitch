@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="wds_colorPrimary">#2C2F44</color>
+    <color name="wds_colorPrimaryDark">@color/fixGeniusDarkBlue</color>
+    <color name="wds_colorAccent">@color/wds_button_color</color>
+    <color name="fixGeniusBlue">#2C2F44</color>
+    <color name="fixGeniusDarkBlue">#2C2F44</color>
+
+    <color name="areaHeading">#2C2F44</color>
+    <color name="areaSubHeading">#000000</color>
+
+    <color name="mainButton">#2C2F44</color>
+    <color name="mainButtonText">#FFFFFF</color>
+
+    <color name="bottomButtonPanel">#f4f4f4</color>
+    <color name="buttonConfirm">#2C2F44</color>
+
+    <color name="titleBarBackgroundColor">@color/wds_colorPrimary</color>
+    <color name="statusBarBackgroundColor">@color/wds_colorPrimary</color>
+
+    <color name="lightGreen">#2C2F44</color>
+    <color name="midGreen">#2C2F44</color>
+    <color name="darkGreen">#2C2F44</color>
+
+    <color name="white">#ffffff</color>
+    <color name="lightGrey">#f4f4f4</color>
+    <color name="darkGrey">#dadada</color>
+    <color name="black">#333333</color>
+
+    <color name="lightBlue">#2C2F44</color>
+    <color name="darkBlue">#2C2F44</color>
+
+    <color name="lightRed">#ee4126</color>
+    <color name="midRed">#d62828</color>
+    <color name="darkRed">#a31945</color>
+
+
+    <color name="wds_button_color">@color/wds_colorPrimary</color>
+    <color name="wds_main_bg_gray">#FFFFFF</color>
+    <color name="black_bg">#373737</color>
+    <color name="button_background">@color/wds_colorPrimary</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="toolbar_background">@color/wds_colorPrimary</color>
+    <color name="toolbar_titleColor">#FFFFFF</color>
+    <color name="button_text_color">#FFFFFF</color>
+    <color name="progressbar_color">@color/wds_colorPrimary</color>
+
+    <color name="gray">#D3D3D3</color>
+    <color name="yellow">#FFD700</color>
+    <color name="thick_grey">#373737</color>
+    <color name="description_grey">#808080</color>
+    <color name="primary_btn_textcolor">@color/wds_button_color</color>
+    <color name="secondary_btn_textcolor">@color/wds_button_color</color>
+    <color name="primary_btn_bg">@color/zxing_transparent</color>
+    <color name="secondary_btn_bg">@color/zxing_transparent</color>
+    <color name="secondary_btn_border_color">@color/zxing_transparent</color>
+    <!--MEXICO COLOR-->
+    <color name="backgroundColor_mexico">#5BC500</color>
+
+
+</resources>

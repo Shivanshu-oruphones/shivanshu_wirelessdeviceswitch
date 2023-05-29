@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/textTitle"
+        style="@style/textStyle_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/darkGrey"
+        android:gravity="center"
+        android:padding="15dp"
+        android:text="@string/str_resume_transaction" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textTitle"
+        android:orientation="vertical">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/tv_restart_trans"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:lineSpacingExtra="2dp"
+            android:text="@string/str_restart_transaction" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:orientation="horizontal">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/btn_start_again"
+                style="@style/textStyle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="@dimen/button_padding"
+                android:text="@string/str_start_again" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/btn_resume"
+                style="@style/textStyle_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:padding="@dimen/button_padding"
+                android:text="@string/str_resume" />
+
+        </LinearLayout>
+    </LinearLayout>
+</RelativeLayout>

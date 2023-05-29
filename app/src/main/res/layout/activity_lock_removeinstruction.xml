@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wds_main_bg_gray"
+    android:fitsSystemWindows="true">
+
+    <include
+        android:id="@+id/customtoolbar"
+        layout="@layout/custom_acc_toolbar" />
+
+    <TextView
+        android:id="@+id/head_lr_inst"
+        android:gravity="center_horizontal"
+        android:layout_below="@+id/customtoolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/google_ac_remove_head"
+        style="@style/textStyle_bodyHeading"/>
+
+    <ScrollView
+        android:id="@+id/scroll_instructions"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/head_lr_inst"
+        android:layout_above="@+id/settings_btn_lr_inst"
+        android:isScrollContainer="true"
+        android:fadeScrollbars="false"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginLeft="15dp"
+        android:background="@color/wds_main_bg_gray">
+        <TextView
+            android:id="@+id/inst_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/google_ac_remove_instructions"
+            style="@style/Manualtest_description"/>
+
+    </ScrollView>
+    <com.pervacio.wds.CustomButton
+        android:id="@+id/settings_btn_lr_inst"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/btn_layout"
+        android:layout_centerHorizontal="true"
+        android:text="@string/go_to_settings"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="80dp"
+        android:paddingBottom="@dimen/acc_lock_rm_button_padding_bottom"
+        android:paddingTop="@dimen/acc_lock_rm_button_padding_top"
+        android:paddingLeft="@dimen/acc_lock_rm_button_padding_left"
+        android:paddingRight="@dimen/acc_lock_rm_button_padding_right"
+        android:textColor="@color/textColor"
+        android:background="@drawable/blue_rounded_corners"
+        android:textAllCaps="false"/>
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="@dimen/lock_wornig_internal_space"
+        android:orientation="horizontal">
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wds_main_bg_gray">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/btn_layout"
+        android:fadeScrollbars="false"
+        android:fillViewport="true"
+        android:isScrollContainer="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="@dimen/em_layout_margin">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/msg_sprint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/text_message"
+                android:textAppearance="@style/textStyle_bodyHeading" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/version_number"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/msg_sprint"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/version_number"
+                android:textAppearance="@style/textStyle_body" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/build_release_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/version_number"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="@string/build_release_date"
+                android:textAppearance="@style/textStyle_body" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/rate_app"
+                style="@style/textStyle_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/build_release_date"
+                android:layout_marginLeft="20dp"
+                android:paddingTop="@dimen/em_padding_top"
+                android:visibility="gone"
+                android:text="@string/rate_app" />
+
+            <LinearLayout
+                android:id="@+id/rating"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/rate_app"
+                android:gravity="center"
+                android:visibility="gone"
+                android:padding="@dimen/em_margin_top">
+
+                <RatingBar
+                    style="@style/ratingBarStyle"
+                    android:id="@+id/rating_bar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="@dimen/em_layout_margin"
+                    android:layout_marginTop="@dimen/em_layout_margin"
+                    android:gravity="center"
+                    android:isIndicator="false"
+                    android:numStars="5"
+                    android:progressTint="@color/yellow"
+                    android:rating="0"
+                    android:secondaryProgressTint="@color/thick_grey"
+                    android:stepSize="1"
+                    android:theme="@style/ratingBarStyle" />
+            </LinearLayout>
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/comment_app"
+                style="@style/textStyle_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/build_release_date"
+                android:layout_marginLeft="@dimen/em_margin_left"
+                android:layout_marginTop="35dp"
+                android:text="@string/comment" />
+
+            <EditText
+                android:id="@+id/structured_edittext_answer"
+                android:layout_width="match_parent"
+                android:layout_height="110dp"
+                android:layout_below="@id/comment_app"
+                android:layout_marginBottom="10dp"
+                android:layout_marginTop="@dimen/em_margin_top"
+                android:background="@color/white"
+                android:fontFamily="@string/font_regular"
+                android:gravity="left"
+                android:hint="@string/comment_box"
+                android:inputType="textCapSentences|textMultiLine"
+                android:padding="10dp"
+                android:textColorHint="#B0B0B0"
+                android:textSize="@dimen/text_size" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/privacy_policy"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/structured_edittext_answer"
+                android:layout_marginLeft="@dimen/em_margin_left"
+                android:layout_marginRight="@dimen/em_margin_left"
+                android:layout_marginTop="@dimen/em_margin_top"
+                android:clickable="true"
+                android:fontFamily="@string/font_light"
+                android:text="@string/read_more"
+                android:textColor="@color/black" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/privacy_policyee"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/privacy_policy"
+                android:layout_marginLeft="@dimen/em_margin_left"
+                android:layout_marginRight="@dimen/em_margin_left"
+                android:layout_marginTop="@dimen/em_margin_top"
+                android:layout_marginBottom="@dimen/em_margin_left"
+                android:clickable="true"
+                android:fontFamily="@string/font_light"
+                android:text="@string/selecting_submit_message"
+                android:textColor="@color/black"
+                android:visibility="visible" />
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:gravity="bottom|right|center_vertical">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/cancel_tv"
+            style="@style/textStyle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical|right"
+            android:minWidth="64dp"
+            android:padding="@dimen/button_padding"
+            android:text="@string/wds_cancel" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/accept_tv"
+            style="@style/textStyle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:minWidth="64dp"
+            android:padding="@dimen/button_padding"
+            android:text="@string/submit" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FF7900</color>
+    <color name="colorPrimaryDark">#000000</color>
+
+    <color name="primary_btn_textcolor">@color/white</color>
+    <color name="secondary_btn_textcolor">@color/black</color>
+    <color name="primary_btn_bg">@color/wds_button_color</color>
+    <color name="secondary_btn_bg">@color/white</color>
+    <color name="secondary_btn_border_color">@color/gray</color>
+    <color name="black">#000000</color>
+
+</resources>

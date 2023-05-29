@@ -1,0 +1,35 @@
+<resources>
+
+   <style name="primary_button" parent="Widget.AppCompat.Button.Colored">
+      <item name="android:textColor">@color/primary_btn_textcolor</item>
+      <item name="android:minWidth">64dp</item>
+      <item name="android:padding">@dimen/fab_margin</item>
+      <item name="android:background">@drawable/primary_button</item>
+      <item name="android:textAllCaps">true</item>
+      <item name="android:fontFamily">@string/font_medium</item>
+   </style>
+
+   <style name="secondary_button" parent="Widget.AppCompat.Button.Colored">
+      <item name="android:textColor">@color/secondary_btn_textcolor</item>
+      <item name="android:minWidth">64dp</item>
+      <item name="android:padding">@dimen/fab_margin</item>
+      <item name="android:background">@drawable/secondary_button</item>
+      <item name="android:textAllCaps">true</item>
+   </style>
+
+   <style name="primary_button_right" parent="Widget.AppCompat.Button">
+      <item name="android:textColor">@color/primary_btn_textcolor</item>
+      <item name="android:minWidth">150dp</item>
+      <item name="android:padding">@dimen/fab_margin</item>
+      <item name="android:background">@drawable/primary_button</item>
+      <item name="android:textAllCaps">true</item>
+      <item name="android:layout_gravity">center_horizontal|center_vertical</item>
+      <item name="android:layout_centerHorizontal">true</item>
+      <item name="android:textSize">@dimen/button_textsize</item>
+      <item name="android:clickable">true</item>
+      <item name="android:focusable">true</item>
+      <item name="android:fontFamily">@string/font_medium</item>
+   </style>
+
+
+</resources>

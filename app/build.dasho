@@ -1,0 +1,162 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.preemptive.dasho.android'
+//apply from: 'dasho.gradle'
+
+android {
+    lintOptions {
+        abortOnError false
+    }
+
+    signingConfigs {
+        debug_signing {
+            keyAlias 'cmd_debug_keystore'
+            keyPassword 'debugpassword'
+            storeFile file('../cmd_debug_keystore.jks')
+            storePassword 'debugpassword'
+        }
+    }
+    compileSdkVersion 29
+    buildToolsVersion '28.0.0'
+    flavorDimensions "default"
+    defaultConfig {
+        applicationId "com.pervacio.wds"
+        minSdkVersion 16
+        targetSdkVersion 29
+        versionCode 1
+        versionName project.buildVersion
+        multiDexEnabled true
+    }
+     buildTypes {
+           def BDATE =  new Date().format('MM.dd.yyyy')
+           debug {
+               buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
+                   minifyEnabled true
+           }
+           release {
+                   minifyEnabled true
+               buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
+               minifyEnabled true
+               debuggable false
+               proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro', 'wds_proguard-rules.txt'
+               zipAlignEnabled true
+           }
+       }
+
+    productFlavors {
+        pervacio{
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [ appLabel: "Content Transfer" ]
+            dimension "default"
+        }
+        sprint{
+            applicationId "com.sprint.contenttransfer"
+            manifestPlaceholders = [ appLabel: "Sprint Content Transfer" ]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        sprintMSDS{
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [ appLabel: "Sprint Content Transfer" ]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        pervacioMSDS {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        tms{
+            applicationId "com.pervacio.tms"
+            manifestPlaceholders = [ appLabel: "TMS Content Transfer" ]
+            dimension "default"
+			versionCode 1
+            targetSdkVersion 28
+        }
+        privatelabel{
+            applicationId "com.mobilecopy.transfer"
+            manifestPlaceholders = [ appLabel: "MobileCopy" ]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        bell{
+            applicationId "com.pervacio.wct"
+            manifestPlaceholders = [ appLabel: "Content Transfer" ]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        orange{
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [ appLabel: "Kopia Danych" ]
+            dimension "default"
+            targetSdkVersion 22
+        }
+                o2 {
+                    applicationId "com.pervacio.wct"
+                    manifestPlaceholders = [appLabel: "Content Transfer"]
+                    dimension "default"
+                    targetSdkVersion 26
+                }
+                        playstore {
+                            applicationId "com.pervacio.wds"
+                            manifestPlaceholders = [appLabel: "Pervacio Content Transfer"]
+                            dimension "default"
+                            versionCode 17
+                            targetSdkVersion 29
+                        }
+    }
+
+    sourceSets{
+        sprintMSDS {
+            res.srcDirs = ['src/sprint/res']
+        }
+    }
+ }
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation files('libs/jmdns-3.4.1.jar')
+    implementation 'com.journeyapps:zxing-android-embedded:3.5.0' // upgrading to new version of zxing
+    implementation 'com.pervacio.crashreportlib:crashreportlib@aar'
+    implementation 'org.pervacio.wirelessdatawipe:wirelessdatawipe@aar'
+    implementation 'org.pervacio.onediaglib:onediaglib@aar'
+
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.code.gson:gson:2.7'
+    implementation 'com.google.android.gms:play-services-drive:7.0.0'
+    // downgraded the version 8.4 to 7.0 for geofencing.
+//    implementation 'com.squareup.retrofit2:retrofit:2.0.2'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.0.2'
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    implementation 'com.github.mjdev:libaums:0.5.5'
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    implementation 'pl.droidsonroids.gif:android-gif-drawable:1.1.+'
+    implementation 'org.jsoup:jsoup:1.7.3'
+    implementation ('com.amazonaws:aws-android-sdk-mobile-client:2.6.7@aar') { transitive = true }
+    implementation 'com.amazonaws:aws-android-sdk-s3:2.6.+'
+    implementation 'com.amazonaws:aws-android-sdk-cognito:2.6.+'
+    implementation "androidx.annotation:annotation:1.1.0"
+    implementation 'com.google.android.gms:play-services-location:16.0.0'
+
+    //Firebase
+    implementation 'com.android.support:multidex:1.0.3'
+    implementation 'com.google.android.material:material:1.2.0'
+    implementation 'com.google.firebase:firebase-ml-vision:24.0.1'
+
+
+    //RunTime
+//    implementation "android.arch.work:work-runtime:1.0.1"
+
+    def work_version = "2.4.0"
+    // (Java only)
+    implementation "androidx.work:work-runtime:$work_version"
+
+}
+apply plugin: 'com.google.gms.google-services'

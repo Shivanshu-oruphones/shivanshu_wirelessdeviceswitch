@@ -1,0 +1,70 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ActivityRemote">
+    <item
+        android:id="@+id/about"
+        android:showAsAction="withText"
+        android:title="@string/menu_about"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/settings"
+        android:showAsAction="withText"
+        android:title="@string/menu_prouct"
+        android:visible="false"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/help"
+        android:showAsAction="withText"
+        android:title="@string/menu_help"
+        android:visible="false"
+        tools:ignore="AppCompatResource" />
+
+    <item
+        android:id="@+id/languages"
+        android:showAsAction="withText"
+        android:title="@string/menu_lanugages"
+        android:visible="false"
+        tools:ignore="AppCompatResource">
+        <menu>
+            <item
+                android:id="@+id/select_english"
+                android:orderInCategory="100"
+                android:title="@string/language_english"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/select_polish"
+                android:orderInCategory="100"
+                android:title="@string/language_polish"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/select_french"
+                android:orderInCategory="100"
+                android:title="@string/language_french"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/select_slovak"
+                android:orderInCategory="100"
+                android:title="@string/language_slovak"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+            <item
+                android:id="@+id/select_spanish"
+                android:orderInCategory="100"
+                android:title="@string/language_spanish"
+                android:visible="false"
+                app:showAsAction="collapseActionView" />
+        </menu>
+        <item
+            android:id="@+id/select_portuguese"
+            android:orderInCategory="100"
+            android:title="@string/language_portuguese"
+            android:visible="false"
+            app:showAsAction="collapseActionView" />
+    </item>
+
+</menu>

@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">Content Transfer</string>
+    <string name="ept_empty_line">\n</string>
+
+    <string name="ept_next_button">Ďalej</string>
+    <string name="ept_back_button">Back</string>
+    <string name="ept_finish_button">Dokončiť</string>
+    <string name="ept_exit_button">VÝCHOD</string>
+    <string name="ept_start_over_button">Začať odznovu</string>
+    <string name="ept_app_name">Content Transfer</string>
+
+    <string name="ept_welcome_text_top_1">Content Transfer</string>
+    <string name="ept_welcome_text_bottom_1">This application will help you copy your contacts, calendars and photos to another device.\n\nTouch the &quot;Next&quot; button to continue.</string>
+
+    <string name="ept_select_device_title">Vybrať zariadenie</string>
+    <string name="ept_select_device_text">\nSelect your other device from the list below.\n\nEnsure your other device is running the app and is connected to the same Wi-Fi network.\n"</string>
+
+    <string name="ept_display_pin_title">Confirm PIN</string>
+    <string name="ept_display_pin_text">\nFor security reasons you must enter the following PIN on your other device. Continue on your other device, until you are prompted to enter the PIN:\n</string>
+
+    <string name="ept_select_content_title">Vyberte obsah</string>
+    <string name="ept_select_content_contacts">Kontakty</string>
+    <string name="ept_select_content_calendar">Kalendáre</string>
+    <string name="ept_select_content_messages">Správy</string>
+    <string name="ept_select_content_photos">Fotografie</string>
+    <string name="ept_select_content_videos">Videá</string>
+    <string name="ept_select_content_audio">Audio</string>
+    <string name="ept_select_content_app">Aplikácie</string>
+    <string name="ept_select_content_call_logs">Denníky hovorov</string>
+    <string name="ept_select_content_settings">Nastavenia</string>
+    <string name="ept_transfer_time">Transfer Time</string>
+
+    <string name="ept_progress_title">Copying Data</string>
+    <string name="ept_progress_text">\nPlease wait while your data is copied.\n</string>
+
+    <string name="ept_complete_title">Transfer Complete</string>
+    <string name="ept_complete_text">\nThe following data has been copied:</string>
+
+    <string name="ept_select_device_help">It may take a while to detect your other device. Check that your other device is running the app and is connected to the same unrestricted Wi-Fi network.</string>
+
+    <string name="ept_connect_to_wifi_title">Pripojiť k WiFi</string>
+    <string name="ept_connect_to_wifi_message">This device is not connected to a WiFi network. You must connect this device to a WiFi network before continuing.</string>
+    <string name="ept_scanning_for_devices_title">Searching for Devices</string>
+
+    <string name="ept_could_not_copy_data_title">Could Not Copy Data</string>
+    <string name="ept_could_not_copy_data_message">Nové zariadenie nemá dostatočný ukladací priestor. Zrušte výber niektorého typu obsahu v starom zariadení alebo uvoľnite viac miesta v novom zariadení a skúste to znova.</string>
+
+    <string name="ept_ok">OK</string>
+    <string name="ept_progress_details">{0} z {1}</string>
+
+    <string name="ept_processing_calendar">Processing calendars</string>
+    <string name="ept_processing_contacts">Processing contacts</string>
+    <string name="ept_processing_call_logs">Processing call logs</string>
+    <string name="ept_processing_messages">Processing messages</string>
+    <string name="ept_sending_calendar">Sending calendars</string>
+    <string name="ept_sending_contacts">Sending contacts</string>
+    <string name="ept_sending_call_logs">Sending call logs</string>
+    <string name="ept_sending_messages">Sending messages</string>
+    <string name="ept_sending_photos">Sending photos</string>
+    <string name="ept_sending_videos">Sending videos</string>
+    <string name="ept_recieving_calendar">Receiving calendars</string>
+    <string name="ept_receiving_contacts">Receiving contacts</string>
+    <string name="ept_receiving_call_logs">Receiving call logs</string>
+    <string name="ept_receiving_settings">Receiving Settings</string>
+    <string name="ept_receiving_messages">Receiving messages</string>
+    <string name="ept_receiving_photos">Receiving photos</string>
+    <string name="ept_receiving_video">Receiving videos</string>
+    <string name="ept_sent_calendar">Sent calendars</string>
+    <string name="ept_sent_contacts">Sent contacts</string>
+    <string name="ept_sent_call_logs">Sent call logs</string>
+    <string name="ept_sent_messages">Sent messages</string>
+
+    <string name="ept_confirm_pin">\nContinue on your other device until it displays the PIN, then enter it on this device.\n</string>
+    <string name="ept_connected_title">Pripojené</string>
+    <string name="ept_connected_text">\nPokračujte v nastavení \ndruhého zariadenia.</string>
+
+    <string name="ept_source_or_target_title">Options</string>
+    <string name="ept_source_or_target_text_1">\nYou have selected this device:\n</string>
+    <string name="ept_source_or_target_text_2">\nSelect an option below depending on whether you want to copy data to or from the selected device:\n</string>
+    <string name="ept_transfer_to_selected_device_button_text">Copy data to selected device</string>
+    <string name="ept_transfer_from_selected_device_button_text">Copy data from selected device</string>
+
+    <string name="cmd_local_wifi_or_cloud_text">You can transfer your data wirelessly or you can backup and restore using Google Drive</string>
+    <string name="cmd_local_wifi_button_text">To or From Another Device Over a WiFi Network</string>
+    <string name="cmd_wifi_direct_button_text">To or From Another Device Using WiFi Direct</string>
+    <string name="cmd_google_drive_button_text">Back Up or Restore Content</string>
+    <string name="cmd_sd_card_button_text">Back Up or Restore from SD Card</string>
+    <string name="cmd_local_wifi_lan_or_direct_button_text">Wirelessly Transfer Content</string>
+
+    <string name="cmd_google_drive_options_title">Google Drive Options</string>
+    <string name="cmd_google_drive_options_text">Select one of the following options to continue</string>
+    <string name="cmd_google_drive_backup_button_text">Back Up Data to Google Drive</string>
+    <string name="cmd_google_drive_restore_button_text">Restore Data from Google Drive</string>
+
+    <string name="cmd_sd_card_options_title">SD Card Options</string>
+    <string name="cmd_sd_card_options_text">Select one of the following options to continue:</string>
+    <string name="cmd_sd_card_backup_button_text">Back Up Data to SD Card</string>
+    <string name="cmd_sd_card_restore_button_text">Restore Data from SD Card</string>
+
+    <string name="cmd_could_not_copy_data_google_title">Kopírovanie zlyhalo</string>
+    <string name="cmd_could_not_copy_data_google_message">Nebolo možné skopírovať všetky údaje. Skontrolujte pripojenie na internet a skúste to zopakovať.</string>
+
+    <string name="cmd_google_drive_sd_card_error_title">SD Card Not Accessible</string>
+    <string name="cmd_google_drive_sd_card_error_body">It is not possible to connect to Google Drive services without an SD card in this device. Please insert an SD card and ensure that this device is not connected to a PC.</string>
+
+    <string name="cmd_connecting_to_cloud_title">Connecting</string>
+    <string name="cmd_connecting_to_google_body">Connecting to Google Drive</string>
+
+    <string name="cmd_sign_in_error_title">Could Not Sign In</string>
+    <string name="cmd_sign_in_error_body">It was not possible to sign in to your account. Please check you account details and internet connection.</string>
+    <string name="cmd_unable_to_download_backup_title">Unable to Download Backup</string>
+    <string name="cmd_unable_to_download_backup_body">It was not possible to download the backup from the selected account. Please check your internet connection and that a content backup was previously created with the selected account.</string>
+    <string name="cmd_unable_to_find_backup_title">Unable to Find Backup</string>
+    <string name="cmd_unable_to_find_backup_body">No backup was found on the selected account. Please check your internet connection and that a content backup was previously created with the selected account.</string>
+    <string name="cmd_unable_to_create_backup_title">Unable to Create Backup</string>
+    <string name="cmd_unable_to_create_backup_body">It was not possible to create a backup on the selected account. Please check your internet connection and that there is sufficient space available on the selected account.</string>
+
+    <string name="cmd_unexpected_fatal_error_title">An Error Has Occured</string>
+    <string name="cmd_unexpected_fatal_error_body">It was not possible to complete the operation due to an unexpected error. Please check your internet connection and try again.</string>
+
+    <string name="ept_select_content_text">\nSelect content to Transfer</string>
+    <string name="ept_select_content_text_backup">\nSelect content to Back Up</string>
+    <string name="ept_select_content_text_restore">\nSelect content to Restore</string>
+    <string name="cmd_select_content_to_back_up">Select the required data then touch &quot;Next&quot; to back it up to your account.</string>
+    <string name="cmd_select_content_to_restore">Select the required data then touch &quot;Next&quot; to restore it to this device.</string>
+
+    <string name="cmd_no_sd_card_title">No SD Card</string>
+    <string name="cmd_no_sd_card_body">No SD card was detected. Ensure that a formatted SD card is inserted into this device and try again.</string>
+
+    <string name="cmd_no_sd_card_backup_title">Unable to Find Backup</string>
+    <string name="cmd_no_sd_card_backup_body">No backup was found on the SD card.</string>
+
+    <string name="cmd_insufficient_sd_card_space_title">Nedostatočné miesto</string>
+    <string name="cmd_insufficient_sd_card_space_body">Na karte SD nie je dostatok miesta na zálohovanie vybraných údajov.</string>
+    <string name="cmd_insufficient_google_drive_space_title">Nedostatočné miesto</string>
+    <string name="cmd_insufficient_google_drive_space_body">There is not enough space on Google Drive to back up the selected data.</string>
+
+    <string name="cmd_sd_card_backup_already_exists_title">Already Exists</string>
+    <string name="cmd_sd_card_backup_already_exists_body">A backup already exists on this SD card. Delete the old backup and then try again.</string>
+
+    <string name="ept_finding_files">Finding files</string>
+    <string name="ept_checking_remote_storage_space">Calculating required space</string>
+
+
+    <!-- Test banner -->
+    <!--
+<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+-->
+
+    <!-- Real banner -->
+    <string name="banner_ad_unit_id">ca-app-pub-1730626111507220/9058868399</string>
+
+
+    <string name="cmd_old_or_new_device_text">Is this your old or new device?</string>
+    <string name="cmd_old_device_button">This is old device</string>
+    <string name="cmd_new_device_button">This is new device</string>
+
+    <string name="cmd_other_device_type_text">Is your other device an Android or Apple device?</string>
+    <string name="cmd_other_device_type_ios_button">Apple Device</string>
+    <string name="cmd_other_device_type_android_button">Android Device</string>
+
+    <string name="cmd_scan_qr_code_text">Pokračujte na druhom zariadení, kým sa nezobrazí QR kód. Keď na druhom zariadení zobrazí QR kód, naskenujte ho kamerou nižšie</string>
+    <string name="cmd_display_qr_code_text">Pokračujte na svojom druhom zariadení, kým sa nezobrazí výzva na naskenovanie nasledujúceho QR kódu:</string>
+    <string name="cmd_display_scan_qr_code_text">QR kód umiestnite do rámčeka hľadáčika a naskenujte ho</string>
+
+    <string name="cmd_wifi_network_name_text">Názov siete Wi-Fi:</string>
+    <string name="cmd_wifi_network_passphrase_text">Heslo k sieti Wi-Fi:</string>
+
+    <string name="ept_creating_network_title">Vytvára sa sieť</string>
+    <string name="ept_creating_network_text">Počkajte, kým zariadenie vytvorí bezdrôtovú sieť. Môže to trvať niekoľko minút.</string>
+    <string name="ept_connecting_to_network_title">Prebieha pripojenie k sieti</string>
+    <string name="ept_connecting_to_network_text">Please wait while this device connects to the wireless network. This may take a few minutes.</string>
+
+    <string name="ept_incorrect_passcode_title">Incorrect PIN</string>
+    <string name="ept_incorrect_passcode_text">The PIN was not entered correctly. Restart the app on both devices and try again.</string>
+
+    <string name="ept_wifi_is_off_title">Wi-Fi</string>
+    <string name="ept_wifi_is_off_text">Wi-Fi is switched off on this device. Go to the settings app, switch Wi-Fi on and try again.</string>
+
+    <string name="ept_cant_connect_to_network_title">Chyba spojenia</string>
+    <string name="ept_cant_connect_to_network_text">It was not possible to connect to the other device.</string>
+
+    <string name="ept_retransfer_previous_content_dialog_text">You have previously transferred data to the selected device. Do you want to skip the previously transferred data?</string>
+
+    <string name="ept_transfer_again">Transfer It Again</string>>
+    <string name="ept_skip_it">Skip It</string>
+
+    <string name="cmd_local_wifi_or_cloud_title">Vyberte typ druhého zariadenia</string>
+    <string name="cmd_data_back_up_title">Content Transfer</string>
+    <string name="cmd_local_wifi_or_cloud_title_Scan_QRcode">Skenovať QR kód</string>
+    <string name="display_barcode_to_scan">Skenovať QR kód</string>
+    <string name="transferring_data">Prebieha prenos údajov</string>
+
+
+    <string name="cmd_ios_qr_code_info_1">Po naskenovaní čiarového kódu prejdite do časti Nastavenia v zariadení so systémom iOS a pripojte sa k tejto sieti:</string>
+    <string name="cmd_ios_qr_code_info_2">Po pripojení k danej sieti sa vráťte do aplikácie v zariadení so systémom iOS</string>
+    <string name="cmd_ios_qr_code_info_3">Go to “Settings” on your other device and connect to the following network:</string>
+
+    <string name="cmd_wifi_lan_or_direct">Select an option depending on how you want to transfer your data:</string>
+
+    <string name="cmd_transfer_over_wifi_lan_button">Transfer over home WiFi network</string>
+    <string name="cmd_transfer_over_wifi_direct_button">Transfer directly without a WiFi network</string>
+
+    <string name="ept_connecting_to_device_title">Connecting</string>>
+    <string name="ept_connecting_to_device_text">Connecting to your other device</string>
+
+    <string name="checking_pin_title"></string>
+    <string name="checking_pin_text">Confirming PIN</string>
+
+    <string name="ept_incorrect_pin">Nesprávne PIN ( Pin sa nedá potrvdiť ) Prosím skúste znova.</string>
+    <string name="title_activity_dummy_main">DummyMainActivity</string>
+
+    <string name="ept_option_to_close_text">Chcete zrušiť prenos?</string>
+    <string name="ept_option_to_close_confirm_text">Zrušiť prenos</string>
+    <string name="ept_option_to_close_reject_text">Nerušiť</string>
+
+    <string name="ept_option_to_force_close_text">Do you want to cancel the data transfer and exit the app?</string>
+
+    <string name="ept_page_title_default">Content Transfer</string>
+    <string name="ept_page_title_content_transfer">Content Transfer</string>
+    <string name="ept_page_title_confirm_pin">Confirm PIN</string>
+    <string name="ept_page_title_select_content">Vyberte obsah</string>
+    <string name="ept_page_title_progress">Transferring Data</string>
+    <string name="ept_page_title_complete">Transfer Complete</string>
+    <string name="ept_page_title_select_device">Vybrať zariadenie</string>
+    <string name="ept_page_title_scan_barcode">Skenovať QR kód</string>
+    <string name="ept_page_title_backup_or_restore">Google Drive Options</string>
+    <string name="ept_page_title_old_new">Vyberte, či ide o staré alebo nové zariadenie</string>
+    <string name="ept_page_title_summary">Súhrn prenosu</string>
+
+
+    <string name="ept_keep_app_open_warning">Please ensure to keep the app open on both devices until the transfer is complete. If doing a full content transfer, we recommend plugging your devices into a power source</string>
+
+
+    <string name="storeid_message">Zadajte ID predajne</string>
+    <string name="terms_and_condition_dialog_header">Zmluvné podmienky</string>
+    <string name="terms_and_condition_dialog_header_acknowledge">Please acknowledge the terms and conditions below to continue.</string>
+    <string name="wds_terms_and_conditions_text">Prevzatím a použitím aplikácie Pervacio Content Transfer pre vás automaticky platia tieto podmienky. Z tohto dôvodu si ich pred použitím aplikácie pozorne prečítajte. Upozorňujeme, že aplikáciu nemôžete poslať niekomu inému a aplikáciu, jej časť ani naše ochranné známky nesmiete žiadnym spôsobom kopírovať ani upravovať.  Pokusy o extrakciu zdrojového kódu aplikácie sú zakázané a nesmiete sa pokúšať ani o preklad aplikácie a vytvorenie jej odvodenín.  Samotná aplikácia a všetky ochranné známky, autorské práva, databázové práva a práva duševného vlastníctva, ktoré s ňou súvisia, stále patria spoločnosti Pervacio Inc.</string>
+    <string name="button_i_agree">Súhlasím</string>
+    <string name="button_i_disagree">Nesúhlasím</string>
+    <string name="connecting_to_server">Prebieha pripojenie k serveru</string>
+    <string name="wds_please_wait">Počkajte chvíľu, prosím...</string>
+    <string name="supporting_check">Checking Device support...</string>
+    <string name="not_supported_device">This device is not certified and may not transfer successfully</string>
+    <string name="wds_alert">Caution</string>
+    <string name="pairing_devices">Pairing devices please wait.....</string>
+    <string name="select_storeid">Please Select Store ID</string>
+    <string name="oldornewdevice">Select Old or New Device</string>
+
+    <string name="uniqueTransactionId">ID transakcie : </string>
+    <string name="qr_code_scan_message">QR kód umiestnite do rámčeka hľadáčika a naskenujte ho</string>
+
+    <string name="generating_summary_title">Transaction Completed</string>
+    <string name="generating_summary_description">Transaction is complete. Please wait while we generate transfer summary...</string>
+    <string name="processing">Spracováva sa</string>
+    <string name="sending_data">Odosielanie údajov...</string>
+    <string name="receiving_data">Prijímanie údajov...</string>
+    <string name="location_not_granted">* Prístup k polohe nie je udelený</string>
+    <string name="invalid_storeid">* Neplatné ID predajne</string>
+    <string name="location_validation_failed">* Nepodarilo sa overiť polohu</string>
+    <string name="unbale_to_get_location">* Nepodarilo sa získať polohu</string>
+    <string name="proceed_anyway">Pokračovať aj tak</string>
+    <string name="wds_cancel">Zrušiť</string>
+    <string name="enter_storeid">Zadajte ID predajne</string>
+    <string name="no_internet">Internet connection not available on the device.</string>
+
+    <string name="alert_oops">Strata spojenia</string>
+    <string name="migration_interrupted">Connection lost between devices. Please close the applications and try again.</string>
+
+    <string name="transfer_interrupted_title">Prenos bol prerušený</string>
+    <string name="transfer_interrupted_message">Prenos bol prerušený v druhom zariadení. Teraz môžete aplikáciu zatvoriť a skúsiť to znova.</string>
+    <string name="transfer_interrupted_action">Zatvoriť</string>
+
+    <string name="language_english">Angličtina</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_french">Francúzština</string>
+    <string name="language_slovak">Slovak</string>
+
+    <string name="hour">hod</string>
+    <string name="min">min</string>
+    <string name="sec">sek</string>
+    <string name="space_on_destination">V cieli treba urobiť miesto</string>
+    <string name="insufficient_space">Insufficient Space</string>
+    <string name="enter_store_id">Zadajte ID predajne</string>
+    <string name="unable_to_fetch_location">* Unable to fetch location</string>
+    <string name="submit">Odoslať</string>
+    <string name="device_disconnected">Device Disconnected!</string>
+    <string name="device_disconnection_message">Device Disconnected. Continue to resume session</string>
+    <string name="source_device_disconnection_message">Source Device Disconnected. Continue to resume session</string>
+    <string name="destination_device_disconnection_message">Destination Device Disconnected. Continue to resume session</string>
+    <string name="cancelling_trasaction">Prebieha zrušenie...</string>
+
+    <string name="msg_permission_title">Odmietnuté povolenie</string>
+    <string name="msg_permission_description">Povolenie pre správy nebolo udelené, správy nebudú prenesené.</string>
+    <string name="msg_permission_yes">Udeliť povolenie</string>
+    <string name="msg_permission_no">Ignorovať</string>
+    <string name="no_network">Nie je internet</string>
+    <string name="no_internet_message">V zariadení nie je k dispozícii internetové pripojenie. Pripojte sa k sieti a skúste to znova.</string>
+    <string name="wds_try_again">Skúsiť znovu</string>
+
+    <string name="install_apps">Nainštalovať aplikácie</string>
+
+
+    <!-- Menu items-->
+    <string name="menu_about">About</string>
+    <string name="menu_prouct">Product</string>
+    <string name="menu_lanugages">Jazyky</string>
+    <string name="menu_help">Help</string>
+
+
+    <!-- FONT FAIIMLY -->
+    <declare-styleable name="customfont">
+        <attr name="android:fontFamily" />
+        <attr name="android:textStyle" />
+    </declare-styleable>
+
+    <!-- Font Names in Assets -->
+    <!-- Font Names in Assets -->
+    <string name="font_light">roboto_light.ttf</string>
+    <string name="font_regular">roboto_regular.ttf</string>
+    <string name="font_bold">roboto_bold.ttf</string>
+    <string name="font_medium">roboto_medium.ttf</string>
+    <string name="font_thin">roboto_thin.ttf</string>
+
+    <string name="text_new">NEW</string>
+    <string name="text_old">OLD</string>
+    <string name="text_source">Zdroj</string>
+    <string name="text_destination">Cieľ</string>
+    <string name="text_android">ANDROID</string>
+    <string name="text_ios">IOS</string>
+    <string name="old_or_new_title">Is this the old or new device?</string>
+    <string name="source_or_destination_title">Je to Zdrojové alebo Cieľové zariadenie?</string>
+    <string name="other_device_type_title">Aký je typ druhého zariadenia?</string>
+    <string name="accept">Prijať</string>
+    <string name="welcome_screen_title">Víta vás to Pervacio \n Content Transfer</string>
+    <string name="lets_get_started">Začnime!</string>
+    <string name="elapsed_time">Uplynulý čas : </string>
+    <string name="estimation">Odhad : </string>
+    <string name="estiamated_transfer_time">Odhadovaná doba prenosu :</string>
+    <string name="estimated_transfer_time_suggestion">Skutočné časy prenosu sa môžu líšiť v závislosti od konkrétneho obsahu telefónu a modelu telefónu</string>
+    <string name="transfer_completed_in">Prenos dokončený za :</string>
+    <string name="waiting_connection">Čaká sa na pripojenie</string>
+    <string name="unable_to_connect">Pripojenie nie je možné</string>
+    <string name="grant_permissions">Please <font color="#1576F9"><u>click here</u></font> to grant permissions</string>
+    <string name="permissions_messages">Below data types will not be transferred because permissions were not granted</string>
+    <string name="insufficient_space_on_dest">* Nedostatok miesta v Cieli</string>
+    <string name="str_string">Štart</string>
+    <string name="switch_scan_source_msg">Treba opätovne spustiť párovanie, kliknite na tlačidlo Reštartovať párovanie v Cieľovom zariadení.</string>
+    <string name="switch_scan_destination_msg">Naozaj chcete \"reštartovať párovanie\" ?</string>
+    <string name="str_continue">Pokračovať</string>
+    <string name="str_google_services_update">* Služby Google Play si vyžadujú aktualizáciu</string>
+    <string name="str_google_services_problem">* Nejaký problém so službami Google Play</string>
+    <string name="str_txt_messages_only">Iba textové správy</string>
+    <string name="read_more">Read the Sprint\'s <a href="http://www.sprint.com/privacypolicy">Privacy Policy</a>.</string>
+    <string name="build_release_date">Build release date</string>
+    <string name="version_number">Version number</string>
+    <string name="app_created">This app was created for Sprint by Pervacio, Inc.</string>
+    <string name="comment_box">Please leave a comment about the app.</string>
+    <string name="about">About</string>
+    <string name="text_message">Sprint Content Transfer quickly and easily allows you to transfer the data between devices.</string>
+    <string name="rate_app">Rate this app</string>
+    <string name="comment">Comment</string>
+    <string name="selecting_submit_message">By selecting submit, you agree that Sprint can collect information about your device.</string>
+    <string name="str_switch_scan">REŠTARTOVAŤ PÁROVANIE \n(použiť LEN vtedy, ak Cieľové zariadenie vydá tento pokyn)</string>
+    <string name="str_yes">ÁNO</string>
+    <string name="str_no">NIE</string>
+    <string name="pairing_in_progress">Prebieha párovanie</string>
+    <string name="quick_transfer_tips">Rýchle tipy k prenosu</string>
+    <string name="quick_transfer_steps">
+        1. Zariadenia vždy udržujte od seba vo vzdialenosti do 300 cm.
+   <!-- \n\n2. Skontrolujte, či batéria je pred začatím prenosu nabitá na viac ako 50 %.-->
+    \n\n2. Počas prenosu nechajte aplikáciu otvorenú na oboch zariadeniach a vyhnite sa používaniu telefónov.</string>
+    <string name="session_cancelled">Relácia je zrušená</string>
+    <string name="session_cancelled_text">Relácia Content Transfer bola zrušená. Ak chcete preniesť všetky údaje zo Zdrojového zariadenia do Cieľového, reláciu opäť spustite.</string>
+    <string name="str_wrong_selection">Vybrané nesprávne zariadenie.</string>
+    <string-array name="settingsInfo">
+        <item>Časový limit obrazovky</item>
+        <item>Jas</item>
+        <item>Nastavenia hovorov (typ zvonenia a hlasitosť)</item>
+        <item>Tapeta</item>
+    </string-array>
+
+    <string name="title_endpage">Nezabudnite prosím dokončiť nasledujúce manuálne kroky.</string>
+
+    <string name="text_suggestionSource">1.Zabudnutá Wifi sieť predajne na tomto zariadení.
+              \n\n2.Odinštalujte aplikáciu Content Transfer z tohto zariadenia.
+    </string>
+
+    <string name="text_suggestionDest">1.Zabudnutá Wifi sieť predajne na tomto zariadení.
+              \n\n2.Odinštalujte aplikáciu Content Transfer z tohto zariadenia.
+              \n\n3.V prípade potreby obnovte továrenské nastavenia.
+    </string>
+    <string name="text_suggestionDest2">1.Zabudnutá Wifi sieť predajne na tomto zariadení.
+              \n\n2.Odinštalujte aplikáciu Content Transfer z tohto zariadenia.
+              \n\n3.V prípade potreby obnovte továrenské nastavenia.
+              \n\n4.On Exit, when prompted, please select Messaging app as the default SMS application.
+    </string>
+    <string name="faulty_camera_suggestion">V prípade problémov so skenovaním.Kliknite sem</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied</string>
+    <string name="str_go_to_settings">Prejdite k nastaveniam</string>
+    <string name="copy_connect_network">Skopírujte heslo a pripojte sa k nasledujúcej sieti.</string>
+    <string name="wds_str_name">Name : </string>
+    <string name="str_password">Password : </string>
+    <string name="str_enterpin">Zadajte PIN zobrazujúci sa na druhom zariadení.</string>
+    <string name="str_enter_pin_hint">Zadajte PIN</string>
+    <string name="read_more_ts_and_cs_text">Read more</string>
+    <string name="terms_and_conditions_text_more"></string>
+    <string name="wlan_suggestion">Please connect to {} and then click on retry.</string>
+    <string name="wrong_combination">Currently iOS-BB combination is not supported.</string>
+    <string name="low_battery">Slabá batéria</string>
+    <string name="battery_level">Úroveň batérie je : </string>
+    <string name="low_battery_text_message">\n\nPripojte zariadenie k zdroju napájania</string>
+    <string name="str_permission_go_to_settings">Go to settings and enable the permissions.</string>
+    <string name="str_write_permission">Allow Content Transfer to modify device settings.</string>
+    <string name="str_allow">Allow</string>
+    <string name="str_deny">Deny</string>
+    <string name="str_data_types_not_transferred">Nasledujúce typy údajov sa neprenesú, lebo neboli udelené povolenia</string>
+    <string name="str_grant_permission">Please click here to grant the permission</string>
+    <string name="str_resume_transaction">Resume transaction?</string>
+    <string name="str_start_again">START AGAIN</string>
+    <string name="str_resume">RESUME</string>
+    <string name="str_skip">SKIP</string>
+    <string name="str_restart_transaction">Your last transaction was terminated.
+        \nDo you want to resume the old transaction or start a new one?</string>
+    <string name="pin">PIN</string>
+    <string name="cancel_transfer">Zrušiť prevod</string>
+    <string name="pairing">vyparovanie</string>
+    <string name="str_connected">Pripojené</string>
+    <string name="store_identification">Identifikácia obchodu</string>
+    <string name="select_storeid_list_msg">Zo zoznamu vyberte svoj ID obchodu</string>
+
+
+</resources>

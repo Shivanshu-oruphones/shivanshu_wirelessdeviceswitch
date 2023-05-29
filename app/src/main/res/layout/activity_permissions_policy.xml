@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/permissions_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/pp_header"
+        style="@style/textStyle_heading"
+        android:layout_width="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:padding="@dimen/fab_margin" />
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/pp_body"
+        style="@style/textStyle_body"
+        android:layout_above="@+id/btn_layout"
+        android:layout_below="@+id/pp_header"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:scrollbars="vertical"
+        android:textSize="12sp" />
+    <ProgressBar
+        android:id="@+id/action_spinner1"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone" />"
+    android:id="@+id/btn_layout"
+    android:layout_alignParentBottom="true"/>
+    <include layout="@layout/two_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_layout"
+        android:layout_alignParentBottom="true"/>
+</RelativeLayout>

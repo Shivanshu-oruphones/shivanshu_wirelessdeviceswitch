@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">Kopia Danych</string>
+    <string name="welcome_screen_title">Witamy w aplikacji Kopia Danych</string>
+    <string name="terms_and_conditions_text">Pobranie i korzystanie z aplikacji Kopia Danych oznacza zgodę na przestrzeganie niniejszych warunków. Przed rozpoczęciem korzystania z aplikacji należy dokładnie zapoznać się z niniejszymi warunkami. Należy pamiętać, że nie można przesyłać aplikacji innym użytkownikom ani w żaden sposób kopiować lub modyfikować aplikacji lub jakiejkolwiek części aplikacji ani naszych znaków towarowych.  Nie zezwala się na podejmowanie prób wyodrębnienia kodu źródłowego aplikacji ani tłumaczenie aplikacji lub tworzenie pochodnych wersji aplikacji.  Aplikacja oraz wszystkie znaki towarowe, prawa autorskie, prawa do baz danych i prawa własności intelektualnej z nią związane należą do Pervacio Inc.</string>
+    <string name="text_suggestionSource">1.Zapomnij sieć Wi-Fi salonu na tym urządzeniu.
+              \n\n2.Odinstaluj aplikację Kopia Danych z tego urządzenia.
+    </string>
+    <string name="text_suggestionDest">1.Zapomnij sieć Wi-Fi salonu na tym urządzeniu.
+              \n\n2.Odinstaluj aplikację Kopia Danych z tego urządzenia.
+              \n\n3.Pamiętaj, aby w razie potrzeby przywrócić ustawienia fabryczne urządzenia Zródłowego.
+    </string>
+
+
+
+
+</resources>

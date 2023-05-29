@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wds_main_bg_gray"
+    tools:context=".app.ui.EasyMigrateActivity">
+
+
+    <ViewFlipper
+        android:id="@+id/MainViewFlipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/version">
+
+        <include layout="@layout/selectoldornewdevice"/>
+
+        <include layout="@layout/selectcontent" />
+
+        <include layout="@layout/progress" />
+
+        <include layout="@layout/complete" />
+
+    </ViewFlipper>
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/version"
+        style="@style/textStyle_smaller"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:gravity="center"
+        android:text="Version"
+        android:visibility="visible" />
+
+</RelativeLayout>

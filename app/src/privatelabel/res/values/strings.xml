@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">MobileCopy</string>
+    <string name="ept_app_name">MobileCopy</string>
+
+    <string name="ept_welcome_text_top_1">MobileCopy</string>
+    <string name="welcome_screen_title">Welcome to MobileCopy</string>
+    <string name="cmd_data_back_up_title">MobileCopy</string>
+    <string name="ept_page_title_default">MobileCopy</string>
+    <string name="ept_page_title_content_transfer">MobileCopy</string>
+
+    <string name="wds_terms_and_conditions_text"> By downloading and using the MobileCopy app, these terms will automatically apply to you. Please make sure therefore that you read them carefully before using the app. Please be aware that you cannot send it on to anyone else, and you\'re not allowed to copy, or modify the app, any part of the app, or our trademarks, in any way.  You\'re not allowed to attempt to extract the source code of the app, you also shouldn\'t try to translate the app or make derivative versions.  The app itself, and all the trademarks, copyright, database rights and intellectual property rights related to it, still belong to MobileCopy.</string>
+    <string name="str_rateapp_msg">Enjoying MobileCopy ?</string>
+    <string name="app_created">This app was created by MobileCopy</string>
+    <string name="text_message">MobileCopy quickly and easily allows you to transfer the data between devices.</string>
+    <string name="session_cancelled_text">MobileCopy session has been cancelled. Please restart this session to transfer all your data from Source to Destination device.</string>
+
+    <string name="text_suggestionSource">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the MobileCopy app from this device.
+    </string>
+
+    <string name="text_suggestionDest">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the MobileCopy app from this device.
+              \n\n3.Remember to factory reset the Source device if needed.
+    </string>
+
+    <string name="str_write_permission"><![CDATA[Allow <b>MobileCopy</b> to access device settings.<br/>(Wallpaper, Screen timeout, Brightness, Volume)]]></string>
+
+
+
+
+        <!-- Font Names in Assets -->
+    <string name="font_light">lato_light.ttf</string>
+    <string name="font_regular">lato_regular.ttf</string>
+    <string name="font_bold">lato_bold.ttf</string>
+    <string name="font_medium">lato_medium.ttf</string>
+    <string name="font_thin">lato_thin.ttf</string>
+    <string name="permissions_policy_header">Welcome to MobileCopy</string>
+    <string name="permissions_policy_body">
+    <![CDATA[
+MobileCopy lets you transfer data from your old device to a new device. During use, this app needs the following permissions to provide data transfer services.
+<!--<br/>
+<br/><b>Call logs</b>
+<br/>Used to transfer call history-->
+<br/>
+<br/><b>Contacts</b>
+<br/>Used to transfer contacts
+<br/>
+<br/><b>Calendar</b>
+<br/>Used to transfer calendar data
+<!--<br/>
+<br/><b>SMS</b>
+<br/>Used to transfer SMS data-->
+<br/>
+<br/><b>Storage</b>
+<br/>Used to transfer images, media and files
+<br/>
+<br/><b>Camera</b>
+<br/>Used for reading QR Code
+<br/>
+<br/><b>Location</b>
+<br/>Used for obtaining device’s location
+<br/><br/>
+Device information such as UUID, device model, system language, OS Version, screen resolution, and ROM version are also collected.
+<br/><br/>
+You can exit this app to stop the information collected and upload activities described above.
+<br/><br/>
+By tapping I AGREE, you acknowledge and agree to the above content and indicate that you have read the <strong>Terms &amp; Conditions</strong> and <strong>Privacy Statement</strong>.
+    ]]>
+    </string>
+    <string name="privacy_policy">
+
+     <![CDATA[
+      <strong>MOBILECOPY PRIVACY POLICY</strong>
+    <p>
+        Pervacio Inc., creator of MobileCopy, recognizes that your privacy is
+        important and that your personal information must be protected. This
+        privacy policy describes the information that we collect from you, how we
+        use it and what we do to protect it.
+    </p>
+    <p>
+        Please read through this policy carefully and periodically. Please contact
+        us at support@pervacio.com if you have any questions about the contents of
+        this policy.
+    </p>
+    <p>
+        <strong>
+            The information we collect is necessary for providing our services.
+        </strong>
+    </p>
+    <p>
+        We do not collect any information from or about you that does not have to
+        do with the services provided by our application. Any information that we
+        collect from you is stored as only being connected to your account unless
+        it is otherwise noted on the application. We take your privacy seriously
+        and will only use and disclose information if they align with the terms
+        outlined below.
+    </p>
+    <p>
+        <strong>We do not collect personal information.</strong>
+    </p>
+    <p>
+        Under no circumstances do we collect and store personal information from or
+        about you. Personal information is any information that identifies you or
+        another person, such as your first and last name, physical addresses, email
+        addresses, telephone numbers, fax numbers, or any information that is
+        specific to you that is stored within your device. Our data transfer
+        feature only stores data from your old device onto the new device that you
+        are transferring the information over to. Throughout the entire process,
+        the MobileCopy server is not accessed so that we do not see your personal
+        information. In other words, you can be assured that there is no way for us
+        to collect your information if you use our application to copy the data
+        from one phone to another.
+    </p>
+    <p>
+        <strong>We only collect non-personal information.</strong>
+    </p>
+    <p>
+        In order to ensure that your experience while using our applications is
+        comfortable, we collect non-personal information to better understand user
+        behavior, discover problems with the applications, and improve our
+        products. Non-personal information is data that does not permit direct
+        association with any specific individual. Examples of non-personal
+        information are: device ID, phone IMEI number, phone model, rom, phone
+        operator, location, operation system, transfer logs, etc.
+    </p>
+    <p>
+        <strong>
+            Permissions required by our applications all have a valid reason.
+        </strong>
+    </p>
+    <p>
+        Our application requests for some access permissions that are deemed as
+        access to sensitive and dangerous data on Android devices. You can find
+        detailed explanations for why we request each permission in the Appendix
+        section of this policy.
+    </p>
+    <p>
+        The permissions requested for our applications are:
+    </p>
+    <p>
+        Take pictures and videos (CAMERA)
+    </p>
+    <p>
+        Read your contacts (READ_CONTACTS)
+    </p>
+    <p>
+        Modify your contacts (WRITE_CONTACTS)
+    </p>
+<!--    <p>
+        Read call log (READ_CALL_LOG)
+    </p>
+    <p>
+        Write call log (WRITE_CALL_LOG)
+    </p>-->
+    <p>
+        Read calendar (READ_CALENDAR)
+    </p>
+    <p>
+        Write calendar (WRITE_CALENDAR)
+    </p>
+<!--    <p>
+        Read your text messages (SMS or MMS)
+    </p>-->
+    <p>
+        Read the contents of your storage (READ_EXTERNAL_STORAGE)
+    </p>
+    <p>
+        Modify or delete the contents of your storage (WRITE_ EXTERNAL_STORAGE)
+    </p>
+    <p>
+        <strong>Security is important to us.</strong>
+    </p>
+    <p>
+        MobileCopy is very concerned about safeguarding the confidentiality of your
+        information. As stated before, we do not collect personal information. In
+        order to protect the non-personal information, we collect from unauthorized
+        access and use, we employ administrative, physical and electronic measures.
+        MobileCopy is well-equipped to handle personal or sensitive user data
+        securely, including transmitting the data to backend server using modern
+        cryptography over HTTPS.
+    </p>
+    <p>
+        Please be aware that the security measures that we take to protect your
+        information are not absolutely guaranteed to counter unauthorized access or
+        use of your Non-Personal Information.
+    </p>
+    <p>
+        <strong>Children</strong>
+    </p>
+    <p>
+        We do not provide service focus on Children. If you are under 13, please
+        ask permission from your parent or guardian before using our application.
+        Parental supervision is advised.
+    </p>
+    <p>
+        <strong>Contact Us</strong>
+    </p>
+    <p>
+        If you have any questions or comments about this Policy or our privacy
+        practices, or to report any violations of the Policy or abuse of the
+        Services or the Site, please contact us at support@pervacio.com
+    </p>
+    <p>
+        <strong>We will update this privacy policy to ensure your rights.</strong>
+    </p>
+    <p>
+        To be ensure the quality of your experience and your security, we will be
+        updating our privacy policy as needed. Any changes made to this policy will
+        not reduce your rights in anyway. If the changes to this policy are
+        significant, a notification will be shown on the application. However,
+        smaller changes may be made so please review this policy periodically. If
+        you do not agree to any changes to this policy, you should immediately stop
+        using any of the services we provide and contact us. Your continued use of
+        our services after changes to this Policy have been made mean that you have
+        accepted the terms of the revised Policy. Please note that none of our
+        employees or agents has the authority to violate any of the rights that
+        have been laid out in this policy.
+    </p>
+    <p>
+        <strong>Appendix</strong>
+    </p>
+    <p>
+        <strong>
+            Privacy-relevant Android permissions requested by our application
+            CAMERA
+        </strong>
+    </p>
+    <p>
+        Used for permissions that are associated with accessing camera or capturing
+        images and/or videos from the device.
+    </p>
+    <p>
+        This permission allows this application to support the following feature
+        related to phone camera:
+    </p>
+    <p>
+        1) Scan QR Code for establishing a wireless connection between two devices
+        faster because this method can bypass the manual input of wireless
+        password.
+    </p>
+    <p>
+        <strong>READ_CONTACTS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read the user’s contacts
+        data. This permission allows the application to transfer telephone contacts
+        as part of the Contacts transfer feature. The purpose is to retrieve the
+        user’s contacts (e.g. phone number, contact name, email, etc) from an old
+        phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>WRITE_CONTACTS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write the user’s contacts
+        data. This permission allows the application to transfer telephone contacts
+        as part of the Contacts transfer feature. The purpose is to write user’s
+        contacts (e.g. phone number, contact name, email, etc), that are received
+        from an old phone to the designated contacts storage on a new phone.
+    </p>
+<!--    <p>
+        <strong>READ_CALL_LOG</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read the user\'s call log.
+    </p>
+    <p>
+        This permission allows the application to transfer telephone call log as
+        part of the Phone Replicate feature. The purpose is to retrieve user\'s call
+        log from an old phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>WRITE_CALL_LOG</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write (but not read) the
+        user\'s call log data. This permission allows the application to transfer
+        telephone call log as part of the Phone Replicate feature. The purpose is
+        to write user’s call log (e.g. phone number, contact name, calling time,
+        etc), that are received from an old phone, to the designated call log
+        storage on a new phone.
+    </p>-->
+    <p>
+        <strong>READ_CALENDARS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read the user\'s calendar.
+        This permission allows the application to transfer calendar as part of the
+        calendar transfer feature. The purpose is to retrieve user’s calendar from
+        an old phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>WRITE_CALENDARS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write (but not read) the
+        user\'s calendar data. This permission allows the application to transfer
+        telephone call log as part of the calendar transfer feature. The purpose is
+        to write user’s calendar, that is retrieved from an old phone, to the
+        designated calendar storage on a new phone.<strong></strong>
+    </p>
+<!--    <p>
+        <strong>READ_SMS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read SMS messages. This
+        permission allows the application to transfer SMS messages as part of the
+        Phone Replicate feature. The purpose is to retrieve user’s SMS messages
+        from an old phone and transfer over to and save on a new phone.
+    </p>-->
+    <p>
+        <strong>READ_EXTERNAL_STORAGE</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read from external
+        storage. This permission allows the application to access any files on the
+        external storage, e.g. SD card, as part of MobileCopy\'s core feature of
+        transferring files. The user can select files to be transferred and send
+        over the wireless connection created by the application.
+    </p>
+    <p>
+        <strong>WRITE _EXTERNAL_STORAGE</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write to external
+        storage. This permission allows the application to access the external
+        storage, e.g. SD card, as part of MobileCopy’s core feature of transferring
+        files. The user can choose to save received files that are transferred over
+        the wireless connection into internal storage or external storage. The user
+        must select to save to external storage from in-app settings.
+    </p>
+        ]]>
+    </string>
+
+</resources>

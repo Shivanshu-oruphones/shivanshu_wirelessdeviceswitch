@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">ORU Content Transfer</string>
+    <string name="welcome_screen_title">Bienvenue dans Wireless Content Transfer</string>
+    <string name="ept_app_name">@string/app_name</string>
+    <string name="ept_welcome_text_top_1">@string/app_name</string>
+    <string name="cmd_data_back_up_title">@string/app_name</string>
+    <string name="ept_page_title_default">@string/app_name</string>
+    <string name="ept_page_title_content_transfer">@string/app_name</string>
+    <string name="terms_and_conditions_text"> En téléchargeant et en utilisant l’application Wireless Content Transfer, les présents termes s’appliqueront automatiquement à vous. Veuillez les lire attentivement avant d’utiliser l’application. Soyez conscient que vous ne pouvez l’envoyer à personne, ni copier ou modifier d’une manière quelconque l’application entière, sa partie ou nos marques de commerce. Vous n’êtes pas autorisé à essayer d’accéder au code source de l’application, ni de traduire l’application ou de créer des versions dérivées. L’application elle-même, ainsi que toutes les marques de commerce, les droits d’auteur, les droits des bases de données et les droits de propriété qui y sont liés, appartiennent toujours à Pervacio Inc.</string>
+</resources>

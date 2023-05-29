@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:id="@+id/mainLayout"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="@dimen/content_padding">
+
+        <CheckBox
+            android:id="@+id/content_select"
+            android:buttonTint="@color/wds_colorPrimary"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/content_image_margin"/>
+
+        <ImageView
+            android:id="@+id/content_result"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/content_image_margin"
+            android:src="@drawable/pass"
+            android:visibility="gone" />
+
+
+
+        <ImageView
+            android:id="@+id/content_image"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:src="@drawable/ic_contact"
+
+            android:visibility="visible" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="@dimen/content_text_margin"
+            android:orientation="horizontal">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/content_name"
+                android:layout_gravity="center_vertical"
+                style="@style/textStyle_subheading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Data type"/>
+
+            <com.pervacio.wds.CustomTextView
+                android:contentDescription="@string/str_go_to_settings"
+                android:id="@+id/message_setting"
+                android:layout_marginLeft="@dimen/margin_small"
+                android:drawableRight="@drawable/ic_sms_settings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:gravity="center"
+                style="@style/textStyle_smaller"
+                android:focusable="true"
+                android:visibility="gone"
+                android:text="@string/sms_info"
+                android:layout_marginStart="@dimen/margin_small"/>
+        </LinearLayout>
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/content_progresscount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right|center_vertical"
+            android:layout_marginRight="@dimen/content_text_margin"
+            android:layout_marginLeft="@dimen/content_text_margin"
+            android:gravity="right"
+            style="@style/textStyle_body"
+            android:text="1" />
+
+        <ImageView
+            android:id="@+id/content_view"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_centerVertical="true"
+            android:layout_gravity="center"
+            android:layout_marginLeft="@dimen/content_image_margin"
+            android:layout_marginRight="@dimen/content_image_margin"
+            android:src="@drawable/next"
+            android:visibility="gone" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/darkGrey" />
+
+</LinearLayout>

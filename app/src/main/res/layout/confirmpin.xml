@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ConfirmPinPageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="35sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/BasicTitle"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:text="@string/ept_display_pin_title">
+    </TextView>
+
+    <TextView
+        android:id="@+id/WelcomeBottomText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:textAppearance="@style/BasicText"
+        android:text="@string/ept_confirm_pin" >
+    </TextView>
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="30sp" />
+
+    <EditText
+        android:id="@+id/PinEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="number"
+        android:imeOptions="actionDone"
+        android:maxLines="1"
+        android:singleLine="true">
+        <requestFocus />
+    </EditText>
+
+    <TextView
+        android:id="@+id/incorrectPinTextView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/darkRed"
+        android:gravity="center_horizontal"
+        android:text="@string/ept_incorrect_pin"
+        android:visibility="invisible"/>
+
+</LinearLayout>

@@ -1,0 +1,6 @@
+dashOConfig {
+	dashOHome = 'D://PreEmptive Solutions//PreEmptive Protection - DashO 9.3//app'
+	doxFilename = 'project.dox'
+	includeAsInputs = ['onediaglib.aar', 'wirelessdatawipe.aar', 'crashreportlib.aar']
+	verbose = true
+}

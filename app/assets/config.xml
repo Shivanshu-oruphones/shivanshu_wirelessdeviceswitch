@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+   1. product      - WDS, MMDS
+
+   2. Transfermode - Home Wifi    - WLAN
+                     Wifi-Direct  - WDIRECT
+                     Cloud backup/restore - Cloud
+
+   3. Authentication Required - true to enable  (Geo Fencing,Store Validation, AppusageHistory)
+                              - false to disable
+
+   4. Server URL   - Endpoint URL to hit the server for logging and Authentication.
+
+   5. Transaction Logging - Database loggging for trasaction
+                            true  -  to  enable
+                            false - to disable
+
+   6. Customer Name - Customer Name Ex: Pervacio, Sprint
+
+   7. Certification Required - true to enable(To check device certification)
+                             - false to disable
+   8 Estimation required - True to enable
+                         - false to disable
+
+   9. Cloud Pairing Enabled - True to enable
+                           - False to disable
+
+   10. Dynamic Estimation required  - True to enable
+                                    - False to disable
+
+-->
+
+
+   <!-- Servers:
+
+    Rogers        : -  https://rogers.pervacioone.com
+    Orange        : -  https://orangepilot.pervacioone.com , https://orangeplwdsuat.pervacioone.com/
+    Pervacio(Dev) : -  http://182.75.101.100:8080
+    Republic      : -  https://republicwireless.pervacioone.com
+    Local 1       : -  http://192.168.0.45:8080/ - QA Dev
+    Local 2       : -  http://192.168.0.67:8080/ - For Developers, Experimental Server
+    TMobile       : -  https://tmowds.pervacioone.com/
+    OrangeSenegal : -  https://orangesewdsuat.pervacioone.com/
+    Sprint        : -  https://sprintqa.pervacioone.com
+    WDSDemo        : -  https://wdsdemo.pervacioone.com
+    BellUAT        : -  https://bellwdsuat.pervacioone.com
+                        https://bellwds.pervacioone.com
+    -->
+
+<!--Product: MMDS
+Flavor: sprintMSDS-->
+<!--<product-config>
+   <product>MMDS</product>
+   <transfer_mode>WDIRECT</transfer_mode>
+   <authentication_required>false</authentication_required>
+   <server_url>https://bellwds.pervacioone.com</server_url>
+   <transaction_logging>false</transaction_logging>
+   <customer>sprint</customer>
+   <certification_required>false</certification_required>
+   <estimation_required>true</estimation_required>
+   <cloud_pairing>false</cloud_pairing>
+   <dynamic_estimation>false</dynamic_estimation>
+</product-config>-->
+
+<!--<product-config>
+   <product>WDS</product>
+   <transfer_mode>WDIRECT</transfer_mode>
+   <authentication_required>true</authentication_required>
+   <server_url>https://bellwds.pervacioone.com</server_url>
+   <transaction_logging>true</transaction_logging>
+   <customer>bell</customer>
+   <certification_required>false</certification_required>
+   <estimation_required>true</estimation_required>
+   <cloud_pairing>true</cloud_pairing>
+   <dynamic_estimation>false</dynamic_estimation>
+</product-config>-->
+
+<!--
+<product-config>
+   <product>WDS</product>
+   <transfer_mode>WDIRECT</transfer_mode>
+   <authentication_required>false</authentication_required>
+   <server_url>https://app.mobilecopy.in</server_url>
+   <transaction_logging>true</transaction_logging>
+   <customer>MobileCopy</customer>
+   <certification_required>false</certification_required>
+   <estimation_required>true</estimation_required>
+   <cloud_pairing>true</cloud_pairing>
+   <dynamic_estimation>false</dynamic_estimation>
+</product-config>-->
+
+<!--
+Playstore
+-->
+<product-config>
+   <product>WDS</product>
+   <transfer_mode>WDIRECT</transfer_mode>
+   <authentication_required>true</authentication_required>
+<!--
+   <server_url>https://wdsdemo.pervacioone.com</server_url>
+-->
+   <!--<server_url>https://appstore.pervacio.com</server_url>-->
+   <server_url>https://appstore.mobilicis.com</server_url>
+   <transaction_logging>true</transaction_logging>
+   <customer>Pervacio</customer>
+   <certification_required>false</certification_required>
+   <estimation_required>true</estimation_required>
+   <cloud_pairing>true</cloud_pairing>
+   <dynamic_estimation>false</dynamic_estimation>
+</product-config>
+
+<!--<product-config>
+<product>WDS</product>
+<transfer_mode>WDIRECT</transfer_mode>
+<authentication_required>true</authentication_required>
+<server_url>https://tmswds.pervacio.com</server_url>
+&lt;!&ndash;    <server_url>https://appstore.pervacio.com</server_url>&ndash;&gt;
+<transaction_logging>true</transaction_logging>
+<customer>TMS</customer>
+<certification_required>false</certification_required>
+<estimation_required>true</estimation_required>
+<cloud_pairing>true</cloud_pairing>
+<dynamic_estimation>false</dynamic_estimation>
+</product-config>-->

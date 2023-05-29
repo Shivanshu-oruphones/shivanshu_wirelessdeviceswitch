@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/titles"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <com.pervacio.wds.CustomTextView
+            style="@style/textStyle_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/select_messages"/>
+
+        <com.pervacio.wds.CustomTextView
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="@string/select_messages_instruction" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/seperator1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_below="@+id/titles"
+        android:background="@color/gray" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/seperator2"
+        android:layout_below="@+id/seperator1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioGroup
+                android:id="@+id/radio_group"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:backgroundTint="@color/wds_colorPrimary"
+                android:orientation="vertical"
+                android:paddingLeft="20dp"
+                android:paddingStart="20dp" />
+
+            <EditText
+                android:id="@+id/datePicker"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start"
+                android:layout_marginLeft="60dp"
+                android:layout_marginRight="40dp"
+                android:backgroundTint="@color/black"
+                android:drawableEnd="@drawable/ic_dropdown"
+                android:drawableRight="@drawable/ic_dropdown"
+                android:focusable="false"
+                android:gravity="start|top"
+                android:hint="@string/enter_date"
+                android:inputType="date"
+                android:layout_marginStart="60dp"
+                android:layout_marginEnd="40dp"
+                android:visibility="gone"
+                style="@style/textStyle_small"/>
+        </LinearLayout>
+    </ScrollView>
+
+    <View
+        android:id="@+id/seperator2"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_above="@+id/btn_layout"
+        android:background="@color/gray" />
+
+    <LinearLayout
+        android:id="@+id/btn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:orientation="horizontal">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/message_setting_cancel"
+            style="@style/textStyle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="@dimen/button_padding"
+            android:text="@string/wds_cancel"
+            android:textColor="@color/wds_button_color" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/message_setting_transfer"
+            style="@style/textStyle_button"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:padding="@dimen/button_padding"
+            android:text="@string/transfer"
+            android:textColor="@color/wds_button_color" />
+    </LinearLayout>
+
+</RelativeLayout>

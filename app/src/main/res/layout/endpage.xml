@@ -1,0 +1,50 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/EndPage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/EndPageTopText"
+            style="@style/textStyle_subheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/title_endpage" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/step"
+            style="@style/textStyle_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/text_suggestionDest" />
+
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/wds_main_bg_gray">
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/finish_page"
+            style="@style/primary_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ept_finish_button" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

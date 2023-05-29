@@ -1,0 +1,195 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".app.ui.EasyMigrateActivity"
+    android:background="@color/wds_main_bg_gray">
+
+    <RelativeLayout
+        android:id="@+id/MainScrollViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/FooterLogoLayout">
+
+        <ViewFlipper
+            android:id="@+id/MainViewFlipper"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+
+            <include layout="@layout/welcome" />
+
+            <include layout="@layout/deviceselection" />
+
+            <include layout="@layout/displaypin" />
+
+            <include layout="@layout/selectcontent" />
+
+            <include layout="@layout/progress" />
+
+            <include layout="@layout/complete" />
+
+            <include layout="@layout/confirmpin" />
+
+            <include layout="@layout/connected" />
+
+            <include layout="@layout/selectcloudorlocal" />
+
+            <include layout="@layout/selectcloudbackuporrestore" />
+
+            <include layout="@layout/connectingtocloudservice" />
+
+            <include layout="@layout/selectoldornewdevice" />
+
+            <include layout="@layout/selectotherdevicetype" />
+
+            <include layout="@layout/scanqrcode" />
+
+            <include layout="@layout/displayqrcode" />
+
+            <include layout="@layout/selectwifilanordirect" />
+
+            <include layout="@layout/connecting"/>
+
+            <include layout="@layout/activity_about_summary"/>
+
+            <include layout="@layout/session_cancelled"/>
+
+            <include layout="@layout/datatype_info"/>
+
+            <include layout="@layout/endpage"/>
+
+            <include layout="@layout/cloudpairing"/>
+
+            <include layout="@layout/denied_permissions_list"/>
+
+            <include layout="@layout/select_transfertype"/>
+
+        </ViewFlipper>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/progressLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:visibility="gone"
+        android:descendantFocusability="blocksDescendants"
+        android:background="@color/wds_main_bg_gray"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_above="@+id/FooterLogoLayout">
+
+        <RelativeLayout
+            android:id="@+id/pairingInprogress"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone">
+            <include layout="@layout/connecting" />
+        </RelativeLayout>
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/overLayMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            style="@style/textStyle_heading"
+            android:text="@string/device_disconnection_message"
+            android:layout_centerInParent="true"
+            android:gravity="center"
+            android:visibility="gone"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/FooterLogoLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:visibility="visible"
+        android:background="@color/wds_main_bg_gray"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="20sp"
+            android:layout_marginLeft="60sp"
+            android:layout_marginRight="60sp"
+            android:adjustViewBounds="true"
+            android:visibility="gone"
+            android:cropToPadding="false"
+            android:src="@drawable/copy_icon"/>
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/version"
+            style="@style/textStyle_smaller"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginBottom="2dp"
+            android:gravity="center"
+            android:text="Version"
+            android:visibility="visible" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/LinearLayout02"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:id="@+id/LinearLayout01"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:gravity="bottom">
+
+            <Button
+                android:id="@+id/BackButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:layout_toLeftOf="@+id/NextButton"
+                android:layout_weight="1"
+                android:text="@string/ept_back_button"></Button>
+
+            <Button
+                android:id="@+id/NextButton"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:text="@string/ept_next_button"></Button>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="10sp"></LinearLayout>
+
+      <!--  <com.google.android.gms.ads.AdView
+            android:id="@+id/adView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="SMART_BANNER"
+            ads:adUnitId="@string/banner_ad_unit_id"></com.google.android.gms.ads.AdView>-->
+
+    </LinearLayout>
+
+</RelativeLayout>

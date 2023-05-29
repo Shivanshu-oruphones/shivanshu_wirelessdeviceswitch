@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- The 'proper' way to set a color as a background is to define a drawable of the required
+    color and reference that here: http://stackoverflow.com/a/5295522
+    This method however is much easier-->
+    <item android:state_pressed="true" >
+        <shape>
+            <gradient
+                android:startColor="@color/button_background"
+                android:endColor="@color/button_background"
+                android:angle="270"/>
+        </shape>
+    </item>
+
+    <item android:state_focused="true" >
+        <shape>
+            <gradient
+                android:endColor="@color/button_background"
+                android:startColor="@color/button_background"
+                android:angle="270"/>
+        </shape>
+    </item>
+
+    <item>
+        <shape>
+            <gradient
+                android:endColor="@color/button_background"
+                android:startColor="@color/button_background"
+                android:angle="270"/>
+        </shape>
+    </item>
+</selector>

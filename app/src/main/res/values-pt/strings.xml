@@ -1,0 +1,891 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">Pervacio Content Transfer</string>
+    <string name="ept_empty_line">\n</string>
+
+    <string name="ept_next_button">Seguinte</string>
+    <string name="ept_back_button">Voltar</string>
+    <string name="ept_finish_button">Concluir</string>
+    <string name="ept_exit_button">Sair</string>
+    <string name="ept_start_over_button">Recome\u00e7ar</string>
+    <string name="ept_app_name">Content Transfer</string>
+
+    <string name="ept_welcome_text_top_1">Content Transfer</string>
+    <string name="ept_welcome_text_bottom_1">Esta aplica\u00e7\u00e3o ir\u00e1 ajudar a copiar o conte\u00fado do seu antigo equipamento para o novo.\n\nPressione &quot;Seguinte&quot; para continuar.</string>
+
+    <string name="ept_select_device_title">Selecionar Equipamento</string>
+    <string name="ept_select_device_text">\nSelecione seu equipamento na seguinte lista.\n\nVerigfique se o seu equipamento est\u00e1 a correr a App e est\u00e1 conectado na mesma rede.\n"</string>
+
+    <string name="ept_display_pin_title">Confirme PIN</string>
+    <string name="ept_display_pin_text">\nPara sua seguran\u00e7a dever\u00e1 inserir o seguinte PIN no outro equipamento. Continue no outro equipamento, at\u00e9 ser pedido para introduzir o PIN:\n</string>
+
+    <string name="ept_select_content_title">Selecionar Conte\u00fado</string>
+    <string name="ept_select_content_contacts">Contatos</string>
+    <string name="ept_select_content_calendar">Calend\u00e1rios</string>
+    <string name="ept_select_content_messages">SMS</string>
+    <string name="ept_select_content_photos">Fotos</string>
+    <string name="ept_select_content_videos">V\u00eddeos</string>
+    <string name="ept_select_content_audio">\u00c1udio</string>
+    <string name="ept_select_content_app">Apps</string>
+    <string name="ept_select_content_call_logs">Registros de Chamadas</string>
+    <string name="ept_select_content_settings">Defini\u00e7\u00f5es</string>
+    <string name="ept_select_content_documents">Documentos</string>
+    <string name="ept_transfer_time">Tempo de Transfer\u00eancia</string>
+
+    <string name="ept_progress_title">Transferindo Dados</string>
+    <string name="ept_progress_text">\nPor favor aguarde enquanto os seus dados s\u00e3o transferidos.\n</string>
+
+    <string name="ept_complete_title">Transfer\u00eancia Completa</string>
+    <string name="ept_complete_text">\nOs seguintes conte\u00fados foram copiados:</string>
+
+    <string name="ept_select_device_help">Pode levar algum tempo a detetar o outro equipamento. Verifique se o outro equipamento est\u00e1 a correr a App e est\u00e1 conectado na mesma rede.</string>
+
+    <string name="ept_connect_to_wifi_title">Conectar a uma Rede</string>
+    <string name="ept_connect_to_wifi_message">Este equipamento n\u00e3o est\u00e1 ligado a uma rede. Tem de conectar a uma rede para continuar.</string>
+    <string name="ept_scanning_for_devices_title">Searching for Devices</string>
+
+    <string name="ept_could_not_copy_data_title">Espa\u00e7o Insuficiente</string>
+    <string name="ept_could_not_copy_data_message">O novo equipamento n\u00e3o tem espa\u00e7o suficiente. Selecione menos conte\u00fados ou liberte algum espa\u00e7o no novo equipamento e tente de novo.</string>
+
+    <string name="ept_ok">Tudo OK</string>
+    <string name="ept_progress_details">{0} de {1}</string>
+
+    <string name="ept_processing_calendar">Processando Calend\u00e1rios</string>
+    <string name="ept_processing_contacts">Processando Contatos</string>
+    <string name="ept_processing_call_logs">Processando Regitros de Chamadas</string>
+    <string name="ept_processing_messages">Processando SMS</string>
+    <string name="ept_sending_calendar">Enviando Calend\u00e1rios</string>
+    <string name="ept_sending_contacts">Enviando Contatos</string>
+    <string name="ept_sending_call_logs">Enviando Regitros de Chamadas</string>
+    <string name="ept_sending_messages">Enviando SMS</string>
+    <string name="ept_sending_photos">Enviando Fotos</string>
+    <string name="ept_sending_videos">Enviando V\u00eddeos</string>
+    <string name="ept_recieving_calendar">Recebendo Calend\u00e1rios</string>
+    <string name="ept_receiving_contacts">Recebendo Contatos</string>
+    <string name="ept_receiving_call_logs">Recebendo Regitros de Chamadas</string>
+    <string name="ept_receiving_settings">Recebendo Defini\u00e7\u00f5es</string>
+    <string name="ept_receiving_messages">Recebendo SMS</string>
+    <string name="ept_receiving_photos">Recebendo Fotos</string>
+    <string name="ept_receiving_video">Recebendo V\u00eddeos</string>
+    <string name="ept_sent_calendar">Enviado Calend\u00e1rios</string>
+    <string name="ept_sent_contacts">Enviado Contatos</string>
+    <string name="ept_sent_call_logs">Enviado Regitros de Chamadas</string>
+    <string name="ept_sent_messages">Enviado SMS</string>
+
+    <string name="ept_confirm_pin">\nContinue no outro equipamento at\u00e9 aparecer o PIN, depois insira neste equipamento.\n</string>
+    <string name="ept_connected_title">Conectado</string>
+    <string name="ept_connected_text">\nPor favor continue a configura\u00e7\u00e3o no \n outro equipamento.</string>
+
+    <string name="ept_source_or_target_title">Op\u00e7\u00f5es</string>
+    <string name="ept_source_or_target_text_1">\nVoc\u00ea selecionou este equipamento:\n</string>
+    <string name="ept_source_or_target_text_2">\nSelecione uma das op\u00e7\u00f5es seguintes dependendo se quer transferir dados de ou para o equipamento selecionado:\n</string>
+    <string name="ept_transfer_to_selected_device_button_text">Copiar dados para o equipamento selecionado</string>
+    <string name="ept_transfer_from_selected_device_button_text">Copiar dados do equipamento selecionado</string>
+
+    <string name="cmd_local_wifi_or_cloud_text">Pode transferir os dados por WiFi ou pode guradar e restaurar usando Google Drive</string>
+    <string name="cmd_local_wifi_button_text">De ou para outro equipamento via WiFi</string>
+    <string name="cmd_wifi_direct_button_text">De ou para outro equipamento via WiFi Direct</string>
+    <string name="cmd_google_drive_button_text">Guardar ou restaurar conte\u00fado</string>
+    <string name="cmd_sd_card_button_text">Guardar pu restaurar de Cart\u00e3o SD</string>
+    <string name="cmd_local_wifi_lan_or_direct_button_text">Transferir Conte\u00fado Sem Fios</string>
+
+    <string name="cmd_google_drive_options_title">Op\u00e7\u00f5es Google Drive</string>
+    <string name="cmd_google_drive_options_text">Selecione uma das seguintes op\u00e7\u00f5es para continuar.</string>
+    <string name="cmd_google_drive_backup_button_text">Guardar Dados no Google Drive</string>
+    <string name="cmd_google_drive_restore_button_text">Restaurar Dados do Google Drive</string>
+
+    <string name="cmd_sd_card_options_title">Op\u00e7\u00f5es Cart\u00e3o SD</string>
+    <string name="cmd_sd_card_options_text">Selecione uma das seguintes op\u00e7\u00f5es para continuar:</string>
+    <string name="cmd_sd_card_backup_button_text">Guardar Dados no Cart\u00e3o SD</string>
+    <string name="cmd_sd_card_restore_button_text">Restaurar Dados do Cart\u00e3o SD</string>
+
+    <string name="cmd_could_not_copy_data_google_title">Falhou C\u00f3pia de Dados</string>
+    <string name="cmd_could_not_copy_data_google_message">N\u00e3o foi poss\u00edvel copiar todos os seus dados. Por favor verifique a conex\u00e3o \u00e0 Internet e tente de novo.</string>
+
+    <string name="cmd_google_drive_sd_card_error_title">Cart\u00e3o SD n\u00e3o acess\u00edvel</string>
+    <string name="cmd_google_drive_sd_card_error_body">N\u00e3o \u00e9 poss\u00edvel conetar aos servi\u00e7os do Google Drive sem um Cart\u00e3o SD neste equipamento. Por favor insira um Cart\u00e3o SD e que este equipamento n\u00e3o est\u00e1 conetado a um PC.</string>
+
+    <string name="cmd_connecting_to_cloud_title">Conetando</string>
+    <string name="cmd_connecting_to_google_body">Conetando ao Google Drive</string>
+
+    <string name="cmd_sign_in_error_title">N\u00e3o foi poss\u00edvel entrar</string>
+    <string name="cmd_sign_in_error_body">N\u00e3o foi poss\u00edvel entrar na sua conta. Por favor verifique os deus detalhes de conta e a conex\u00e3o \u00e0 Internet.</string>
+    <string name="cmd_unable_to_download_backup_title">N\u00e3o foi poss\u00edvel baixar dados.</string>
+    <string name="cmd_unable_to_download_backup_body">N\u00e3o foi possivel baixar dados da conta selecionada. Por favor verifique a conex\u00e3o \u00e0 Internet e que foi ralizada uma c\u00f3pia de seguran\u00e7a na conta selecionada.</string>
+    <string name="cmd_unable_to_find_backup_title">N\u00e3o foi poss\u00edvel encontrar c\u00f3pia de seguran\u00e7a</string>
+    <string name="cmd_unable_to_find_backup_body">N\u00e3o foi encontrada uma c\u00f3pia de seguran\u00e7a para a conta selecionada. Por favor verifique a conex\u00e3o \u00e0 Internet e que foi ralizada uma c\u00f3pia de seguran\u00e7a na conta selecionada.</string>
+    <string name="cmd_unable_to_create_backup_title">N\u00e3o \u00e9 poss\u00edvel criar c\u00f3pia de seguran\u00e7a</string>
+    <string name="cmd_unable_to_create_backup_body">N\u00e3o foi poss\u00edvel criar c\u00f3pia de seguran\u00e7a na conta selecionada. Por favor verifique conex\u00e3o \u00e0 Internet e se tem suficiente espa\u00e7o dsipon\u00edvel na conta selecionada.</string>
+
+    <string name="cmd_unexpected_fatal_error_title">Occorreu um erro</string>
+    <string name="cmd_unexpected_fatal_error_body">N\u00e3o foi poss\u00edvel completar a opera\u00e7\u00e3o devido a um erro inesperado. Verifique conex\u00e3o \u00e0 Internet e tente de novo.</string>
+
+    <string name="ept_select_content_text">\nSelecione conteudo a transferir.</string>
+    <string name="ept_select_content_text_backup">\nSelecione conteudo a Guardar.</string>
+    <string name="ept_select_content_text_restore">\nSelecione conteudo a Restaurar</string>
+    <string name="cmd_select_content_to_back_up">Selecione os dados a guardar e pressione &quot;Seguinte&quot; para come\u00e7ar c\u00f3pia de seguran\u00e7a.</string>
+    <string name="cmd_select_content_to_restore">Selecione dados a restaurar e pressione &quot;Seguinte&quot; para copiar para este equipamento.</string>
+
+    <string name="cmd_no_sd_card_title">Sem cart\u00e3o SD</string>
+    <string name="cmd_no_sd_card_body">N\u00e3o foi detetado cart\u00e3o SD. Verifique se h\u00e1 um cart\u00e3o SD formatado inserido neste equipamento e tente de novo.</string>
+
+    <string name="cmd_no_sd_card_backup_title">N\u00e3o foi poss\u00edvel encontrar c\u00f3pia de seguran\u00e7a</string>
+    <string name="cmd_no_sd_card_backup_body">N\u00e3o foi encontrado uma c\u00f3pia de seguran\u00e7a no cart\u00e3o SD.</string>
+
+    <string name="cmd_insufficient_sd_card_space_title">Espa\u00e7o insuficiente</string>
+    <string name="cmd_insufficient_sd_card_space_body">N\u00e3o h\u00e1 espa\u00e7o suficiente no cart\u00e3o SD para guardar os dados selecionados.</string>
+    <string name="cmd_insufficient_google_drive_space_title">Espa\u00e7o insuficiente</string>
+    <string name="cmd_insufficient_google_drive_space_body">N\u00e3o tem espa\u00e7o suficiente no Google Drive para guardar os dados selecionados.</string>
+
+    <string name="cmd_sd_card_backup_already_exists_title">J\u00e1 existe uma c\u00f3pia de seguran\u00e7a</string>
+    <string name="cmd_sd_card_backup_already_exists_body">J\u00e1 existe uma c\u00f3pia de seguran\u00e7a neste cart\u00e3o SD. Apague a c\u00f3pia anterior e tente novamente.</string>
+
+    <string name="ept_finding_files">Procurando ficheiros</string>
+    <string name="ept_checking_remote_storage_space">Calculando espa\u00e7o necess\u00e1rio</string>
+
+
+    <!-- Test banner -->
+    <!--
+<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+-->
+
+    <!-- Real banner -->
+    <string name="banner_ad_unit_id">ca-app-pub-1730626111507220/9058868399</string>
+
+
+    <string name="cmd_old_or_new_device_text">Este \u00e9 o antigo ou o novo equipamento?</string>
+    <string name="cmd_old_device_button">Antigo</string>
+    <string name="cmd_new_device_button">Novo</string>
+
+    <string name="cmd_other_device_type_text">O outro equipamento \u00e9 Android ou Apple?</string>
+    <string name="cmd_other_device_type_ios_button">Apple</string>
+    <string name="cmd_other_device_type_android_button">Android</string>
+
+    <string name="cmd_scan_qr_code_text">Continue no outro dispositivo at\u00e9 exibir o c\u00f3digo QR. Quando aparecer, digitalize-o com esta c\u00e2mera:</string>
+    <string name="cmd_display_qr_code_text">Continue no outro dispositivo at\u00e9 exibir o c\u00f3digo QR. Quando aparecer, digitalize-o com esta c\u00e2mera:</string>
+    <string name="cmd_display_scan_qr_code_text">Posicione o c\u00f3digo QR dentro do rect\u00e2ngulo para o digitalizar.</string>
+
+    <string name="cmd_wifi_network_name_text">Nome da rede WiFi: </string>
+    <string name="cmd_wifi_network_passphrase_text">Senha do Wi-Fi: </string>
+
+    <string name="ept_creating_network_title">Criando rede</string>
+    <string name="ept_creating_network_text">Aguarde enquanto este dispositivo cria uma rede sem fio. Pode demorar alguns minutos.</string>
+    <string name="ept_connecting_to_network_title">Conectando \u00e0 rede.</string>
+    <string name="ept_connecting_to_network_text">Por favor aguarde enquanto se conecta \u00e0 rede WiFi. Pode demorar alguns minutos.</string>
+
+    <string name="ept_incorrect_passcode_title">PIN incorreto</string>
+    <string name="ept_incorrect_passcode_text">O PIN n\u00e3o foi inserido corretamente. Reinicie a App em ambos os equipamentos e tente de novo.</string>
+
+    <string name="ept_wifi_is_off_title">Wi-Fi desligado</string>
+    <string name="ept_wifi_is_off_text">Wi-Fi est\u00e1 desligado neste equipamento. V\u00e1 a defini\u00e7\u00f5es, ligue a rede sem fios e tente novamente.</string>
+
+    <string name="ept_cant_connect_to_network_title">Erro de liga\u00e7\u00e3o</string>
+    <string name="ept_cant_connect_to_network_text">N\u00e3o foi poss\u00edvel conetar a outro equipamento.</string>
+
+    <string name="ept_retransfer_previous_content_dialog_text">Vo\u00e7\u00ea transferiu dados anteriormente para o equipamento slecionado. Quer ignorar os dados transferidos anteriormente?</string>
+
+    <string name="ept_transfer_again">Transferir novamente</string>>
+    <string name="ept_skip_it">Ignorar</string>
+
+    <string name="cmd_local_wifi_or_cloud_title">Selecione outro tipo de dispositivo</string>
+    <string name="cmd_data_back_up_title">Transfer\u00eancia de conte\u00fado</string>
+    <string name="cmd_local_wifi_or_cloud_title_Scan_QRcode">Digitalizar c\u00f3digo QR</string>
+    <string name="display_barcode_to_scan">Digitalizar c\u00f3digo QR</string>
+    <string name="transferring_data">Transferindo dados</string>
+
+
+    <string name="cmd_ios_qr_code_info_1">Ap\u00f3s digitalizar o c\u00f3digo QR, v\u00e1 a Defini\u00e7\u00f5es no outro equipamento e ligue \u00e0 seguinte rede:</string>
+    <string name="cmd_ios_qr_code_info_2">Ap\u00f3s se ter conetado \u00e0 rede, volte para a App no outro equipamento.</string>
+    <string name="cmd_ios_qr_code_info_3">V\u00e1 a Defini\u00e7\u00f5es no outro equipamento e ligue \u00e0 seguinte rede:</string>
+
+    <string name="cmd_wifi_lan_or_direct">Selecione uma op\u00e7\u00e3o dependendo de como vo\u00e7\u00ea quer transferir seus dados:</string>
+
+    <string name="cmd_transfer_over_wifi_lan_button">Transferir por WiFi normal</string>
+    <string name="cmd_transfer_over_wifi_direct_button">Transferir por WiFi Direct</string>
+
+    <string name="ept_connecting_to_device_title">Conetando</string>>
+    <string name="ept_connecting_to_device_text">Conetando ao outro equipamento</string>
+
+    <string name="checking_pin_title"></string>
+    <string name="checking_pin_text">Confirmando PIN</string>
+
+    <string name="ept_incorrect_pin">O PIN n\u00e3o pode ser confirmado. Por favor tente de novo.</string>
+    <string name="title_activity_dummy_main">DummyMainActivity</string>
+
+    <string name="ept_option_to_close_text">Deseja cancelar a transfer\u00eancia?</string>
+    <string name="ept_option_to_close_confirm_text">Sim, cancelar </string>
+    <string name="ept_option_to_close_reject_text">N\u00e3o, cancelar </string>
+
+    <string name="ept_option_to_force_close_text">Quer cancelar tranfer\u00eancia e sair da App?</string>
+
+    <string name="ept_page_title_default">Transfer\u00eancia de conte\u00fados</string>
+    <string name="ept_page_title_content_transfer">Transfer\u00eancia de conte\u00fados</string>
+    <string name="ept_page_title_confirm_pin">Confirmar PIN</string>
+    <string name="ept_page_title_select_content">Selecionar conte\u00fados</string>
+    <string name="ept_page_title_progress">Transferindo dados</string>
+    <string name="ept_page_title_complete">Transfer\u00eancia completa</string>
+    <string name="ept_page_title_select_device">Selecione equipamento</string>
+    <string name="ept_page_title_scan_barcode">Digitalize c\u00f3digo QR</string>
+    <string name="ept_page_title_backup_or_restore">Op\u00e7\u00f5es Google Drive</string>
+    <string name="ept_page_title_old_new">Selecione antigo ou novo equipamento</string>
+    <string name="ept_page_title_summary">Resumo da Transfer\u00eancia</string>
+
+
+    <string name="ept_keep_app_open_warning">Por favor se certifique que a App est\u00e1 aberta nos dois equipamentos at\u00e9 terminar a transfer\u00eancia. Se estiver a realizar uma transfer\u00eancia completa, \u00e9 recomendado ligar a uma fonte de energia.</string>
+
+
+    <string name="storeid_message">Por favor introduza ID de Loja</string>
+    <string name="terms_and_condition_dialog_header">Termos e condi\u00e7\u00f5es</string>
+    <string name="terms_and_condition_dialog_header_acknowledge">Por favor leia os termos e condi\u00e7\u00f5es seguintes antes de continuar.</string>
+    <string name="wds_terms_and_conditions_text"> Ao baixar e utilizar a App Pervacio Content Transfer, estes termos ser\u00e3o autom\u00e1ticamente aplicados a si. Por favor os leia atentamente antes de usar a App. Por favor esteja ciente de que n\u00e3o a pode enviar para mais ningu\u00e9m, e que n\u00e3o est\u00e1 autorizado a copiar, ou modificar a App, ou parte da App, ou as marcas registadas, se qualquer forma. Vo\u00e7\u00ea n\u00e3o est\u00e1 autorizado a extrair o c\u00f3digo fonte da App, tamb\u00e9m n\u00e3o deve tentar traduzir ou fazer vers\u00f5es derivadas desta App. A pr\u00f3pria App, e todas as marcas registadas, direitos de autor, direitos de base de dados e direotos de propriedade intelectual relacionados com a App, ainda pertencem \u00e0 Pervacio Inc.</string>
+    <string name="button_i_agree">Concordo</string>
+    <string name="button_i_disagree">N\u00e3o concordo</string>
+    <string name="connecting_to_server">Conetando ao servidor</string>
+    <string name="wds_please_wait">Aguarde um momento por favor...</string>
+    <string name="estimating_pleasewait">Calculando tamanho do dados \ne tempo de transfer\u00eancia.\nPor favor aguarde..</string>
+    <string name="supporting_check">Verificando suporte do equipamento...</string>
+    <string name="not_supported_device">Este equipamento n\u00e3o est\u00e1 certificado a transfer\u00eancia poder\u00e1 n\u00e3o ser bem sucedida.</string>
+    <string name="wds_alert">Aten\u00e7\u00e3o</string>
+    <string name="pairing_devices">Emparelhando equipamentos por favor aguarde...</string>
+    <string name="select_storeid">Por favor selecione ID de Loja</string>
+    <string name="oldornewdevice">Selecione antigo ou novo equipamento</string>
+
+    <string name="uniqueTransactionId">ID da transa\u00e7\u00e3o </string>
+    <string name="qr_code_scan_message">Posicione o c\u00f3digo QR dentro do rect\u00e2ngulo para o digitalizar.</string>
+
+    <string name="generating_summary_title">Transa\u00e7\u00e3o completa</string>
+    <string name="generating_summary_description">Transa\u00e7\u00e3o est\u00e1 completa. Por favor aguarde enquanto geramos o relat\u00f3rio de transfr\u00eancia...</string>
+    <string name="processing">Processando</string>
+    <string name="sending_data">Enviando dados...</string>
+    <string name="receiving_data">Recebendo dados...</string>
+    <string name="location_not_granted">* Acesso n\u00e3o garantido</string>
+    <string name="invalid_storeid">* ID de Loja inv\u00e1lido</string>
+    <string name="location_validation_failed">* N\u00e3o foi poss\u00edvel verificar localiza\u00e7\u00e3o</string>
+    <string name="unbale_to_get_location">* N\u00e3o foi poss\u00edvel encontrar localiza\u00e7\u00e3o</string>
+    <string name="proceed_anyway">Proceder assim mesmo</string>
+    <string name="wds_cancel">Cancelar</string>
+    <string name="enter_storeid">Por favor insira ID de Loja</string>
+    <string name="no_internet">Conex\u00e3o \u00e0 Intenet n\u00e3o dispon\u00edvel.</string>
+
+    <string name="alert_oops">Perdeu a conex\u00e3o</string>
+    <string name="migration_interrupted">Conex\u00e3o perdida entre equipamentos. Por favor feche as Apps e tente de novo.</string>
+    <string name="connection_lost_msg">Pedimos desculpa, houve um erro na transfr\u00eancia. Por favor pressione OK e Recome\u00e7ar.</string>
+
+    <string name="transfer_interrupted_title">Transferencia interrompida</string>
+    <string name="transfer_interrupted_message">Transfer\u00eancia foi interrompida no outro equipamento. Pode fechar a App e tentar de novo.</string>
+    <string name="transfer_interrupted_action">Fechar</string>
+
+    <string name="language_english">Ingl\u00eas</string>
+    <string name="language_polish">Polaco</string>
+    <string name="language_french">Franc\u00eas</string>
+    <string name="language_slovak">Eslovaco</string>
+    <string name="language_spanish">Espanhol</string>
+
+    <string name="hour">h</string>
+    <string name="min">min</string>
+    <string name="sec">sec</string>
+    <string name="space_on_destination">Espa\u00e7o necess\u00e1rio no destino.</string>
+    <string name="space_needed_on_destination">Espa\u00e7o necess\u00e1rio: {0}, Espa\u00e7o dispon\u00edvel no destino:</string>
+    <string name="insufficient_space">Espa\u00e7o insuficiente</string>
+    <string name="enter_store_id">Insira ID de Loja</string>
+    <string name="unable_to_fetch_location">* N\u00e3o foi poss\u00edvel encontrar localiza\u00e7\u00e3o</string>
+    <string name="submit">Enviar</string>
+    <string name="device_disconnected">Equipamento desconetado!</string>
+    <string name="device_disconnection_message">Equipamento desconetado. Continue para resumir sess\u00e3o.</string>
+    <string name="source_device_disconnection_message">Equipamento fonte desconetado. Continue para resumir sess\u00e3o.</string>
+    <string name="destination_device_disconnection_message">Equipamento de destino desconetado. Continue para resumir sess\u00e3o.</string>
+    <string name="cancelling_trasaction">Cancelar...</string>
+
+    <string name="msg_permission_title">Permiss\u00e3o n\u00e3o concedida</string>
+    <string name="msg_permission_description">Permiss\u00e3o para Menssagens n\u00e3o foi concedida, menssagens n\u00e3o ser\u00e3o copiadas.</string>
+    <string name="msg_permission_yes">Permitir</string>
+    <string name="msg_permission_no">Ignorar</string>
+    <string name="no_network">Sem Internet</string>
+    <string name="no_internet_message">A conex\u00e3o \u00e0 Internet n\u00e3o est\u00e1 dispon\u00edvel no computador, conecte-se a uma rede e tente novamente.</string>
+    <string name="wds_try_again">Tentar de novo </string>
+
+    <string name="install_apps">Instalar Apps</string>
+
+
+    <!-- Menu items-->
+    <string name="menu_about">Sobre</string>
+    <string name="menu_prouct">Produto</string>
+    <string name="menu_lanugages">Languages</string>
+    <string name="menu_help">Ajuda </string>
+
+
+    <!-- FONT FAIIMLY -->
+    <declare-styleable name="customfont">
+        <attr name="android:fontFamily" />
+        <attr name="android:textStyle" />
+    </declare-styleable>
+
+    <!-- Font Names in Assets -->
+    <!-- Font Names in Assets -->
+    <string name="font_light">roboto_light.ttf</string>
+    <string name="font_regular">roboto_regular.ttf</string>
+    <string name="font_bold">roboto_bold.ttf</string>
+    <string name="font_medium">roboto_medium.ttf</string>
+    <string name="font_thin">roboto_thin.ttf</string>
+
+    <string name="text_new">NOVO</string>
+    <string name="text_old">ANTIGO</string>
+    <string name="text_source">Fonte</string>
+    <string name="text_destination">Destino</string>
+    <string name="text_android">ANDROID</string>
+    <string name="text_ios">IOS</string>
+    <string name="old_or_new_title">Este \u00e9 o seu equipamento antigo?</string>
+    <string name="source_or_destination_title">Este \u00e9 o equipamento fonte ou de destino?</string>
+    <string name="other_device_type_title">De que tipo \u00e9 o outro equipamento?</string>
+    <string name="accept">Aceitar</string>
+    <string name="welcome_screen_title">Bem vindo ao Content Transfer</string>
+    <string name="lets_get_started">Vamos come\u00e7ar!</string>
+    <string name="elapsed_time">Tempo decorrido : </string>
+    <string name="estimation">Estimado : </string>
+    <string name="estiamated_transfer_time">Tempo estimado de transfer\u00eancia : </string>
+    <string name="estimated_transfer_time_suggestion">Estes tempos de transfr\u00eancia podem variar dependendo dos conte\u00fados do seu equipamento.</string>
+    <string name="transfer_completed_in">Transfer\u00eancia realizada em: </string>
+    <string name="waiting_connection">Esperando conex\u00e3o</string>
+    <string name="unable_to_connect">N\u00e3o foi poss\u00edvel conetar</string>
+    <string name="grant_permissions">Por favor <font color="#1576F9"><u>clique aqui</u></font> para dar permiss\u00e3o</string>
+    <string name="permissions_messages">Os tipos de dados seguintes n\u00e3o ser\u00e3o transferidos porque as permiss\u00f5es n\u00e3o foram garantidas.</string>
+    <string name="insufficient_space_on_dest">* Espa\u00e7o insuficiente no destino</string>
+    <string name="str_string">Iniciar</string>
+    <string name="switch_scan_source_msg">Emparelhamento necessita de reinicializar, clique em \"Reiniciar Emparelhamento\" no equipamento de destino.</string>
+    <string name="switch_scan_destination_msg">tem a certeza que quer \"Reiniciar Emparelhamento\" ?</string>
+    <string name="str_continue">Continuar</string>
+    <string name="str_google_services_update">* Google play services rquer atualiza\u00e7\u00e3o</string>
+    <string name="str_google_services_problem">* H\u00e1 um problema com Google play services</string>
+    <string name="str_txt_messages_only">Apenas menssagens de texto</string>
+    <string name="read_more">Leia a <a href="http://www.sprint.com/privacypolicy">Politica de Privacidade da Pervacio</a>.</string>
+    <string name="build_release_date">Data da compila\u00e7\u00e3o</string>
+    <string name="version_number">N\u00famero da vers\u00e3o</string>
+    <string name="app_created">Esta App foi criada para a Telefonica pela Pervacio, Inc.</string>
+    <string name="comment_box">Por favor deixe um coment\u00e1rio sobre a App.</string>
+    <string name="about">Sobre</string>
+    <string name="text_message">Pervacio Content Transfer permite transferir conte\u00fados entre equipamentos f\u00e1cil e rapidamente.</string>
+    <string name="rate_app">Avalie esta App</string>
+    <string name="comment">Coment\u00e1rio</string>
+    <string name="selecting_submit_message">Ao selecionar enviar, voc\u00ea concorda que a Pervacio pode adquirir informa\u00e7\u00f5es sobre o seu equipamento.</string>
+    <string name="str_switch_scan">REINICIAR EMPARELHAMENTO \n(APENAS se intruido pelo Equipamento Fonte)</string>
+    <string name="str_yes">SIM</string>
+    <string name="str_no">N\u00c3O</string>
+    <string name="pairing_in_progress">Sincroniza\u00e7\u00e3o em andamento</string>
+    <string name="quick_transfer_tips">Dicas para transfer\u00eancia de conte\u00fado</string>
+    <string name="quick_transfer_steps">
+        1. Mantenha o equipamento dentro de um raio m\u00e1ximo de 3 metros durante toda a opera\u00e7\u00e3o.
+        <!--\n\n2. Verifique se a carga do equipamento est\u00e1 acima de 50% antes de iniciar a transfer\u00eancia.-->
+        \n\n2. Durante a transfer\u00eancia, mantenha o aplicativo aberto nos dois dispositivo e evite us\u00e1-los.</string>
+    <string name="session_cancelled">A sess\u00e3o foi cancelada</string>
+    <string name="session_cancelled_text">A sess\u00e3o de transfer\u00eancia de conte\u00fado foi cancelada. Fa\u00e7a login novamente para transferir todo o seu conte\u00fado do computador de origem para o computador de destino.</string>
+    <string name="str_wrong_selection">Equipamento errado selecionado</string>
+    <string-array name="settingsInfo">
+        <item>Luminosidade</item>
+        <item>Brilho</item>
+        <item>Configura\u00e7\u00f5es de chamada (toque e volume)</item>
+        <item>Protetor de tela</item>
+    </string-array>
+
+    <string name="title_endpage">Lembre-se de concluir as etapas a seguir.</string>
+
+    <string name="text_suggestionSource">1.Selecione esquecer esta rede WiFi neste computador.
+              \n\n2.Desinstalar Content Transfer App deste equipamento.
+    </string>
+
+    <string name="text_suggestionDest">1.Selecione esquecer esta rede WiFi neste computador.
+              \n\n2.Desinstalar Content Transfer App deste equipamento.
+              \n\n3.Lembre-se de restaurar as configura\u00e7\u00f5es de f\u00e1brica para o equipamento original, se necess\u00e1rio.
+    </string>
+    <string name="text_suggestionDest2">1.Selecione esquecer esta rede WiFi neste computador.
+              \n\n2.Desinstalar Content Transfer App deste equipamento.
+              \n\n3.Lembre-se de restaurar as configura\u00e7\u00f5es de f\u00e1brica para o equipamento original, se necess\u00e1rio.
+              \n\n4.On Exit, when prompted, please select Messaging app as the default SMS application.
+    </string>
+    <string name="faulty_camera_suggestion">No caso de probemas em digitalizar. Clique aqui</string>
+    <string name="copy">Copiar</string>
+    <string name="copied">Copiado</string>
+    <string name="str_go_to_settings">Ir para configura\u00e7\u00f5es</string>
+    <string name="copy_connect_network">Copiar senha e conetar \u00e0 seguinte rede.</string>
+    <string name="wds_str_name">Nome : </string>
+    <string name="str_password">Senha : </string>
+    <string name="str_enterpin">Por favor insira o PIN como aparece no outro equipamento.</string>
+    <string name="str_enter_pin_hint">Insira PIN</string>
+    <string name="read_more_ts_and_cs_text">Ler mais</string>
+    <string name="terms_and_conditions_text_more"></string>
+    <string name="wlan_suggestion">Por favor conete a {} e depois clique Tentar de Novo.</string>
+    <string name="wrong_combination">Atualmente a combina\u00e7\u00e3o iOS-BB n\u00e3o \u00e9 suportada.</string>
+    <string name="low_battery">Bateria fraca</string>
+    <string name="battery_level">O n\u00edvel de Bateria \u00e9 : </string>
+    <string name="low_battery_text_message">\n\nPor favor conete o seu equipamento a uma fonte de energia.</string>
+    <string name="str_permission_go_to_settings">V\u00e1 a defini\u00e7\u00f5oes para conceder permiss\u00f5es.</string>
+    <string name="str_write_permission"><![CDATA[Permita ao Content Transfer aceder às configurações.<br/>(Protetor de tela, Brilho, Volume)]]></string>
+    <string name="str_allow">Permitir</string>
+    <string name="str_deny">Rejeitar</string>
+    <string name="str_data_types_not_transferred">Os seguintes arquivos n\u00e3o ser\u00e3o transferidos porque as permiss\u00f5es necess\u00e1rias n\u00e3o foram concedidas</string>
+    <string name="str_grant_permission">Por favor, selecione aqui para conceder permiss\u00f5es</string>
+    <string name="str_resume_transaction">Continuar opera\u00e7\u00e3o?</string>
+    <string name="str_start_again">Comece Novamente</string>
+    <string name="str_resume">RESUMIR</string>
+    <string name="str_skip">SALTAR</string>
+    <string name="str_restart_transaction">A sua ultima transfer\u00eancia foi terminada.
+        \nQUer retomar a sua transfer\u00eancia antiga ou come\u00e7ar uma nova?</string>
+    <string name="str_rate_now">Classificar Agora</string>
+    <string name="str_not_now">Agora N\u00e3o</string>
+    <string name="str_rateapp_msg">Gosta de Pervacio Content Transfer?</string>
+    <string name="str_tap_a_star">Pressione uma Estrela para classificar na Play Store.</string>
+    <string name="str_enter_emp_id">Digite a identifica\u00e7\u00e3o do funcion\u00e1rio</string>
+    <string name="str_pls_enter_emp_id">Por favor insira ID de Funcion\u00e1rio.</string>
+    <string name="invalid_repid">* ID de Funcion\u00e3rio inv\u00e1lida</string>
+    <string name="str_unable_to_transfer">N\u00e3o \u00e9 poss\u00edvel transferir {0} para este equipamento.</string>
+    <string name="str_reconnect_network">Por favor v\u00e1 a Defini\u00e7\u00f5es e reconete a {}.</string>
+    <string name="large_text_msg_maynot_transfer">* Menssagens de texto grandes com fotos/videos anexados ou mais de 120 carat\u00e9res podem n\u00e3o ser transferidas em alguns modelos.</string>
+    <string name="remaining_time">Tempo restante : </string>
+    <string name="str_transactionid_empty">ID de Transfer\u00eancia n\u00e3o encontrado devido a erro de servidor.</string>
+    <string name="app_running_in_background">Por favor, acesse o aplicativo novamente.</string>
+    <string name="pin">N\u00famero</string>
+    <string name="cancel_transfer">Cancelar Transfer\u00eancia</string>
+    <string name="pairing">Sincroniza\u00e7\u00e3o</string>
+    <string name="str_connected">Conectado</string>
+    <string name="select_messages">Selecione as mensagens para transferir</string>
+    <string name="select_messages_instruction">Selecionar v\u00e1rias mensagens pode aumentar o tempo de transfer\u00eancia e reduzir o desempenho do equipamento.</string>
+    <string name="transfer">Transferir</string>
+
+    <string-array name="message_setting_Array">
+        <item name="last_30_days"><![CDATA[<b>\u00daltimos 30 dias</b><br />]]> %s messages</item>
+        <item name="last_3_months"><![CDATA[<b>\u00daltimos 3 meses\n</b><br />]]> %s messages</item>
+        <item name="last_6_months"><![CDATA[<b>\u00daltimos 6 meses</b><br />]]> %s messages</item>
+        <item name="last_12_months"><![CDATA[<b>\u00daltimos 12 meses</b><br />]]> %s messages</item>
+        <item name="last_2_years"><![CDATA[<b>\u00daltimos 2 anos</b><br />]]> %s messages</item>
+        <item name="all_messages"><![CDATA[<b>Todos</b><br />]]> %s messages</item>
+    </string-array>
+    <string name="customize"><![CDATA[<b>Customize</b>]]></string>
+    <string name="no">N\u00e3o</string>
+    <string name="after">Depois de</string>
+    <string name="enter_date">Inserir Data</string>
+    <string name="select_proper_date">Por favor selecione data</string>
+    <string name="p2p_connection_lost_msg">A conex\u00e3o entre computadores foi perdida. Por favor, selecione "Repetir" para continuar.</string>
+    <string name="hotspot_permission_message">De forma a transferir os seus dados, por favor permita a esta App modifcar as suas defini\u00e7\u00f5es de HotSpot WiFi.</string>
+    <string name="sms_info">Para o intervalo, selecione</string>
+    <string name="click_here">selecione aqui</string>
+    <string name="reconnecting_message">Reconectando, aguarde....</string>
+    <string name="store_identification">Nome da loja</string>
+    <string name="select_storeid_list_msg">Por favor, selecione o nome da loja nesta lista</string>
+    <string name="ept_timeout">Tempo de espera </string>
+    <string name="ept_server_response">O servidor expirou. Por favor tente novamente.</string>
+    <string name="unable_to_resume">N\u00e3o \u00e9 poss\u00edvel retomar a transi\u00e7\u00e3o, por favor comece de novo..</string>
+
+
+    <string name="title_activity_login">Entrar</string>
+    <string name="str_storeid">Id de Loja</string>
+    <string name="str_username">ID Funcion\u00e1rio</string>
+    <string name="prompt_password">Senha</string>
+    <string name="action_sign_in">Entrar</string>
+    <string name="error_invalid_username">Este ID de Funcion\u00e1rio n\u00e3o \u00e9 v\u00e1lido</string>
+    <string name="error_invalid_password">Esta senha \u00e9 demasiado curta</string>
+    <string name="error_incorrect_password">Esta senha est\u00e1 incorreta</string>
+    <string name="error_field_required">Campo obrigat\u00f3rio</string>
+    <string name="str_to">para</string>
+    <string name="title_activity_report_aproblem">Reportar problema</string>
+
+    <string name="wds_phone_number">Numero de telefone<font color="#d62828">*</font></string>
+    <string name="email_id">Email ID<font color="#d62828">*</font></string>
+    <string name="description">Descri\u00e7\u00e3o<font color="#d62828">*</font></string>
+    <string name="policy_content">Registo de erros (sem informa\u00e7\u00f5es pessoais) v\u00e3o ser incluidos neste relat\u00f3rio. Para mais informa\u00e7\u00f5es veja, <a href="http://www.google.com">Politica de prote\u00e7\u00e3o de conte\u00fados</a>.</string>
+    <string name="required">*obrigat\u00f3rio</string>
+    <string name="required_fields">Por favor insira todos os campos obrigat\u00f3rios</string>
+    <string name="descrption_hint">Por favor inclua uma descri\u00e7\u00e3o do problema.</string>
+    <string name="valid_email">Por favor insira um endere\u00e7o de email v\u00e1lido.</string>
+    <string name="reportproblem_title">Problema reportado com sucesso</string>
+    <string name="reportproblem_error_title">Envio de relat\u00f3rio falhado.</string>
+    <string name="reportproblem_message">O problema foi enviado com sucesso para a nossa equipa de suporte.</string>
+    <string name="reportproblem_error_message">O relat\u00f3rio do problema falhou. Por favor reenvie o formul\u00e1rio.</string>
+    <string name="error_field_storeid_required">ID de loja obrigat\u00f3rio</string>
+    <string name="error_field_userid_required">ID de Funcion\u00e1rio obrigat\u00f3rio</string>
+    <string name="error_field_password_required">Senha obrigat\u00f3ria</string>
+    <string name="error_invalid_storeid">ID de loja incorreto</string>
+    <string name="error_invalid_credentials">ID de Funcion\u00e1rio ou Senha incorreto</string>
+    <string name="press_again_to_exit">Pressione outra vez para sair.</string>
+    <string name="killed_crashed_msg">Pedimos desculpa houve um erro com a sua transfer\u00eancia. Por favor clique OK para reiniciar.</string>
+    <string name="transfer_cancelled">Transfer\u00eancia Cancelada</string>
+    <string name="transfer_cancelled_msg">Por favor cique OK e Reinicie se for necess\u00e1rio.</string>
+    <string name="str_terms_condition">Termos &amp; Condi\u00e7\u00f5es</string>
+    <string name="str_privacy_statement">Declara\u00e7\u00e3o de Privacidade</string>
+
+    <string name="permissions_policy_header">Bem-vindo ao Pervacio Content Transfer</string>
+    <string name="permissions_policy_body">
+        <![CDATA[
+Pervacio Pervacio Content Transfer permite transferir dados do seu celular antigo para um novo celular. Durante o uso, este aplicativo precisa das seguintes permiss\u00f5es para fornecer servi\u00e7os de transfer\u00eancia de dados.
+<br/>
+<br/><b>Call logs</b>
+<br/>Used to transfer call history
+<br/>
+<br/><b>Contatos</b>
+<br/>Used to transfer contacts
+<br/>
+<br/><b>Calend\u00e1rios</b>
+<br/>Usado para transferir dados do calend\u00e1rio.
+<br/>
+<br/><b>SMS</b>
+<br/>Used to transfer SMS data
+<br/>
+<br/><b>Armazenamento</b>
+<br/>Usado para transferir imagens, v\u00eddeos, m\u00fasicas e arquivos.
+<br/>
+<br/><b>C\u00e2mera</b>
+<br/>Usado para ler o c\u00f3digo QR
+<br/>
+<br/><b>Location</b>
+<br/>Used for obtaining device\u2019s location
+<br/><br/>
+Informa\u00e7\u00f5es do dispositivo, com ou UUID, modelo do dispositivo, linguagem do sistema, vers\u00e3o do sistema operacional, resolu\u00e7\u00e3o da tela e vers\u00e3o ROM tamb\u00e9m s\u00e3o coletadas.
+<br/><br/>
+Voc\u00ea pode sair deste aplicativo para parar as informa\u00e7\u00f5es coletadas e carregar as atividades descritas acima.
+<br/><br/>
+Ao escolher EU ACEITO, voc\u00ea reconhece e concorda com o conte\u00fado acima e indica que leu os <strong>Termos &amp; Condi\u00e7\u00f5es</strong> e <strong>Declara\u00e7\u00e3o de Privacidade</strong>.
+    ]]>
+    </string>
+    <string name="privacy_policy">
+
+     <![CDATA[
+      <strong>Pol\u00edtica de privacidade de transfer\u00eancia de conte\u00fado Pervacio</strong>
+    <p>
+        A Pervacio Inc., criadora do Pervacio Content Transfer,reconhece que sua
+        privacidade \u00e9 importante e que suas informa\u00e7\u00f5es pessoais devem ser
+        protegidas. Esta pol\u00edtica de privacidade descreve as informa\u00e7\u00f5es que
+        coletamos de voc\u00ea, como as usamos e o que fazemos para proteg\u00ea-la.
+    </p>
+    <p>
+        Leia atentamente e periodicamente esta pol\u00edtica. Entre em contato conosco
+        support@pervacio.com se voc\u00ea tiver alguma d\u00favida sobre o conte\u00fado desta
+        pol\u00edtica.
+    </p>
+    <p>
+        <strong>
+            As informa\u00e7\u00f5es que coletamos s\u00e3o necess\u00e1rias para a presta\u00e7\u00e3o dos nossos servi\u00e7os.
+        </strong>
+    </p>
+    <p>
+        N\u00f3s n\u00e3o coletamos nenhuma informa\u00e7\u00e3o de ou sobre voc\u00ea que n\u00e3o tenha a ver
+        com os servi\u00e7os prestados pelo nosso aplicativo. Qualquer informa\u00e7\u00e3o que
+        coletamos de voc\u00ea \u00e9 armazenada apenas como sendo conectada \u00e0 sua conta,
+        a menos que seja anotada de outra forma no aplicativo. Levamos a sua
+        privacidade a s\u00e9rio e s\u00f3 usaremos e divulgaremos informa\u00e7\u00f5es se estiverem
+        alinhadas com os termos descritos abaixo.
+    </p>
+    <p>
+        <strong>N\u00e3o coletamos informa\u00e7\u00f5es pessoais.</strong>
+    </p>
+    <p>
+        Em nenhuma circunst\u00e2ncia coletamos ou armazenamos informa\u00e7\u00f5es pessoais de
+        ou sobre voc\u00ea. Informa\u00e7\u00f5es pessoais s\u00e3o qualquer informa\u00e7\u00e3o que identifique
+        voc\u00ea ou outra pessoa, como seu nome e sobrenome, endere\u00e7os f\u00edsicos,
+        endere\u00e7os de e-mail, n\u00fameros de telefone, n\u00fameros de fax ou qualquer
+        informa\u00e7\u00e3o espec\u00edfica para voc\u00ea que seja armazenada dentro do seu
+        dispositivo. Nosso recurso de transfer\u00eancia de dados armazena apenas dados
+        do seu dispositivo antigo para o novo dispositivo para o que voc\u00ea est\u00e1
+        transferindo as informa\u00e7\u00f5es. Durante todo o processo, o servidor Pervacio
+        Content Transfer n\u00e3o \u00e9 acessado para que n\u00e3o vejamos suas informa\u00e7\u00f5es
+        pessoais. Em outras palavras, voc\u00ea pode ter certeza de que n\u00e3o h\u00e1 como
+        coletar suas informa\u00e7\u00f5es se voc\u00ea usar nosso aplicativo para copiar os dados
+        de um telefone para outro.
+    </p>
+    <p>
+        <strong>S\u00f3 coletamos informa\u00e7\u00f5es n\u00e3o pessoais.</strong>
+    </p>
+    <p>
+        Para garantir que sua experi\u00eancia ao usar nossos aplicativos seja
+        confort\u00e1vel, coletamos informa\u00e7\u00f5es n\u00e3o pessoais para entender melhor o
+        comportamento do usu\u00e1rio, descobrir problemas com os aplicativos e melhorar
+        nossos produtos. Informa\u00e7\u00f5es n\u00e3o pessoais s\u00e3o dados que n\u00e3o permitem
+        associa\u00e7\u00e3o direta com qualquer indiv\u00edduo espec\u00edfico. Exemplos de
+        informa\u00e7\u00f5es n\u00e3o pessoais  s\u00e3o:  ID do dispositivo, n\u00famero IMEI do telefone,
+        modelo de telefone, ROM, operador de telefone, localiza\u00e7\u00e3o, sistema
+        operativo, logs de transfer\u00eancia, etc.
+    </p>
+    <p>
+        <strong>
+            As permiss\u00f5es exigidas por nossos aplicativos t\u00eam uma raz\u00e3o v\u00e1lida.
+        </strong>
+    </p>
+    <p>
+        Nosso aplicativo solicita algumas permiss\u00f5es de acesso que s\u00e3o
+        consideradas como acesso a dados sens\u00edveis e perigosos em dispositivos
+        Android. Voc\u00ea pode encontrar explica\u00e7\u00f5es detalhadas para por que
+        solicitamos cada permiss\u00e3o na se\u00e7\u00e3o ap\u00eandice desta pol\u00edtica.
+    </p>
+    <p>
+        As permiss\u00f5es solicitadas para nossos aplicativos s\u00e3o:
+    </p>
+    <p>
+        Tirar fotos e v\u00eddeos (CAMERA)
+    </p>
+    <p>
+        Ler contatos (READ_CONTACTS)
+    </p>
+    <p>
+        Modificar contatos (WRITE_CONTACTS)
+    <p>
+        Ler hist\u00f3rico de chamadas (READ_CALL_LOG)
+    </p>
+    <p>
+        Escrever hist\u00f3rico de chamadas (WRITE_CALL_LOG)
+    </p>
+    <p>
+        Ler calend\u00e1rio (READ_CALENDAR)
+    </p>
+    <p>
+        Escrever calend\u00e1rio (WRITE_CALENDAR)
+    </p>
+    <p>
+        Ler as suas SMS (SMS or MMS)
+    </p>
+    <p>
+        Ler conte\u00fado do seu armazenamento (READ_EXTERNAL_STORAGE)
+    </p>
+    <p>
+        Modificar ou excluir o conte\u00fado do seu armazenamento (WRITE_ EXTERNAL_STORAGE)
+    </p>
+    <p>
+        <strong>A seguran\u00e7a \u00e9 importante para n\u00f3s.</strong>
+    </p>
+    <p>
+        A Pervacio est\u00e1 muito preocupada em proteger a confidencialidade de suas
+        informa\u00e7\u00f5es. Como dito anteriormente, n\u00e3o coletamos informa\u00e7\u00f5es pessoais.
+        Para proteger as informa\u00e7\u00f5es n\u00e3o pessoais, coletamos de acesso e uso n\u00e3o
+        autorizados, empregamos medidas administrativas, f\u00edsicas e eletr\u00f4nicas.
+        O Pervacio  Content Transfer est\u00e1 bem equipado para lidar com dados
+        pessoais ou sens\u00edveis do usu\u00e1rio com seguran\u00e7a, incluindo a transmiss\u00e3o
+        dos dados para o servidor backend usando criptografia moderna sobre HTTPS.
+    </p>
+    <p>
+        Por favor, esteja ciente de que as medidas de seguran\u00e7a que tomamos para
+        proteger suas informa\u00e7\u00f5es n\u00e3o s\u00e3o absolutamente garantidas para combater o
+        acesso ou o uso n\u00e3o autorizado de suas Informa\u00e7\u00f5es N\u00e3o Pessoais.
+    </p>
+    <p>
+        <strong>Crian\u00e7as</strong>
+    </p>
+    <p>
+        N\u00f3s n\u00e3o fornecemos foco de servi\u00e7o em Crian\u00e7as. Se voc\u00ea tiver menos de
+        13 anos, por favor, pe\u00e7a permiss\u00e3o aos seus pais ou respons\u00e1veis antes
+        de usar nosso aplicativo. A supervis\u00e3o dos pais \u00e9 aconselh\u00e1vel.
+    </p>
+    <p>
+        <strong>Entre em contato conosco</strong>
+    </p>
+    <p>
+        Se voc\u00ea tiver alguma d\u00favida ou coment\u00e1rio sobre esta Pol\u00edtica ou nossas
+        pr\u00e1ticas de privacidade, ou para relatar quaisquer viola\u00e7\u00f5es da Pol\u00edtica
+        ou abuso dos Servi\u00e7os ou do Site, entre em contato conosco em
+        support@pervacio.com
+    </p>
+    <p>
+        <strong>Atualizaremos esta pol\u00edtica de privacidade para garantir seus direitos.</strong>
+    </p>
+    <p>
+        Para garantir a qualidade de sua experi\u00eancia e sua seguran\u00e7a, atualizaremos
+        nossa pol\u00edtica de privacidade conforme necess\u00e1rio. Quaisquer mudan\u00e7as feitas
+        nesta pol\u00edtica n\u00e3o reduzir\u00e3o seus direitos de qualquer maneira. Se as
+        altera\u00e7\u00f5es nesta pol\u00edtica forem significativas, uma notifica\u00e7\u00e3o ser\u00e1 exibida
+        no aplicativo. No entanto, mudan\u00e7as menores podem ser feitas, por isso, por
+        favor, revise esta pol\u00edtica periodicamente. Se voc\u00ea n\u00e3o concordar com nenhuma
+        altera\u00e7\u00e3o nesta pol\u00edtica, voc\u00ea deve parar imediatamente de usar qualquer um
+        dos servi\u00e7os que fornecemos e entrar em contato conosco. Seu uso cont\u00ednuo de
+        nossos servi\u00e7os ap\u00f3s altera\u00e7\u00f5es nesta Pol\u00edtica ter sido feita significa que
+        voc\u00ea aceitou os termos da Pol\u00edtica revisada. Por favor, note que nenhum de
+        nossos funcion\u00e1rios ou agentes tem autoridade para violar qualquer um dos
+        direitos que foram estabelecidos nesta pol\u00edtica.
+    </p>
+    <p>
+        <strong>Ap\u00eandice</strong>
+    </p>
+    <p>
+        <strong>
+            Permiss\u00f5es de Android relevantes para privacidade solicitadas pelo nosso aplicativo CAMERA
+        </strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es associadas ao acesso \u00e0 c\u00e2mera ou captura de imagens e/ou
+        v\u00eddeos do dispositivo.
+    </p>
+    <p>
+        Esta permiss\u00e3o permite que este aplicativo suporte o seguinte recurso relacionado
+        com a c\u00e2mera do telefone:
+    </p>
+    <p>
+        1) Escaneie o QR Code para estabelecer uma conex\u00e3o sem fio entre dois dispositivos
+        mais rapidamente, pois este m\u00e9todo pode contornar a entrada manual de senha sem fio.
+    </p>
+    <p>
+        <strong>READ_CONTACTS</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo leia os dados de
+        contatos do usu\u00e1rio. Essa permiss\u00e3o permite que o aplicativo transfira
+        contatos telef\u00f4nicos como parte do recurso de transfer\u00eancia contatos. O
+        objetivo \u00e9 recuperar os contatos do usu\u00e1rio (por exemplo, n\u00famero de
+        telefone, nome de contato, e-mail, etc) de um telefone antigo e transferir
+        para e salvar em um novo telefone.
+    </p>
+    <p>
+        <strong>WRITE_CONTACTS</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo escreva os dados de
+        contatos do usu\u00e1rio. Essa permiss\u00e3o permite que o aplicativo transfira
+        contatos telef\u00f4nicos como parte do recurso de transfer\u00eancia contatos. O
+        objetivo \u00e9 escrever os contatos do usu\u00e1rio (por exemplo, n\u00famero de telefone,
+        nome de contato, e-mail, etc), que s\u00e3o recebidos de um telefone antigo
+        para o armazenamento de contatos designados em um novo telefone.
+    </p>
+    <p>
+        <strong>READ_CALL_LOG</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem ao aplicativo lar o hist\u00f3rico de chamadas do utilizador.
+    </p>
+    <p>
+        Esta permiss\u00e3o permite ao aplicativo transferir o registro de chamadas como
+        parte do processo de replicar o conteudo do dipositivo. O prop\u00f3sito \u00e9 receber
+        os registros de chamadas do dispositivo antigo, transferir e gravar em um novo.
+    <p>
+        <strong>WRITE_CALL_LOG</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo grave (mas n\u00e3o leia) o
+        dados do log de chamadas do usu\u00e1rio. Essa permiss\u00e3o permite que o aplicativo
+        transfira o registro de chamadas telef\u00f4nicas como parte do recurso de replicar
+        telefone. O objetivo \u00e9 para escrever o registro de chamadas do usu\u00e1rio (por
+        exemplo, n\u00famero de telefone, nome do contato, hor\u00e1rio da chamada, etc), recebidos
+        de um telefone antigo, para o registro de chamadas designado armazenamento em
+        um novo telefone.
+    </p>
+    <p>
+        <strong>READ_CALENDARS</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo leia o calend\u00e1rio do
+        usu\u00e1rio. Essa permiss\u00e3o permite que o aplicativo transfira o calend\u00e1rio como
+        parte do recurso de transfer\u00eancia de calend\u00e1rio. O objetivo \u00e9 recuperar o
+        calend\u00e1rio do usu\u00e1rio de um telefone antigo e transferir para e salvar em
+        um novo telefone.
+    </p>
+    <p>
+        <strong>WRITE_CALENDARS</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo escreva (mas n\u00e3o leia)
+        os dados do calend\u00e1rio do usu\u00e1rio. Essa permiss\u00e3o permite que o aplicativo
+        transfira o registro de chamadas telef\u00f4nicas como parte do recurso de
+        transfer\u00eancia de calend\u00e1rio. O objetivo \u00e9 escrever o calend\u00e1rio do usu\u00e1rio,
+        que \u00e9 recuperado de um telefone antigo, para o armazenamento de calend\u00e1rio
+        designado em um novo telefone.
+    </p>
+    <p>
+        <strong>READ_SMS</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo leia mensagens SMS.
+        Essa permiss\u00e3o permite que o aplicativo transfira mensagens SMS como parte do
+        Recurso Replicar telefone. O objetivo \u00e9 recuperar as mensagens SMS do usu\u00e1rio
+        de um telefone antigo, transferir e salvar em um novo telefone.
+    </p>
+    <p>
+        <strong>READ_EXTERNAL_STORAGE</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo leia a partir de
+        armazenamento externo. Essa permiss\u00e3o permite que o aplicativo acesse
+        quaisquer arquivos no armazenamento externo, por exemplo, cart\u00e3o SD, como
+        parte do recurso principal da Transfer\u00eancia de Conte\u00fado pervacio de
+        transferir arquivos. O usu\u00e1rio pode selecionar arquivos a serem transferidos
+        e enviar a conex\u00e3o sem fio criada pelo aplicativo.
+    </p>
+    <p>
+        <strong>WRITE _EXTERNAL_STORAGE</strong>
+    </p>
+    <p>
+        Usado para permiss\u00f5es que permitem que um aplicativo escreva para
+        armazenamento externo. Essa permiss\u00e3o permite que o aplicativo acesse o
+        armazenamento externo, por exemplo, cart\u00e3o SD, como parte do recurso principal
+        da Pervacio  Content Transferde transfer\u00eancia dearquivos. O usu\u00e1rio pode
+        optar por salvar arquivos recebidos que s\u00e3o transferidos pela conex\u00e3o sem
+        fio para armazenamento interno ou armazenamento externo. O usu\u00e1rio deve
+        selecionar para salvar o armazenamento externo a partir das configura\u00e7\u00f5es
+        do aplicativo.
+    </p>
+        ]]>
+    </string>
+    <string name="select_transfer_types">Selecione tipo de transfer\u00eancia</string>
+
+    <string name="backup_inprogress">Guardando Dados</string>
+    <string name="usb_reconnect_msg">Dispositivo USB desconetado. Por favor reconete o dispositvo para continuar.</string>
+    <string name="backup">Guardar</string>
+    <string name="restore">Restaurar</string>
+    <string name="backup_restore_msg">Este equipamento é para Guardar ou Reastaurar dados?</string>
+    <string name="data_transfer_modes">Modos de Transfer\u00eancia de Dados</string>
+    <string name="select_mode_msg">Por favor selecione o seu modo pretendido de Transfer\u00eancia de dados.</string>
+    <string name="title_activity_scan_qr_code">QR Scanner</string>
+    <string name="str_alert">Alerta</string>
+    <string name="location_permission_required_msg">Conceda a permiss\u00e3o de localização, pois \u00e9 necess\u00e1rio para o aplicativo funcionar.</string>
+    <string name="location_permission_denied_msg">N\u00e3o foi poss\u00edvel continuar, pois a permiss\u00e3o de localização foi negada. Ative-a acessando Configura\u00e7\u00f5es > Apps &amp; Notifica\u00e7\u00f5es > Selecionar App > Permiss\u00f5es > Localiza\u00e7\u00e3o e tente de novo.</string>
+    <string name="invalid_id">* ID Inv\u00e1lido</string>
+    <string name="app_description">O Pervacio Content Transfer permite transferir de maneira f\u00e1cil e confi\u00e1vel o conte\u00fado de dispositivos m\u00f3veis pessoais sem fio de um dispositivo para outro.</string>
+    <string name="str_content">Content</string>
+    <string name="str_transfer">Transfer</string>
+    <string name="enter_your_id">Insira o seu ID</string>
+    <string name="str_whatsapp_media_exclude_alert">A m�dia do WhatsApp (Fotos e V�deos) n�o ser� transferida para o dispositivo de destino.</string>
+    <string name="str_sdcard_media_exclude_alert">Os dados do cart�o SD n�o ser�o transferidos para o dispositivo de destino.</string>
+    <string name="str_whatsapp_media_include_alert">A m�dia do WhatsApp (Fotos e V�deos) tamb�m ser� transferido para o dispositivo de destino.</string>
+    <string name="str_sdcard_media_include_alert">Os dados do cart�o SD tamb�m ser�o transferidos para o dispositivo de destino.</string>
+    <string name="str_whatsapp_media">Whatsapp Media</string>
+    <string name="str_sdcard">Cart�o SD</string>
+    <!--Data Wipe-->
+    <string name="proceed_to_wipe_title">Continuar com a Limpeza de Dados?</string>
+    <string name="proceed_to_wipe_msg">Deseja apagar todo o conte\u00fado e as configura\u00e7\u00f5es deste dispositivo?</string>
+
+    <!--Account Removal-->
+    <string name="google_ac_remove_head">Siga os passos abaixo para remover a Conta do Google do dispositivo.</string>
+    <string name="device_lock_remove_head">Siga as etapas abaixo para remover o bloqueio de PIN / Padrão / Senha do dispositivo Android.</string>
+    <string name="mdm_profile_remove_head">Siga as etapas abaixo para remover o perfil MDM do dispositivo.</string>
+    <string name="google_ac_remove_instructions">1. V\u00e1 para <font fgcolor='#009bdf'>Defini\u00e7\u00f5es</font> \n\n2. Selecione <font fgcolor='#009bdf'>Contas</font> \n\n3. Selecione <font fgcolor='#009bdf'>Conta Google</font> \n\n4. Pressione o bot\u00e3o <font fgcolor='#009bdf'>REMOVER CONTA</font> \n\n5. Na janela pressione o bot\u00e3o <font fgcolor='#009bdf'>REMOVER CONTA</font> </string>
+    <string name="device_lock_remove_instructions">1. V\u00e1 para <font fgcolor='#009bdf'>Defini\u00e7\u00f5es</font> \n\n2. Pressione <font fgcolor='#009bdf'>Seguran\u00e7a &amp; Localiza\u00e7\u00e3o</font> \n\n3. Slecione <font fgcolor='#009bdf'>Bloqueio de Tela</font> \n\n4. Digite o PIN, Padrão ou Senha associados ao dispositivo \n\n5. Selecione <font fgcolor='#009bdf'>Nenhum</font> \n\n6. Na janela, pressione <font fgcolor='#009bdf'>SIM</font>, e depois o bot\u00e3o <font fgcolor='#009bdf'>REMOVER</font> </string>
+    <string name="remove_google_account">Remover Conta Google</string>
+    <string name="remove_device_lock">Remover Bloqueio de Dispositivo</string>
+    <string name="remove_pin_lock">Remover PIN</string>
+    <string name="want_to_return_device">O dispositivo ser\u00e1 devolvido ao cliente?</string>
+    <string name="thank_you">Obrigado</string>
+
+    <!-- Customer Satisfaction dialog -->
+    <string name="rate_your_experience">Avalie sua experiência</string>
+    <string name="cust_satisfy_title">Satisfação do Cliente</string>
+    <string name="cust_satisfy_msg">Avalie a experiência do serviço recebido na loja hoje</string>
+    <string name="agent_satisfy_title">Satisfação do Agente</string>
+    <string name="agent_satisfy_msg">Entregue o dispositivo ao Agente da Loja para avaliar sua experiência com o serviço</string>
+    <string name="reason_for_rating">Motivo da insatisfação</string>
+    <string-array name="wds_reasons_list">
+        <item>Não estou satisfeito com o resultado.</item>
+        <item>O conteúdo não foi transferido corretamente</item>
+        <item>O aplicativo foi reiniciado uma ou mais vezes.</item>
+        <item>O processo não foi concluído corretamente</item>
+        <item>Problemas ao baixar o aplicativo.</item>
+        <item>Os dispositivos não podem ser emparelhados</item>
+        <item>O processo não funcionou na primeira tentativa</item>
+        <item>O tempo de transferência é muito alto</item>
+    </string-array>
+
+</resources>

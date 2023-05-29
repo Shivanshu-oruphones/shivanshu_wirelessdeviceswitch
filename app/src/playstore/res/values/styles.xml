@@ -1,0 +1,23 @@
+<resources>
+    <style name="content_text" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/apptitle_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">aileron-black.ttf</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    <style name="transfer_text" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/apptitle_textsize</item>
+        <item name="android:textColor">@color/lightBlue</item>
+        <item name="android:fontFamily">aileron-black.ttf</item>
+        <item name="android:typeface">normal</item>
+    </style>
+    <style name="description_text" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/description_textsize</item>
+        <item name="android:textColor">@color/description_grey</item>
+        <item name="android:fontFamily">aileron_light.ttf</item>
+        <item name="android:typeface">normal</item>
+    </style>
+</resources>

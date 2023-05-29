@@ -1,0 +1,155 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/wds_main_bg_gray"
+        android:orientation="vertical">
+        <LinearLayout
+            android:id="@+id/device_details_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#f1f1f1"
+            android:orientation="vertical"
+            android:visibility="gone" >
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/old_new_device_make"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:gravity="center_horizontal"
+            android:text="Samsung"
+            android:textColor="@color/wds_colorPrimary"
+            android:layout_marginTop="10dp"
+            style="@style/textStyle_subheading" />
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/old_new_device_model"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:gravity="center_horizontal"
+                android:text="SM-G920W"
+                android:layout_marginBottom="10dp"
+                style="@style/textStyle_subheading" />
+        </LinearLayout>
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/old_new_device_heading"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center|top"
+            android:layout_marginBottom="@dimen/margin_small"
+            android:layout_marginTop="@dimen/selection_margin_top"
+            android:gravity="center_horizontal"
+            android:paddingBottom="@dimen/padding_small"
+            android:paddingTop="@dimen/padding_small"
+            android:fontFamily="@string/font_bold"
+            android:text="@string/source_or_destination_title"
+            style="@style/textStyle_heading" />
+        <FrameLayout android:id="@+id/old_new_device_frame"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/em_margin_left"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/old_device_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/device_old" />
+
+                <Button
+                    android:id="@+id/old_device_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/selection_margin"
+                    android:minWidth="110dp"
+                    android:backgroundTint="@color/wds_colorPrimary"
+                    android:textColor="@color/button_text_color"
+                    android:background="@drawable/round_corners"
+                    android:text="@string/text_source"
+                    android:textSize="@dimen/button_textsize" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.5"
+                android:orientation="vertical">
+
+
+                <ImageView
+                    android:id="@+id/new_device_image"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:src="@drawable/device_new" />
+
+
+                <Button
+                    android:id="@+id/new_device_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="@dimen/selection_margin"
+                    android:minWidth="110dp"
+                    android:backgroundTint="@color/wds_colorPrimary"
+                    android:textColor="@color/button_text_color"
+                    android:background="@drawable/round_corners"
+                    android:text="@string/text_destination"
+                    android:textSize="@dimen/button_textsize" />
+
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+            <pl.droidsonroids.gif.GifImageView
+                android:id="@+id/arrow_gifview"
+                android:layout_width="50dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:src="@drawable/selectdevice_arrow"
+                android:layout_marginBottom="15dp"
+                android:visibility="gone" />
+        </FrameLayout>
+        <WebView
+            android:id="@+id/hidden_srp_webview"
+            android:layout_width="1px"
+            android:layout_height="1px"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/datawipebutton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/selection_margin"
+            android:minWidth="110dp"
+            android:backgroundTint="@color/wds_colorPrimary"
+            android:textColor="@color/button_text_color"
+            android:background="@drawable/round_corners"
+            android:text="Data Wipe"
+            android:textSize="@dimen/button_textsize" />
+    </LinearLayout>
+
+
+
+
+</LinearLayout>

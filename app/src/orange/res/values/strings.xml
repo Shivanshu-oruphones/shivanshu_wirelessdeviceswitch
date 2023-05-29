@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+
+    <string name="app_name">Kopia Danych</string>
+    <string name="welcome_screen_title">Welcome to Kopia Danych</string>
+    <string name="terms_and_conditions_text"> By downloading and using the Kopia Danych app, these terms will automatically apply to you. Please make sure therefore that you read them carefully before using the app. Please be aware that you cannot send it on to anyone else, and you\'re not allowed to copy, or modify the app, any part of the app, or our trademarks, in any way.  You\'re not allowed to attempt to extract the source code of the app, you also shouldn\'t try to translate the app or make derivative versions.  The app itself, and all the trademarks, copyright, database rights and intellectual property rights related to it, still belong to Pervacio Inc.</string>
+    <string name="session_cancelled_text">Kopia Danych session has been cancelled. Please restart this session to transfer all your data from Source to Destination device.</string>
+    <string name="text_suggestionSource">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the Kopia Danych app from this device.
+    </string>
+
+    <string name="text_suggestionDest">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the Kopia Danych app from this device.
+              \n\n3.Remember to factory reset the Source device if needed.
+    </string>
+    <string name="text_suggestionDest2">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the Pervacio Content Transfer app from this device.
+              \n\n3.Remember to factory reset the Old device if needed.
+              \n\n4.On Exit, when prompted, please select Messaging app as the default SMS application.
+    </string>
+
+    <!-- Font Names in Assets -->
+    <string name="font_light">helvetica_light.ttf</string>
+    <string name="font_regular">helvetica_regular.ttf</string>
+    <string name="font_bold">helvetica_bold.ttf</string>
+    <string name="font_medium">helvetica_medium.ttf</string>
+    <string name="font_thin">helvetica_thin.ttf</string>
+    <string name="str_enter_emp_id">Enter your 5-digit BSCS code</string>
+</resources>

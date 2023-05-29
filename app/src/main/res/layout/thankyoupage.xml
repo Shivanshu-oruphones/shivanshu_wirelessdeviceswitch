@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/EndPage"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+    <include
+        android:id="@+id/customtoolbar"
+        layout="@layout/custom_acc_toolbar" />
+    <LinearLayout
+        android:layout_below="@+id/customtoolbar"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/EndPageTopText1"
+            style="@style/textStyle_subheading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/title_endpage" />
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/step"
+            style="@style/textStyle_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/text_suggestionDest" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:orientation="vertical">
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/EndPageTopText"
+            style="@style/textStyle_subheading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/thank_you" />
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/wds_main_bg_gray">
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/thanks_exit_button"
+            style="@style/primary_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ept_exit_button" />
+    </RelativeLayout>
+</RelativeLayout>

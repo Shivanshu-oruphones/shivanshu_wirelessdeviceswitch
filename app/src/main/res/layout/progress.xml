@@ -1,0 +1,60 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WelcomePageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wds_main_bg_gray">
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/contentDetailsProgress_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/button_layout"
+        android:layout_alignParentTop="true"
+        android:background="@color/white"
+        android:focusable="true"
+        android:scrollbars="vertical" />
+
+    <LinearLayout
+        android:id="@+id/button_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/elapsedTime"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="center_horizontal"
+            android:padding="@dimen/default_padding"
+            android:visibility="gone" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/estimationTime"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/default_padding"
+            android:visibility="gone" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/sessionId"
+            style="@style/textStyle_body"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="@dimen/default_padding"
+            android:visibility="gone" />
+
+        <com.pervacio.wds.CustomButton
+            style="@style/primary_button_right"
+            android:id="@+id/btn_cancel"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/wds_cancel" />
+
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,106 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ConnectedPageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="match_parent"
+    android:background="@color/wds_main_bg_gray"
+    android:orientation="vertical">
+
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/connected"
+        style="@style/textStyle_heading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/margin_connected"
+        android:gravity="center_horizontal"
+        android:paddingTop="@dimen/padding_small"
+        android:paddingBottom="@dimen/padding_small"
+        android:text="@string/pairing_in_progress" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/connectingProgress"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/connecting_image_rightmargin"
+        android:layout_marginRight="@dimen/connecting_image_leftmargin"
+        android:layout_toStartOf="@+id/connectingProgress"
+        android:layout_toLeftOf="@+id/connectingProgress"
+        android:background="@drawable/phone_connecting" />
+
+    <ProgressBar
+        android:id="@+id/connectingProgress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/connected"
+        android:layout_gravity="center"
+        android:layout_marginStart="@dimen/connecting_image_rightmargin"
+        android:layout_marginLeft="@dimen/connecting_image_leftmargin"
+        android:layout_marginTop="@dimen/connecting_image_topmargin"
+        android:layout_toEndOf="@+id/connectingProgress"
+        android:layout_toRightOf="@+id/connectingProgress"
+        android:background="@drawable/phone_connecting" />
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/WelcomeBottomText"
+        style="@style/textStyle_body"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center|top"
+        android:layout_marginBottom="75dp"
+        android:gravity="center_horizontal"
+        android:lineSpacingExtra="2dp"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:text="@string/ept_connected_text"
+        android:visibility="gone" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/btnTryAgain"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/wds_colorPrimary"
+            android:paddingHorizontal="20dp"
+            android:text="Try Again"
+            android:textColor="@color/white" />
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/btnConnect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:background="@drawable/round_corners"
+            android:backgroundTint="@color/wds_colorPrimary"
+            android:paddingHorizontal="20dp"
+            android:text="Connect Manually"
+            android:textColor="@color/white" />
+    </LinearLayout>
+
+</RelativeLayout>

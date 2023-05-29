@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--<color name="colorPrimary">@color/lightGreen</color>
+    <color name="colorPrimaryDark">@color/fixGeniusDarkBlue</color>-->
+    <color name="colorAccent">@color/wds_colorPrimary</color>
+    <color name="fixGeniusBlue">@color/wds_colorPrimary</color>
+    <color name="fixGeniusDarkBlue">@color/wds_colorPrimary</color>
+
+    <color name="areaHeading">#00a6a4</color>
+    <color name="areaSubHeading">#000000</color>
+
+    <color name="mainButton">#007a78</color>
+    <color name="mainButtonText">#FFFFFF</color>
+
+    <color name="bottomButtonPanel">#f4f4f4</color>
+    <color name="buttonConfirm">#007a78</color>
+
+    <color name="titleBarBackgroundColor">#009BDE</color>
+    <color name="statusBarBackgroundColor">#009BDE</color>
+
+    <color name="lightGreen">#009BDE</color>
+    <color name="midGreen">#009BDE</color>
+    <color name="darkGreen">#009BDE</color>
+
+    <color name="white">#ffffff</color>
+    <color name="lightGrey">#f4f4f4</color>
+    <color name="darkGrey">#dadada</color>
+    <color name="black">#333333</color>
+
+    <color name="lightBlue">#0fafce</color>
+    <color name="darkBlue">#1964c8</color>
+
+    <color name="lightRed">#ee4126</color>
+    <color name="midRed">#d62828</color>
+    <color name="darkRed">#a31945</color>
+
+
+    <color name="button_color">#1576F9</color>
+    <color name="main_bg_gray">#f1f1f1</color>
+    <color name="black_bg">#373737</color>
+    <color name="button_background">#FFC700</color>
+
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#000000</color>
+
+    <color name="black_overlay">#66000000</color>
+    <color name="toolbar_background">#FFFFFF</color>
+    <color name="toolbar_titleColor">#000000</color>
+    <color name="button_text_color">#000000</color>
+    <color name="progressbar_color">#FFC700</color>
+    <color name="gray">#D3D3D3</color>
+    <color name="yellow">#FFD700</color>
+    <color name="thick_grey">#373737</color>
+</resources>

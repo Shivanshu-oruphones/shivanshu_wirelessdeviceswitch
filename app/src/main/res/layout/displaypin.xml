@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WelcomePageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="35sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/BasicTitle"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:text="@string/ept_display_pin_title">
+    </TextView>
+
+    <TextView
+        android:id="@+id/WelcomeBottomText"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:textAppearance="@style/BasicText"
+        android:text="@string/ept_display_pin_text" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/pinLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center_horizontal"
+        android:paddingTop="10sp"
+        android:paddingBottom="10sp"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:background="@drawable/action_button"
+        android:text="1670" />
+
+</LinearLayout>

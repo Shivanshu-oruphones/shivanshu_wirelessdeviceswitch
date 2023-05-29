@@ -1,0 +1,40 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WelcomePageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="35sp" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/BasicTitle"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:text="@string/ept_select_device_title">
+    </TextView>
+
+    <TextView
+        android:id="@+id/WelcomeBottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:textAppearance="@style/BasicText"
+        android:text="@string/ept_select_device_text" >
+    </TextView>
+
+    <ListView
+        android:id="@+id/deviceListView"
+        android:layout_width="match_parent"
+        android:layout_height="246dp" >
+    </ListView>
+
+</LinearLayout>

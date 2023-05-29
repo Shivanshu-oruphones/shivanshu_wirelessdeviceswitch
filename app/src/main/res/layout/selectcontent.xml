@@ -1,0 +1,198 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WelcomePageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/wds_main_bg_gray">
+
+        <RelativeLayout
+            android:id="@+id/storageLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/black_bg"
+            android:padding="@dimen/sc_progressbar_padding">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/storageSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/sc_margin"
+                android:layout_marginTop="@dimen/sc_margin"
+                android:layout_toLeftOf="@+id/storageSpace"
+                android:text="@string/space_on_destination"
+                android:layout_alignParentLeft="true"
+                android:fontFamily="@string/font_regular"
+                android:textSize="@dimen/small_textsize"
+                android:textColor="@color/white" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/storageSpace"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginBottom="@dimen/sc_margin"
+                android:layout_marginTop="@dimen/sc_margin"
+                android:gravity="right|center_vertical"
+                android:text="1"
+                android:fontFamily="@string/font_medium"
+                android:textColor="@color/white"
+                android:textSize="@dimen/sc_storage_textsize" />
+
+            <ProgressBar
+                android:id="@+id/storagespaceIndicator"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="fill_parent"
+                android:layout_height="@dimen/storage_progressbar_width"
+                android:layout_below="@+id/storageSuggestion"
+                android:layout_marginBottom="@dimen/content_padding"
+                android:progress="80"
+                android:progressDrawable="@drawable/storage_progressbar_green"
+                android:visibility="visible" />
+        </RelativeLayout>
+        <LinearLayout
+            android:id="@+id/contentCheckLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/storageLayout"
+            android:orientation="horizontal"
+            android:padding="@dimen/content_padding">
+
+        <LinearLayout
+            android:id="@+id/contentCheckLayoutSDCardMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/content_padding">
+
+            <CheckBox
+                android:id="@+id/sdCardMediaIncludeCheck"
+                android:backgroundTint="@color/wds_colorPrimary"
+                android:layout_width="wrap_content"
+                android:buttonTint="@color/wds_colorPrimary"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@color/wds_button_color"
+                android:layout_marginLeft="80dp"
+                android:checked="true"/>
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/sdCardMediaIncludeSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text="SD Card"
+                android:layout_marginLeft="@dimen/content_image_margin"
+                style="@style/textStyle_small" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/contentCheckLayoutWhatsAppMedia"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="@dimen/content_padding">
+
+            <CheckBox
+                android:id="@+id/whatsAppMediaIncludeCheck"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:buttonTint="@color/wds_colorPrimary"
+                android:background="@color/wds_colorPrimary"
+                android:backgroundTint="@color/wds_colorPrimary"
+                android:layout_gravity="center"
+                android:layout_marginLeft="@dimen/content_image_margin"
+                android:checked="true"/>
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/whatsAppMediaIncludeSuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="right"
+                android:text="Whatsapp Media"
+                android:layout_marginLeft="@dimen/content_image_margin"
+                style="@style/textStyle_small"
+                />
+        </LinearLayout>
+
+        </LinearLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/contentDetails_list"
+            android:background="@color/white"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/est_lyt"
+            android:layout_below="@+id/contentCheckLayout"
+            android:fadeScrollbars="false"
+            android:scrollbarThumbVertical="@color/black_overlay"
+            android:scrollbarSize="5dp"
+            android:scrollbars="vertical" />
+        <TextView
+            android:id="@+id/SelectContentBottomText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/content_padding"
+            android:layout_marginBottom="@dimen/default_margin"
+            android:layout_above="@+id/start_migration"
+            android:textColor="@color/black"
+            android:visibility="gone"
+            android:text="@string/ept_select_content_text" />
+
+
+        <LinearLayout
+            android:id="@+id/est_lyt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/start_migration"
+            android:orientation="vertical"
+            android:padding="@dimen/content_padding">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/selectContentsuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:textColor="@color/black" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/selectContentTimesuggestion"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                style="@style/textStyle_small" />
+
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/sourceSelectContentSessionId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:text=""
+                android:layout_marginTop="@dimen/default_margin"
+                style="@style/textStyle_small" />
+
+        </LinearLayout>
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/start_migration"
+            android:layout_alignParentBottom="true"
+            style="@style/primary_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/str_string"/>
+    </RelativeLayout>
+
+
+</LinearLayout>

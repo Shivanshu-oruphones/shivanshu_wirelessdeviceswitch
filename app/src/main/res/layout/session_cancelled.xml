@@ -1,0 +1,59 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/SessionCancelledLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/WelcomeTopText"
+            style="@style/textStyle_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/session_cancelled" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/quickTransferSteps"
+            style="@style/textStyle_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:paddingLeft="@dimen/text_padding_left"
+            android:lineSpacingExtra="2dp"
+            android:paddingRight="@dimen/text_padding_left"
+            android:text="@string/session_cancelled_text" />
+    </LinearLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/wds_main_bg_gray">
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/start_over_tv"
+            style="@style/secondary_button_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ept_start_over_button"
+            android:visibility="gone" />
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/exit_tv"
+            style="@style/primary_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ept_exit_button" />
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:weightSum="1">
+
+       <!-- <com.pervacio.wds.CustomButton
+            android:id="@+id/app_install_button"
+            style="@style/secondary_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/install_apps"
+            android:visibility="gone" />-->
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/summary_finish_button"
+            style="@style/primary_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.5"
+            android:text="@string/ept_finish_button" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/sprint_logo_rl"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <ImageView
+        android:id="@+id/sprint_logo_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_above="@+id/welcome_title"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/splash_margin_bottom"
+        android:src="@drawable/ic_launcher"/>
+
+<!--        style="@style/appname_title"-->
+    <TextView
+        android:id="@+id/welcome_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="@dimen/splash_margin_top"
+        android:fontFamily="@font/roboto_bold"
+        android:gravity="center"
+        android:includeFontPadding="false"
+        android:paddingLeft="@dimen/welcome_tittle_padding"
+        android:paddingRight="@dimen/welcome_tittle_padding"
+        android:text="@string/welcome_screen_title" />
+
+<!--        style="@style/textStyle_bodyHeading"-->
+    <TextView
+        android:id="@+id/welcome_message"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:layout_below="@+id/welcome_title"
+        android:layout_centerInParent="true"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:gravity="center"
+        android:text="" />
+    <ImageView
+        android:id="@+id/powered_by_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="@dimen/pewered_by_logo_bottom_margin"
+        android:paddingLeft="@dimen/pewered_by_logo_padding"
+        android:paddingRight="@dimen/pewered_by_logo_padding"
+        android:src="@drawable/powered_by_logo"
+        android:visibility="gone" />
+    <Button
+        android:id="@+id/letsgetstarted"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:minWidth="250dp"
+        android:textColor="@color/white"
+        android:padding="@dimen/round_button_padding"
+        android:background="@drawable/round_corners_blue"
+        android:layout_marginBottom="@dimen/pervacio_logo_top_margin"
+        android:text="@string/lets_get_started" />
+
+    <ProgressBar
+        android:id="@+id/action_spinner"
+        style="?android:attr/progressBarStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="40dp"
+        android:visibility="gone" />
+    <TextView
+        android:id="@+id/app_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_horizontal"
+        android:padding="@dimen/em_layout_margin"
+        android:text="V1.0.0" />
+<!--        style="@style/textStyle_smaller"-->
+</RelativeLayout>

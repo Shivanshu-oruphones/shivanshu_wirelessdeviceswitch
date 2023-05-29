@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pervacio.wds.custom.EmailSummaryActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="-2dp"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:padding="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/email_summary_statement1"
+            android:textAppearance="@style/textStyle_body" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/customer_email_address"
+            android:textAppearance="@style/textStyle_bodyHeading" />
+
+        <EditText
+            android:id="@+id/cust_email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/grey_rectangular_corners"
+            android:ems="10"
+            android:hint="@string/enter_cust_email_address"
+            android:inputType="textEmailAddress"
+            android:padding="8dp"
+            />
+
+        <TextView
+            android:id="@+id/invalid_email_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/enter_valid_email"
+            android:textColor="@color/manual_test_fail"
+            android:visibility="invisible" />
+
+        <com.pervacio.wds.CustomButtonOld
+            android:id="@+id/email_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:paddingLeft="@dimen/terms_codition_confirm_button_padding_left"
+            android:paddingTop="@dimen/terms_codition_confirm_button_padding_top"
+            android:paddingRight="@dimen/terms_codition_confirm_button_padding_right"
+            android:paddingBottom="@dimen/terms_codition_confirm_button_padding_bottom"
+            android:text="@string/wds_send_email_summary"
+            android:textAllCaps="false"
+            android:layout_gravity="center_horizontal"
+            android:enabled="false"
+            style="?buttonsTestPositiveStyle"/>
+
+        <!--<Button
+            android:id="@+id/email_btn"
+
+            android:layout_width="wrap_content"
+            android:layout_height="32dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:enabled="false"
+            android:paddingLeft="@dimen/terms_codition_confirm_button_padding_left"
+            android:paddingTop="@dimen/terms_codition_confirm_button_padding_top"
+            android:paddingRight="@dimen/terms_codition_confirm_button_padding_right"
+            android:paddingBottom="@dimen/terms_codition_confirm_button_padding_bottom"
+            android:background="@drawable/round_corners_lightblue"
+
+            android:text="@string/send_email_summary"
+            android:textColor="@color/white" />-->
+
+        <LinearLayout
+            android:id="@+id/store_email_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:orientation="vertical"
+            android:visibility="invisible">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="25dp"
+                android:text="@string/email_summary_statement2"
+                android:textAppearance="@style/textStyle_options" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="@string/store_email_address"
+                android:textAppearance="@style/textStyle_bodyHeading" />
+
+            <EditText
+                android:id="@+id/store_email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/grey_rectangular_corners"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textEmailAddress"
+                android:padding="8dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="15dp"
+                android:text="@string/central_email_address"
+                android:textAppearance="@style/textStyle_bodyHeading" />
+
+            <EditText
+                android:id="@+id/central_email_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/grey_rectangular_corners"
+                android:ems="10"
+                android:enabled="false"
+                android:inputType="textEmailAddress"
+                android:padding="8dp" />
+        </LinearLayout>
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginBottom="20dp"
+            android:background="@color/gray"
+            android:visibility="gone"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/yes_no_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:background="@color/white"
+        android:orientation="vertical"
+        android:paddingBottom="20dp">
+
+
+
+        <com.pervacio.wds.CustomButtonOld
+            android:id="@+id/email_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:paddingLeft="@dimen/terms_codition_confirm_button_padding_left"
+            android:paddingTop="@dimen/terms_codition_confirm_button_padding_top"
+            android:paddingRight="@dimen/terms_codition_confirm_button_padding_right"
+            android:paddingBottom="@dimen/terms_codition_confirm_button_padding_bottom"
+            android:text="@string/back_to_summary"
+            android:textAllCaps="false"
+            style="?buttonsTestPositiveStyle"
+
+
+            />
+
+       <!-- <Button
+            android:id="@+id/email_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="@dimen/pervacio_logo_top_margin"
+            android:background="@drawable/round_corners_blue"
+            android:padding="@dimen/round_button_padding"
+            android:text="@string/back_to_summar"
+            android:textColor="@color/white" />-->
+
+    </LinearLayout>
+</RelativeLayout>

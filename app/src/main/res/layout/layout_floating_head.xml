@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:id="@+id/floatingHeadRoot"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    >
+
+    <!--Profile image for the chat head.-->
+    <LinearLayout
+        android:id="@+id/llContainerFHead"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginTop="8dp"
+        tools:ignore="ContentDescription"
+        android:orientation="vertical"
+        android:layout_gravity="right"
+        >
+
+    </LinearLayout>
+    <TextView
+        android:id="@+id/tvAssistedMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/imei_read_instructions_10_bubble_message"
+        android:padding="6dp"
+        android:gravity="center"
+        style="?buttonsTestPositiveStyle"
+        android:layout_gravity="right"
+        android:textSize="12sp"
+        />
+
+</LinearLayout>

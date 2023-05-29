@@ -1,0 +1,25 @@
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/activity_permissions_policy.xml" value="0.1" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/activity_splash.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/activity_tf_terms_and_conditions.xml" value="0.1" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/childview_content_progress.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/childview_contenttype.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/childview_contenttype_appsinstall.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/complete.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/connecting.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/displayqrcode.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/fragment_install_apps.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/progress.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/select_transfertype.xml" value="0.23802083333333332" />
+        <entry key="..\:/wds lib/wirelessdeviceswitch/app/src/main/res/layout/two_buttons.xml" value="0.1" />
+        <entry key="..\:/wirelessdeviceswitch/app/src/main/res/layout/childview_contenttype_app_selection.xml" value="0.23802083333333332" />
+        <entry key="..\:/wirelessdeviceswitch/app/src/main/res/layout/childview_contenttype_appsinstall.xml" value="0.1" />
+      </map>
+    </option>
+  </component>
+  <component name="ExternalStorageConfigurationManager" enabled="true" />
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="corretto-1.8" project-jdk-type="JavaSDK" />
+</project>

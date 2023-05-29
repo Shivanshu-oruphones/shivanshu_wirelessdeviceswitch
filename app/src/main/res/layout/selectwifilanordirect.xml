@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/imageandtitle"/>
+
+    <TextView
+        android:text="@string/cmd_wifi_lan_or_direct"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:textAppearance="@style/BasicText"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <Button
+        android:textAllCaps="false"
+        android:text="@string/cmd_transfer_over_wifi_lan_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@drawable/action_button"
+        android:id="@+id/localCopyButton" />
+
+    <Button
+        android:textAllCaps="false"
+        android:text="@string/cmd_transfer_over_wifi_direct_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@drawable/action_button"
+        android:id="@+id/wifiDirectCardButton" />
+
+
+</LinearLayout>

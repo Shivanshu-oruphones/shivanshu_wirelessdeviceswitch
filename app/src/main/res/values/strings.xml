@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="locale">en</string>
+    <string name="app_name">ORU Content Transfer</string>
+    <string name="ept_empty_line">\n</string>
+
+    <string name="ept_next_button">Next</string>
+    <string name="ept_back_button">Back</string>
+    <string name="ept_finish_button">Finish</string>
+    <string name="ept_exit_button">Exit</string>
+    <string name="ept_start_over_button">Start over</string>
+    <string name="ept_app_name">Content Transfer</string>
+
+    <string name="ept_welcome_text_top_1">Content Transfer</string>
+    <string name="ept_welcome_text_bottom_1">This application will help you copy your contacts, calendars and photos to another device.\n\nTouch the &quot;Next&quot; button to continue.</string>
+
+    <string name="ept_select_device_title">Select Device</string>
+    <string name="ept_select_device_text">\nSelect your other device from the list below.\n\nEnsure your other device is running the app and is connected to the same Wi-Fi network.\n"</string>
+
+    <string name="ept_display_pin_title">Confirm PIN</string>
+    <string name="ept_display_pin_text">\nFor security reasons you must enter the following PIN on your other device. Continue on your other device, until you are prompted to enter the PIN:\n</string>
+
+    <string name="ept_select_content_title">Select content</string>
+    <string name="ept_select_content_contacts">Contacts</string>
+    <string name="ept_select_content_calendar">Calendars</string>
+    <string name="ept_select_content_messages">SMS</string>
+    <string name="ept_select_content_photos">Photos</string>
+    <string name="ept_select_content_videos">Videos</string>
+    <string name="ept_select_content_audio">Audio</string>
+    <string name="ept_select_content_app">Apps</string>
+    <string name="ept_select_content_call_logs">Call Logs</string>
+    <string name="ept_select_content_settings">Settings</string>
+    <string name="ept_select_content_documents">Documents</string>
+    <string name="ept_transfer_time">Transfer Time</string>
+
+    <string name="ept_progress_title">Copying Data</string>
+    <string name="ept_progress_text">\nPlease wait while your data is copied.\n</string>
+
+    <string name="ept_complete_title">Transfer Complete</string>
+    <string name="ept_complete_text">\nThe following data has been copied:</string>
+
+    <string name="ept_select_device_help">It may take a while to detect your other device. Check that your other device is running the app and is connected to the same unrestricted Wi-Fi network.</string>
+
+    <string name="ept_connect_to_wifi_title">Connect to WiFi</string>
+    <string name="ept_connect_to_wifi_message">This device is not connected to a WiFi network. You must connect this device to a WiFi network before continuing.</string>
+    <string name="ept_scanning_for_devices_title">Searching for Devices</string>
+
+    <string name="ept_could_not_copy_data_title">Could Not Copy Data</string>
+    <string name="ept_could_not_copy_data_message">New device does not have enough storage. Unselect some content type on old device or free up some more space on new device and try again.</string>
+
+    <string name="ept_ok">OK</string>
+    <string name="ept_progress_details">{0} of {1}</string>
+
+    <string name="ept_processing_calendar">Processing calendars</string>
+    <string name="ept_processing_contacts">Processing contacts</string>
+    <string name="ept_processing_call_logs">Processing call logs</string>
+    <string name="ept_processing_messages">Processing messages</string>
+    <string name="ept_sending_calendar">Sending calendars</string>
+    <string name="ept_sending_contacts">Sending contacts</string>
+    <string name="ept_sending_call_logs">Sending call logs</string>
+    <string name="ept_sending_messages">Sending messages</string>
+    <string name="ept_sending_photos">Sending photos</string>
+    <string name="ept_sending_videos">Sending videos</string>
+    <string name="ept_recieving_calendar">Receiving calendars</string>
+    <string name="ept_receiving_contacts">Receiving contacts</string>
+    <string name="ept_receiving_call_logs">Receiving call logs</string>
+    <string name="ept_receiving_settings">Receiving Settings</string>
+    <string name="ept_receiving_messages">Receiving messages</string>
+    <string name="ept_receiving_photos">Receiving photos</string>
+    <string name="ept_receiving_video">Receiving videos</string>
+    <string name="ept_sent_calendar">Sent calendars</string>
+    <string name="ept_sent_contacts">Sent contacts</string>
+    <string name="ept_sent_call_logs">Sent call logs</string>
+    <string name="ept_sent_messages">Sent messages</string>
+
+    <string name="ept_confirm_pin">\nContinue on your other device until it displays the PIN, then enter it on this device.\n</string>
+    <string name="ept_connected_title">Connected</string>
+    <string name="ept_connected_text">\nPlease continue the setup on the \n other device.</string>
+
+    <string name="ept_source_or_target_title">Options</string>
+    <string name="ept_source_or_target_text_1">\nYou have selected this device:\n</string>
+    <string name="ept_source_or_target_text_2">\nSelect an option below depending on whether you want to copy data to or from the selected device:\n</string>
+    <string name="ept_transfer_to_selected_device_button_text">Copy data to selected device</string>
+    <string name="ept_transfer_from_selected_device_button_text">Copy data from selected device</string>
+
+    <string name="cmd_local_wifi_or_cloud_text">You can transfer your data wirelessly or you can backup and restore using Google Drive</string>
+    <string name="cmd_local_wifi_button_text">To or From Another Device Over a WiFi Network</string>
+    <string name="cmd_wifi_direct_button_text">To or From Another Device Using WiFi Direct</string>
+    <string name="cmd_google_drive_button_text">Back Up or Restore Content</string>
+    <string name="cmd_sd_card_button_text">Back Up or Restore from SD Card</string>
+    <string name="cmd_local_wifi_lan_or_direct_button_text">Wirelessly Transfer Content</string>
+
+    <string name="cmd_google_drive_options_title">Google Drive Options</string>
+    <string name="cmd_google_drive_options_text">Select one of the following options to continue</string>
+    <string name="cmd_google_drive_backup_button_text">Back Up Data to Google Drive</string>
+    <string name="cmd_google_drive_restore_button_text">Restore Data from Google Drive</string>
+
+    <string name="cmd_sd_card_options_title">SD Card Options</string>
+    <string name="cmd_sd_card_options_text">Select one of the following options to continue:</string>
+    <string name="cmd_sd_card_backup_button_text">Back Up Data to SD Card</string>
+    <string name="cmd_sd_card_restore_button_text">Restore Data from SD Card</string>
+
+    <string name="cmd_could_not_copy_data_google_title">Copy Failed</string>
+    <string name="cmd_could_not_copy_data_google_message">It was not possible to copy all your data. Please check your internet connection and try again.</string>
+
+    <string name="cmd_google_drive_sd_card_error_title">SD Card Not Accessible</string>
+    <string name="cmd_google_drive_sd_card_error_body">It is not possible to connect to Google Drive services without an SD card in this device. Please insert an SD card and ensure that this device is not connected to a PC.</string>
+
+    <string name="cmd_connecting_to_cloud_title">Connecting</string>
+    <string name="cmd_connecting_to_google_body">Connecting to Google Drive</string>
+
+    <string name="try_again">Retry</string>
+    <string name="please_wait">Please wait a moment...</string>
+    <string name="str_name">Name : </string>
+    <string name="app_install_permissions_str">Permisssion</string>
+    <string name="str_all_files_access_permission">Allow ORU Content Transfer to grant all files access permission.</string>
+    <string name="cmd_sign_in_error_title">Could Not Sign In</string>
+    <string name="cmd_sign_in_error_body">It was not possible to sign in to your account. Please check you account details and internet connection.</string>
+    <string name="cmd_unable_to_download_backup_title">Unable to Download Backup</string>
+    <string name="cmd_unable_to_download_backup_body">It was not possible to download the backup from the selected account. Please check your internet connection and that a content backup was previously created with the selected account.</string>
+    <string name="cmd_unable_to_find_backup_title">Unable to Find Backup</string>
+    <string name="cmd_unable_to_find_backup_body">No backup was found on the selected account. Please check your internet connection and that a content backup was previously created with the selected account.</string>
+    <string name="cmd_unable_to_create_backup_title">Unable to Create Backup</string>
+    <string name="cmd_unable_to_create_backup_body">It was not possible to create a backup on the selected account. Please check your internet connection and that there is sufficient space available on the selected account.</string>
+
+    <string name="cmd_unexpected_fatal_error_title">An Error Has Occured</string>
+    <string name="cmd_unexpected_fatal_error_body">It was not possible to complete the operation due to an unexpected error. Please check your internet connection and try again.</string>
+
+    <string name="ept_select_content_text">\nSelect content to Transfer</string>
+    <string name="ept_select_content_text_backup">\nSelect content to Back Up</string>
+    <string name="ept_select_content_text_restore">\nSelect content to Restore</string>
+    <string name="cmd_select_content_to_back_up">Select the required data then touch &quot;Next&quot; to back it up to your account.</string>
+    <string name="cmd_select_content_to_restore">Select the required data then touch &quot;Next&quot; to restore it to this device.</string>
+
+    <string name="cmd_no_sd_card_title">No SD Card</string>
+    <string name="cmd_no_sd_card_body">No SD card was detected. Ensure that a formatted SD card is inserted into this device and try again.</string>
+
+    <string name="cmd_no_sd_card_backup_title">Unable to Find Backup</string>
+    <string name="cmd_no_sd_card_backup_body">No backup was found on the SD card.</string>
+
+    <string name="cmd_insufficient_sd_card_space_title">Insufficient Space</string>
+    <string name="cmd_insufficient_sd_card_space_body">There is not enough space on the SD card to back up the selected data.</string>
+    <string name="cmd_insufficient_google_drive_space_title">Insufficient Space</string>
+    <string name="cmd_insufficient_google_drive_space_body">There is not enough space on Google Drive to back up the selected data.</string>
+
+    <string name="cmd_sd_card_backup_already_exists_title">Already Exists</string>
+    <string name="cmd_sd_card_backup_already_exists_body">A backup already exists on this SD card. Delete the old backup and then try again.</string>
+
+    <string name="ept_finding_files">Finding files</string>
+    <string name="ept_checking_remote_storage_space">Calculating required space</string>
+
+
+    <!-- Test banner -->
+    <!--
+<string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+-->
+
+    <!-- Real banner -->
+    <string name="banner_ad_unit_id">ca-app-pub-1730626111507220/9058868399</string>
+
+
+    <string name="cmd_old_or_new_device_text">Is this your old or new device?</string>
+    <string name="cmd_old_device_button">This is old device</string>
+    <string name="cmd_new_device_button">This is new device</string>
+
+    <string name="cmd_other_device_type_text">Is your other device an Android or Apple device?</string>
+    <string name="cmd_other_device_type_ios_button">Apple Device</string>
+    <string name="cmd_other_device_type_android_button">Android Device</string>
+
+    <string name="cmd_scan_qr_code_text">Continue on your other device until it displays the QR Code. When the QR Code is displayed on your other device, scan it with the camera below</string>
+    <string name="cmd_display_qr_code_text">Continue on your other device until you are prompted to scan the QR code below:</string>
+    <string name="cmd_display_scan_qr_code_text">Place the QR Code inside the viewfinder to scan it</string>
+
+    <string name="cmd_wifi_network_name_text">Wi-Fi Network Name: </string>
+    <string name="cmd_wifi_network_passphrase_text">Wi-Fi Network Password: </string>
+
+    <string name="ept_creating_network_title">Creating Network</string>
+    <string name="ept_creating_network_text">Please wait while this device creates a wireless network. This may take a few minutes.</string>
+    <string name="ept_connecting_to_network_title">Connecting To Network</string>
+    <string name="ept_connecting_to_network_text">Please wait while this device connects to the wireless network. This may take a few minutes.</string>
+
+    <string name="ept_incorrect_passcode_title">Incorrect PIN</string>
+    <string name="ept_incorrect_passcode_text">The PIN was not entered correctly. Restart the app on both devices and try again.</string>
+
+    <string name="ept_wifi_is_off_title">Wi-Fi</string>
+    <string name="ept_wifi_is_off_text">Wi-Fi is switched off on this device. Go to the settings app, switch Wi-Fi on and try again.</string>
+
+    <string name="ept_cant_connect_to_network_title">Connection Error</string>
+    <string name="ept_cant_connect_to_network_text">It was not possible to connect to the other device.</string>
+
+    <string name="ept_retransfer_previous_content_dialog_text">You have previously transferred data to the selected device. Do you want to skip the previously transferred data?</string>
+
+    <string name="ept_transfer_again">Transfer It Again</string>>
+    <string name="ept_skip_it">Skip It</string>
+
+    <string name="cmd_local_wifi_or_cloud_title">Select other device type</string>
+    <string name="cmd_data_back_up_title">Content Transfer</string>
+    <string name="cmd_local_wifi_or_cloud_title_Scan_QRcode">Scan QR Code</string>
+    <string name="display_barcode_to_scan">Scan QR Code</string>
+    <string name="transferring_data">Transferring Data</string>
+
+
+    <string name="cmd_ios_qr_code_info_1">After scanning the bar code, go to “Settings” on your other device and connect to the following network:</string>
+    <string name="cmd_ios_qr_code_info_2">After you have connected to the above network, return to the app on your other device</string>
+    <string name="cmd_ios_qr_code_info_3">Go to “Settings” on your other device and connect to the following network:</string>
+
+    <string name="cmd_wifi_lan_or_direct">Select an option depending on how you want to transfer your data:</string>
+
+    <string name="cmd_transfer_over_wifi_lan_button">Transfer over home WiFi network</string>
+    <string name="cmd_transfer_over_wifi_direct_button">Transfer directly without a WiFi network</string>
+
+    <string name="ept_connecting_to_device_title">Connecting</string>>
+    <string name="ept_connecting_to_device_text">Connecting to your other device</string>
+
+    <string name="checking_pin_title"></string>
+    <string name="checking_pin_text">Confirming PIN</string>
+
+    <string name="ept_incorrect_pin">The PIN could not be confirmed. Please try again.</string>
+    <string name="title_activity_dummy_main">DummyMainActivity</string>
+
+    <string name="ept_option_to_close_text">Do you want to cancel the transfer?</string>
+    <string name="ept_option_to_close_confirm_text">Cancel the transfer</string>
+    <string name="ept_option_to_close_reject_text">Don’t cancel</string>
+
+    <string name="ept_option_to_force_close_text">Do you want to cancel the data transfer and exit the app?</string>
+
+    <string name="ept_page_title_default">Content Transfer</string>
+    <string name="ept_page_title_content_transfer">Content Transfer</string>
+    <string name="ept_page_title_confirm_pin">Confirm PIN</string>
+    <string name="ept_page_title_select_content">Select Content</string>
+    <string name="ept_page_title_progress">Transferring Data</string>
+    <string name="ept_page_title_complete">Transfer Complete</string>
+    <string name="ept_page_title_select_device">Select Device</string>
+    <string name="ept_page_title_scan_barcode">Scan QR code</string>
+    <string name="ept_page_title_backup_or_restore">Google Drive Options</string>
+    <string name="ept_page_title_old_new">Select old or new device</string>
+    <string name="ept_page_title_summary">Transfer summary</string>
+
+
+    <string name="ept_keep_app_open_warning">Please ensure to keep the app open on both devices until the transfer is complete. If doing a full content transfer, we recommend plugging your devices into a power source</string>
+
+
+    <string name="storeid_message">Please enter Store ID</string>
+    <string name="terms_and_condition_dialog_header">Terms and Conditions</string>
+    <string name="terms_and_condition_dialog_header_acknowledge">Please acknowledge the terms and conditions below to continue.</string>
+    <string name="wds_terms_and_conditions_text"> By downloading and using the ORU Content Transfer app, these terms will automatically apply to you. Please make sure therefore that you read them carefully before using the app. Please be aware that you cannot send it on to anyone else, and you\'re not allowed to copy, or modify the app, any part of the app, or our trademarks, in any way. You\'re not allowed to attempt to extract the source code of the app, you also shouldn\'t try to translate the app or make derivative versions. The app itself, and all the trademarks, copyright, database rights and intellectual property rights related to it, still belong to ORU Content Transfer.</string>
+    <string name="button_i_agree">I Agree</string>
+    <string name="button_i_disagree">I Disagree</string>
+    <string name="connecting_to_server">Connecting to server</string>
+    <string name="wds_please_wait">Please wait a moment...</string>
+    <string name="estimating_pleasewait">Estimating the data size \nand transfer time.\nPlease wait..</string>
+    <string name="supporting_check">Checking Device support...</string>
+    <string name="not_supported_device">This device is not certified and may not transfer successfully</string>
+    <string name="wds_alert">Caution</string>
+    <string name="pairing_devices">Pairing devices please wait.....</string>
+    <string name="select_storeid">Please Select Store ID</string>
+    <string name="oldornewdevice">Select Old or New Device</string>
+
+    <string name="uniqueTransactionId">Transaction ID : </string>
+    <string name="qr_code_scan_message">Place the QR Code inside the viewfinder to scan it</string>
+
+    <string name="generating_summary_title">Transaction Completed</string>
+    <string name="generating_summary_description">Transaction is complete. Please wait while we generate transfer summary...</string>
+    <string name="processing">Processing</string>
+    <string name="sending_data">Sending Data...</string>
+    <string name="receiving_data">Receiving Data...</string>
+    <string name="location_not_granted">* Location Access Not granted</string>
+    <string name="invalid_storeid">* Invalid Store id</string>
+    <string name="location_validation_failed">* Unable to verify Location</string>
+    <string name="unbale_to_get_location">* Unable to fetch Location</string>
+    <string name="proceed_anyway">Proceed Anyway</string>
+    <string name="wds_cancel">Cancel</string>
+    <string name="enter_storeid">Please Enter Store Id</string>
+    <string name="no_internet">Internet connection not available on the device.</string>
+
+    <string name="alert_oops">Connection Lost</string>
+    <string name="migration_interrupted">Connection lost between devices. Please close the applications and try again.</string>
+    <!--    <string name="connection_lost_msg">Sorry something went wrong with the transfer. Please click OK and Restart.</string>-->
+    <string name="connection_lost_msg">Sorry something went wrong. Please click CONTINUE to keep running the Transfer or CLOSE to Stop the transfer.</string>
+
+    <string name="transfer_interrupted_title">Transfer Interrupted</string>
+    <string name="transfer_interrupted_message">Transfer has been interrupted in another device. You may now close the app and retry.</string>
+    <string name="transfer_interrupted_action">Close</string>
+
+    <string name="language_english">English</string>
+    <string name="language_polish">Polski</string>
+    <string name="language_french">Français</string>
+    <string name="language_slovak">Slovak</string>
+    <string name="language_spanish">Español</string>
+    <string name="language_portuguese">Portugues</string>
+
+    <string name="hour">hr</string>
+    <string name="min">min</string>
+    <string name="sec">sec</string>
+    <string name="space_on_destination">Space needed on Destination</string>
+    <string name="space_needed_on_destination">Space needed: {0}, Available on destination:</string>
+    <string name="insufficient_space">Insufficient Space</string>
+    <string name="enter_store_id">Enter Store ID</string>
+    <string name="unable_to_fetch_location">* Unable to fetch location</string>
+    <string name="submit">Submit</string>
+    <string name="device_disconnected">Device Disconnected!</string>
+    <string name="device_disconnection_message">Device Disconnected. Continue to resume session</string>
+    <string name="source_device_disconnection_message">Source Device Disconnected. Continue to resume session</string>
+    <string name="destination_device_disconnection_message">Destination Device Disconnected. Continue to resume session</string>
+    <string name="cancelling_trasaction">Cancelling...</string>
+
+    <string name="msg_permission_title">Permission Denied</string>
+    <string name="msg_permission_description">Message permission was not granted, messages will not be transferred.</string>
+    <string name="msg_permission_yes">Grant Permission</string>
+    <string name="msg_permission_no">Ignore</string>
+    <string name="no_network">No Internet</string>
+    <string name="no_internet_message">Internet connection is not available on the device. Please connect to a network and try again.</string>
+    <string name="wds_try_again">Retry</string>
+
+    <string name="install_apps">Install Apps</string>
+
+
+    <!-- Menu items-->
+    <string name="menu_about">About</string>
+    <string name="menu_prouct">Product</string>
+    <string name="menu_lanugages">Languages</string>
+    <string name="menu_help">Help</string>
+
+
+    <!-- FONT FAIIMLY -->
+    <declare-styleable name="customfont">
+        <attr name="android:fontFamily" />
+        <attr name="android:textStyle" />
+    </declare-styleable>
+
+    <!-- Font Names in Assets -->
+    <!-- Font Names in Assets -->
+    <string name="font_light">roboto_light.ttf</string>
+    <string name="font_regular">roboto_regular.ttf</string>
+    <string name="font_bold">roboto_bold.ttf</string>
+    <string name="font_medium">roboto_medium.ttf</string>
+    <string name="font_thin">roboto_thin.ttf</string>
+
+    <string name="text_new">NEW</string>
+    <string name="text_old">OLD</string>
+    <string name="text_source">Source</string>
+    <string name="text_destination">Destination</string>
+    <string name="text_android">ANDROID</string>
+    <string name="text_ios">IOS</string>
+    <string name="old_or_new_title">Is this the old or new device?</string>
+    <string name="source_or_destination_title">Is this the Source or Destination device?</string>
+    <string name="other_device_type_title">What is the other device type?</string>
+    <string name="accept">Accept</string>
+    <string name="welcome_screen_title">Welcome to ORU Content Transfer</string>
+    <string name="lets_get_started">Let\'s get started!</string>
+    <string name="elapsed_time">Elapsed time : </string>
+    <string name="estimation">Estimation : </string>
+    <string name="estiamated_transfer_time">Estimated transfer time : </string>
+    <string name="estimated_transfer_time_suggestion">Actual transfer times may vary based on the specific content in your phone.</string>
+    <string name="transfer_completed_in">Transfer completed in : </string>
+    <string name="waiting_connection">Waiting for connection</string>
+    <string name="unable_to_connect">Unable to Connect</string>
+    <string name="grant_permissions">Please <font color="#1576F9"><u>click here</u></font> to grant permissions</string>
+    <string name="permissions_messages">Below data types will not be transferred because permissions were not granted</string>
+    <string name="insufficient_space_on_dest">* Insufficient space on Destination</string>
+    <string name="str_string">Start</string>
+    <string name="switch_scan_source_msg">Pairing needs to be reinitiated, click on \"Restart Pairing\" on the Destination device.</string>
+    <string name="switch_scan_destination_msg">Are you sure you want to \"Restart Pairing\" ?</string>
+    <string name="str_continue">Continue</string>
+    <string name="str_google_services_update">* Google play services require update</string>
+    <string name="str_google_services_problem">* Some problem with Google play services</string>
+    <string name="str_txt_messages_only">Text messages only</string>
+    <string name="read_more">Read the Sprint\'s <a href="http://www.sprint.com/privacypolicy">Privacy Policy</a>.</string>
+    <string name="build_release_date">Build release date</string>
+    <string name="version_number">Version number</string>
+    <string name="app_created">This app was created for Sprint by ORU, Inc.</string>
+    <string name="comment_box">Please leave a comment about the app.</string>
+    <string name="about">About</string>
+    <string name="text_message">Sprint Content Transfer quickly and easily allows you to transfer the data between devices.</string>
+    <string name="rate_app">Rate this app</string>
+    <string name="comment">Comment</string>
+    <string name="selecting_submit_message">By selecting submit, you agree that Sprint can collect information about your device.</string>
+    <string name="str_switch_scan">RESTART PAIRING \n(ONLY if instructed by Source device)</string>
+    <string name="str_yes">YES</string>
+    <string name="str_no">NO</string>
+    <string name="pairing_in_progress">Pairing in progress</string>
+    <string name="quick_transfer_tips">Quick transfer tips</string>
+    <string name="quick_transfer_steps">
+        1. Please keep both phones within 10 feet of each other at all times.
+        <!--\n\n2. Make sure your battery life is greater than 50% before you start your transfer.-->
+        \n\n2. During transfer, keep the app open on both devices and avoid using the phones.</string>
+    <string name="session_cancelled">Session cancelled</string>
+    <string name="session_cancelled_text">Content Transfer session has been cancelled. Please restart this session to transfer all your data from Source to Destination device.</string>
+    <string name="str_wrong_selection">Wrong device selected.</string>
+    <string-array name="settingsInfo">
+        <item>Screen timeout</item>
+        <item>Brightness</item>
+        <item>Call settings (Ringer type and volume)</item>
+        <item>Wallpaper</item>
+    </string-array>
+
+    <string name="title_endpage">Please remember to complete the following manual steps.</string>
+
+    <string name="text_suggestionSource">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the Content Transfer app from this device.
+    </string>
+
+    <string name="text_suggestionDest">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the ORU Content Transfer app from this device.
+              \n\n3.Remember to factory reset the Source device if needed.
+    </string>
+    <string name="text_suggestionDest2">1.Forget the Store Wi-Fi network on this device.
+              \n\n2.Uninstall the ORU Content Transfer app from this device.
+              \n\n3.Remember to factory reset the Source device if needed.
+              \n\n4.On Exit, when prompted, please select Messaging app as the default SMS application.
+    </string>
+    <string name="faulty_camera_suggestion">In case of problems with scanning.Click here</string>
+    <string name="copy">Copy</string>
+    <string name="copied">Copied</string>
+    <string name="str_go_to_settings">Go to settings</string>
+    <string name="copy_connect_network">Copy the password and connect to below network.</string>
+    <string name="wds_str_name">Name : </string>
+    <string name="str_password">Password : </string>
+    <string name="str_enterpin">Please enter the pin displaying on other device.</string>
+    <string name="str_enter_pin_hint">Enter pin</string>
+    <string name="read_more_ts_and_cs_text">Read more</string>
+    <string name="terms_and_conditions_text_more"></string>
+    <string name="wlan_suggestion">Please connect to {} and then click on retry.</string>
+    <string name="wrong_combination">Currently iOS-BB combination is not supported.</string>
+    <string name="low_battery">Low Battery</string>
+    <string name="battery_level">Battery level is : </string>
+    <string name="low_battery_text_message">\n\nPlease plug-in your device to a power source</string>
+    <string name="str_permission_go_to_settings">Go to settings and enable the permissions.</string>
+    <string name="str_write_permission"><![CDATA[Allow <b>ORU Content Transfer</b> to access device settings.<br/>(Wallpaper, Screen timeout, Brightness, Volume)]]></string>
+    <string name="str_allow">Allow</string>
+    <string name="str_deny">Deny</string>
+    <string name="str_data_types_not_transferred">Below data types will not be transferred because permissions were not granted</string>
+    <string name="str_grant_permission">Please click here to grant the permission</string>
+    <string name="str_resume_transaction">Resume transaction?</string>
+    <string name="str_start_again">START AGAIN</string>
+    <string name="str_resume">RESUME</string>
+    <string name="str_skip">SKIP</string>
+    <string name="str_restart_transaction">Your last transaction was terminated.
+        \nDo you want to resume the old transaction or start a new one?</string>
+    <string name="str_rate_now">Rate Now</string>
+    <string name="str_not_now">Not Now</string>
+    <string name="str_rateapp_msg">Enjoying ORU Content Transfer ?</string>
+    <string name="str_tap_a_star">Tap a star to rate it on the Play Store.</string>
+    <string name="str_enter_emp_id">Enter Employee ID</string>
+    <string name="str_enter_bscs_code">Enter your 5-digit BSCS code</string>
+    <string name="str_pls_enter_emp_id">Please enter employee id.</string>
+    <string name="invalid_repid">* Invalid employee id</string>
+    <string name="str_unable_to_transfer">Unable to transfer {0} to this device</string>
+    <string name="str_reconnect_network">Please Go to Settings and reconnect to {}.</string>
+    <string name="large_text_msg_maynot_transfer">* Large text messages with attached photos/videos or more than 120 characters may not be transferred for some phone models.</string>
+    <string name="remaining_time">Remaining time : </string>
+    <string name="str_transactionid_empty">Transaction ID cannot be fetched due to server error</string>
+    <string name="app_running_in_background">Please bring the app to the foreground</string>
+    <string name="pin">PIN</string>
+    <string name="cancel_transfer">Cancel transfer</string>
+    <string name="pairing">Pairing</string>
+    <string name="str_connected">Connected</string>
+    <string name="select_messages">Select messages to transfer</string>
+    <string name="select_messages_instruction">Selecting more messages will increase transfer time and reduce device performance.</string>
+    <string name="transfer">Transfer</string>
+
+    <string-array name="message_setting_Array">
+        <item name="last_30_days"><![CDATA[<b>Last 30 days</b><br />]]> %s messages</item>
+        <item name="last_3_months"><![CDATA[<b>Last 3 months\n</b><br />]]> %s messages</item>
+        <item name="last_6_months"><![CDATA[<b>Last 6 months</b><br />]]> %s messages</item>
+        <item name="last_12_months"><![CDATA[<b>Last 12 months</b><br />]]> %s messages</item>
+        <item name="last_2_years"><![CDATA[<b>Last 2 years</b><br />]]> %s messages</item>
+        <item name="all_messages"><![CDATA[<b>All</b><br />]]> %s messages</item>
+    </string-array>
+    <string name="customize"><![CDATA[<b>Customize</b>]]></string>
+    <string name="no">No</string>
+    <string name="after">After</string>
+    <string name="enter_date">Enter date</string>
+    <string name="select_proper_date">Please select a date</string>
+    <string name="p2p_connection_lost_msg">Connection lost between devices, Please click on retry to continue.</string>
+    <string name="hotspot_permission_message">In order to transfer your data, please allow this app to change the Wi-Fi- Hotspot setting.</string>
+    <string name="sms_info">For range, Click</string>
+    <string name="click_here">click here</string>
+    <string name="reconnecting_message">Reconnecting. Please wait....</string>
+    <string name="store_identification">Store Identification</string>
+    <string name="select_storeid_list_msg">Select your Store ID from the list below</string>
+    <string name="ept_timeout">Time out</string>
+    <string name="ept_server_response">Server request timed out.Please try again.</string>
+    <string name="unable_to_resume">Unable to resume the transaction, Please restart again..</string>
+
+
+    <string name="title_activity_login">Login</string>
+    <string name="str_storeid">StoreId</string>
+    <string name="str_username">Employee ID</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Login</string>
+    <string name="error_invalid_username">This Employee ID is invalid</string>
+    <string name="error_invalid_password">This password is too short</string>
+    <string name="error_incorrect_password">This password is incorrect</string>
+    <string name="error_field_required">This field is required</string>
+    <string name="str_to">to</string>
+    <string name="title_activity_report_aproblem">Report a problem</string>
+
+    <string name="wds_phone_number">Phone Number<font color="#d62828">*</font></string>
+    <string name="email_id">Email ID<font color="#d62828">*</font></string>
+    <string name="description">Description<font color="#d62828">*</font></string>
+    <string name="policy_content">Error logs(without any personal information)would be included in this report.For more information,please review the <a href="http://www.google.com">Content Protection Policy</a>.</string>
+    <string name="required">*required</string>
+    <string name="required_fields">Please enter all the required fields</string>
+    <string name="descrption_hint">Please include a detailed description of the problem</string>
+    <string name="valid_email">Please enter a valid Email address</string>
+    <string name="reportproblem_title">Problem reported successfully</string>
+    <string name="reportproblem_error_title">Problem Reporting Failed</string>
+    <string name="reportproblem_message">The reported problem has been successfully sent to our Support team</string>
+    <string name="reportproblem_error_message">The Problem reporting has failed. Please re-submit the form again</string>
+    <string name="error_field_storeid_required">Store ID is required</string>
+    <string name="error_field_userid_required">Employee ID is required</string>
+    <string name="error_field_password_required">Password is required</string>
+    <string name="error_invalid_storeid">Incorrect Store ID</string>
+    <string name="error_invalid_credentials">Incorrect Employee ID or Password</string>
+    <string name="press_again_to_exit">Press again to exit.</string>
+    <string name="killed_crashed_msg">Sorry something went wrong with the transfer. Please click OK and Restart.</string>
+    <string name="transfer_cancelled">Transfer Cancelled</string>
+    <string name="transfer_cancelled_msg">Please click OK and Restart if required.</string>
+    <string name="str_terms_condition">Terms &amp; Conditions</string>
+    <string name="str_privacy_statement">Privacy Statement</string>
+    <string name="permissions_policy_header">Welcome to ORU Content Transfer</string>
+    <string name="permissions_policy_body">
+    <![CDATA[
+ORU Content Transfer lets you transfer data from your old device to a new device. During use, this app needs the following permissions to provide data transfer services.<br>
+<br><strong>Call logs</strong>
+<br>Used to transfer call history<br>
+<br><strong>Contacts</strong>
+<br>Used to transfer contacts<br>
+<br><strong>Calendar</strong>
+<br>Used to transfer calendar data<br>
+<br><strong>SMS</strong>
+<br>Used to transfer SMS data<br>
+<br><strong>Storage</strong>
+<br>Used to transfer images, media and files<br>
+<br><strong>Settings</strong>
+<br> Used to transfer Settings<br>
+<br><strong>Camera</strong>
+<br>Used for reading QR Code<br>
+<br><strong>Location</strong>
+<br>Used for obtaining device&rsquo;s location<br>
+<br>Device information such as IMEI, device model, system language, OS Version, screen resolution, and ROM version are also collected.<br>
+<br>You can exit this app to stop the information collected and upload activities described above.<br>
+<br>By tapping I AGREE, you acknowledge and agree to the above content</p>
+    ]]>
+    </string>
+    <string name="privacy_policy">
+     <![CDATA[
+      <strong>ORU Content Transfer PRIVACY POLICY</strong>
+    <p>
+        ORU Inc., creator of ORU Content Transfer, recognizes that your privacy is
+        important and that your personal information must be protected. This
+        privacy policy describes the information that we collect from you, how we
+        use it and what we do to protect it.
+    </p>
+    <p>
+        Please read through this policy carefully and periodically. Please contact
+        us at support@ORU.com if you have any questions about the contents of
+        this policy.
+    </p>
+    <p>
+        <strong>
+            The information we collect is necessary for providing our services.
+        </strong>
+    </p>
+    <p>
+        We do not collect any information from or about you that does not have to
+        do with the services provided by our application. Any information that we
+        collect from you is stored as only being connected to your account unless
+        it is otherwise noted on the application. We take your privacy seriously
+        and will only use and disclose information if they align with the terms
+        outlined below.
+    </p>
+    <p>
+        <strong>We do not collect personal information.</strong>
+    </p>
+    <p>
+        Under no circumstances do we collect and store personal information from or
+        about you. Personal information is any information that identifies you or
+        another person, such as your first and last name, physical addresses, email
+        addresses, telephone numbers, fax numbers, or any information that is
+        specific to you that is stored within your device. Our data transfer
+        feature only stores data from your old device onto the new device that you
+        are transferring the information over to. Throughout the entire process,
+        the ORU Content Transfer server is not accessed so that we do not see your personal
+        information. In other words, you can be assured that there is no way for us
+        to collect your information if you use our application to copy the data
+        from one phone to another.
+    </p>
+    <p>
+        <strong>We only collect non-personal information.</strong>
+    </p>
+    <p>
+        In order to ensure that your experience while using our applications is
+        comfortable, we collect non-personal information to better understand user
+        behavior, discover problems with the applications, and improve our
+        products. Non-personal information is data that does not permit direct
+        association with any specific individual. Examples of non-personal
+        information are: device ID, phone IMEI number, phone model, rom, phone
+        operator, location, operation system, transfer logs, etc.
+    </p>
+    <p>
+        <strong>
+            Permissions required by our applications all have a valid reason.
+        </strong>
+    </p>
+    <p>
+        Our application requests for some access permissions that are deemed as
+        access to sensitive and dangerous data on Android devices. You can find
+        detailed explanations for why we request each permission in the Appendix
+        section of this policy.
+    </p>
+    <p>
+        The permissions requested for our applications are:
+    </p>
+    <p>
+        Take pictures and videos (CAMERA)
+    </p>
+    <p>
+        Read your contacts (READ_CONTACTS)
+    </p>
+    <p>
+        Modify your contacts (WRITE_CONTACTS)
+    </p>
+    <p>
+        Read call log (READ_CALL_LOG)
+    </p>
+    <p>
+        Write call log (WRITE_CALL_LOG)
+    </p>
+    <p>
+        Read calendar (READ_CALENDAR)
+    </p>
+    <p>
+        Write calendar (WRITE_CALENDAR)
+    </p>
+    <p>
+        Read your text messages (READ_SMS)
+    </p>
+    <p>
+        Read the contents of your storage (READ_EXTERNAL_STORAGE)
+    </p>
+    <p>
+        Modify or delete the contents of your storage (WRITE_ EXTERNAL_STORAGE)
+    </p>
+    <p>
+        Write Settings (WRITE_SETTINGS)
+    </p>
+    <p>
+        <strong>Security is important to us.</strong>
+    </p>
+    <p>
+        ORU Content Transfer is very concerned about safeguarding the confidentiality of your
+        information. As stated before, we do not collect personal information. In
+        order to protect the non-personal information, we collect from unauthorized
+        access and use, we employ administrative, physical and electronic measures.
+        ORU Content Transfer is well-equipped to handle personal or sensitive user data
+        securely, including transmitting the data to backend server using modern
+        cryptography over HTTPS.
+    </p>
+    <p>
+        Please be aware that the security measures that we take to protect your
+        information are not absolutely guaranteed to counter unauthorized access or
+        use of your Non-Personal Information.
+    </p>
+    <p>
+        <strong>Children</strong>
+    </p>
+    <p>
+        We do not provide service focus on Children. If you are under 13, please
+        ask permission from your parent or guardian before using our application.
+        Parental supervision is advised.
+    </p>
+    <p>
+        <strong>Contact Us</strong>
+    </p>
+    <p>
+        If you have any questions or comments about this Policy or our privacy
+        practices, or to report any violations of the Policy or abuse of the
+        Services or the Site, please contact us at support@ORU.com
+    </p>
+    <p>
+        <strong>We will update this privacy policy to ensure your rights.</strong>
+    </p>
+    <p>
+        To be ensure the quality of your experience and your security, we will be
+        updating our privacy policy as needed. Any changes made to this policy will
+        not reduce your rights in anyway. If the changes to this policy are
+        significant, a notification will be shown on the application. However,
+        smaller changes may be made so please review this policy periodically. If
+        you do not agree to any changes to this policy, you should immediately stop
+        using any of the services we provide and contact us. Your continued use of
+        our services after changes to this Policy have been made mean that you have
+        accepted the terms of the revised Policy. Please note that none of our
+        employees or agents has the authority to violate any of the rights that
+        have been laid out in this policy.
+    </p>
+    <p>
+        <strong>Appendix</strong>
+    </p>
+    <p>
+        <strong>
+            Privacy-relevant Android permissions requested by our application
+            CAMERA
+        </strong>
+    </p>
+    <p>
+        Used for permissions that are associated with accessing camera or capturing
+        images and/or videos from the device.
+    </p>
+    <p>
+        This permission allows this application to support the following feature
+        related to phone camera:
+    </p>
+    <p>
+        1) Scan QR Code for establishing a wireless connection between two devices
+        faster because this method can bypass the manual input of wireless
+        password.
+    </p>
+    <p>
+        <strong>READ_CONTACTS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read the user’s contacts
+        data. This permission allows the application to transfer telephone contacts
+        as part of the Contacts transfer feature. The purpose is to retrieve the
+        user’s contacts (e.g. phone number, contact name, email, etc) from an old
+        phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>WRITE_CONTACTS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write the user’s contacts
+        data. This permission allows the application to transfer telephone contacts
+        as part of the Contacts transfer feature. The purpose is to write user’s
+        contacts (e.g. phone number, contact name, email, etc), that are received
+        from an old phone to the designated contacts storage on a new phone.
+    </p>
+    <p>
+        <strong>READ_CALL_LOG</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read the user\'s call log.
+    </p>
+    <p>
+        This permission allows the application to transfer telephone call log as
+        part of the Phone Replicate feature. The purpose is to retrieve user\'s call
+        log from an old phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>WRITE_CALL_LOG</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write (but not read) the
+        user\'s call log data. This permission allows the application to transfer
+        telephone call log as part of the Phone Replicate feature. The purpose is
+        to write user’s call log (e.g. phone number, contact name, calling time,
+        etc), that are received from an old phone, to the designated call log
+        storage on a new phone.
+    </p>
+    <p>
+        <strong>READ_CALENDARS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read the user\'s calendar.
+        This permission allows the application to transfer calendar as part of the
+        calendar transfer feature. The purpose is to retrieve user’s calendar from
+        an old phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>WRITE_CALENDARS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write (but not read) the
+        user\'s calendar data. This permission allows the application to transfer
+        telephone call log as part of the calendar transfer feature. The purpose is
+        to write user’s calendar, that is retrieved from an old phone, to the
+        designated calendar storage on a new phone.<strong></strong>
+    </p>
+<p>
+        <strong>READ_SMS</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read SMS messages. This
+        permission allows the application to transfer SMS messages as part of the
+        Phone Replicate feature. The purpose is to retrieve user’s SMS messages
+        from an old phone and transfer over to and save on a new phone.
+    </p>
+    <p>
+        <strong>READ_EXTERNAL_STORAGE</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to read from external
+        storage. This permission allows the application to access any files on the
+        external storage, e.g. SD card, as part of ORU Content Transfer\'s core feature of
+        transferring files. The user can select files to be transferred and send
+        over the wireless connection created by the application.
+    </p>
+    <p>
+        <strong>WRITE_EXTERNAL_STORAGE</strong>
+    </p>
+    <p>
+        Used for permissions that allow an application to write to external
+        storage. This permission allows the application to access the external
+        storage, e.g. SD card, as part of ORU Content Transfer’s core feature of transferring
+        files. The user can choose to save received files that are transferred over
+        the wireless connection into internal storage or external storage. The user
+        must select to save to external storage from in-app settings.
+    </p>
+    <p>
+        <strong>WRITE_SETTINGS</strong>
+    </p>
+    <p>
+        Used for permissions that allow the app to copy Settings. The purpose is to copy user settings, which are retrieved from an old phone, to the Designated Settings on a new phone.
+    </p>
+        ]]>
+    </string>
+    <string name="select_transfer_types">Select transfer type</string>
+    <string name="backup_inprogress">Backing up data</string>
+    <string name="usb_reconnect_msg">USB Device disconnected. Please reconnect the device and continue.</string>
+    <string name="backup">Backup</string>
+    <string name="restore">Restore</string>
+    <string name="backup_restore_msg">Is this device data Backup or Restore?</string>
+    <string name="data_transfer_modes">Data Transfer Modes</string>
+    <string name="select_mode_msg">Please select your preferable mode of Data Transfer</string>
+    <string name="title_activity_scan_qr_code">QR Scanner</string>
+    <string name="str_alert">Alert</string>
+    <string name="location_permission_required_msg">Please grant Location Permission, as it is required for the app to function.</string>
+    <string name="location_permission_denied_msg">Unable to proceed since Location permission is denied. Please enable it by going to Settings > Apps &amp; Notifications > Select App > Permission > Location and try again.</string>
+    <string name="enter_your_id">Enter your ID</string>44
+    <string name="invalid_id">* Invalid ID</string>
+    <string name="app_description">ORU content transfer allows you to effortlessly and reliably transfer personal mobile device content wirelessly from one device to another.</string>
+    <string name="str_content">Content</string>
+    <string name="str_transfer">Transfer</string>
+    <string name="str_whatsapp_media_exclude_alert">WhatsApp Media (Photos &amp; Videos) will not be transferred to the destination device.</string>
+    <string name="str_sdcard_media_exclude_alert">SD Card data will not be transferred to the destination device.</string>
+    <string name="str_whatsapp_media_include_alert">WhatsApp Media (Photos &amp; Videos) will also be transferred to the destination device.</string>
+    <string name="str_sdcard_media_include_alert">SD Card data will also be transferred to the destination device.</string>
+    <string name="str_whatsapp_media">WhatsApp Media</string>
+    <string name="str_sdcard">SD Card</string>
+    <!--Data Wipe-->
+    <string name="proceed_to_wipe_title">Proceed to Data Wipe?</string>
+    <string name="proceed_to_wipe_msg">Do you want to erase all content and setting on this device?</string>
+
+    <!--Account Removal-->
+    <string name="google_ac_remove_head">Please follow the steps below to remove Google Account from the device.</string>
+    <string name="device_lock_remove_head">Please follow the steps below to remove Android device PIN/Pattern/Password lock.</string>
+    <string name="mdm_profile_remove_head">Please follow the steps below to remove MDM profile from device.</string>
+    <string name="google_ac_remove_instructions">1. Go to <font fgcolor='#009bdf'>Settings</font> \n\n2. Tap on <font fgcolor='#009bdf'>Accounts</font> \n\n3. Select <font fgcolor='#009bdf'>Gmail Account</font> \n\n4. Tap on <font fgcolor='#009bdf'>REMOVE ACCOUNT</font> button \n\n5. On the pop-up tap on <font fgcolor='#009bdf'>REMOVE ACCOUNT</font> button</string>
+    <string name="device_lock_remove_instructions">1. Go to <font fgcolor='#009bdf'>Settings</font> \n\n2. Tap on <font fgcolor='#009bdf'>Security &amp; Location</font> \n\n3. Select <font fgcolor='#009bdf'>Screen Lock</font> \n\n4. Enter the PIN, Pattern or Password associated with the device \n\n5. Select <font fgcolor='#009bdf'>None</font> \n\n6. On the pop-up, tap on <font fgcolor='#009bdf'>YES</font>, and then <font fgcolor='#009bdf'>REMOVE</font> button</string>
+    <string name="remove_google_account">Remove Google Account</string>
+    <string name="remove_device_lock">Remove Device Lock</string>
+    <string name="remove_pin_lock">Remove PIN Lock</string>
+    <string name="want_to_return_device">Device needs to be return to the customer?</string>
+    <string name="thank_you">Thank You</string>
+
+    <!-- Location Popup -->
+    <string name="location_turn_on_msg">To continue, turn on Device Location. Click <b>OK</b>, and toggle <b>Access my location</b> ON.</string>
+    <string name="location_must_turn_on_msg">To continue you must turn on Device Location.</string>
+    <string name="telifonica_uk_terms_conditions">We need you to agree that Telefónica UK Ltd does not accept any liability for any loss of personal data including, but not limited to Contacts, SMS Content, Account Settings, Multi-media, Photographs &amp; Videos or application / social media settings and or passwords, neither do we accept any liability for any damage caused to the device. Telefónica UK Ltd will also gather anonymous data about your appointment and device for the purpose of improving the service, this will include technical information about health checks and diagnostics, this can include the IMEI of the devices we work on. By signing this document, you give Telefónica UK Ltd permission to share core data and install third party applications on to your device for the purpose of diagnostics, health checks and data transfers, as approved by Telefónica UK Ltd, here necessary. We will not store any personal data on our workstations.\nPlease read our Privacy Statement and Content Policy.</string>
+    <string name="confirm_pin">Confirm your PIN or Pattern</string>
+    <string name="content_policy">Content Policy</string>
+    <string name="permissions_policy_body_tf">
+    <![CDATA[
+ORU Content Transfer lets you transfer data from your old device to a new device. During use, this app needs the following permissions to provide data transfer services.<br>
+<br><strong>Call logs</strong>
+<br>Used to transfer call history<br>
+<br><strong>Contacts</strong>
+<br>Used to transfer contacts<br>
+<br><strong>Calendar</strong>
+<br>Used to transfer calendar data<br>
+<br><strong>SMS</strong>
+<br>Used to transfer SMS data<br>
+<br><strong>Storage</strong>
+<br>Used to transfer images, media and files<br>
+<br><strong>Settings</strong>
+<br> Used to transfer Settings<br>
+<br><strong>Camera</strong>
+<br>Used for reading QR Code<br>
+<br><strong>Location</strong>
+<br>Used for obtaining device&rsquo;s location<br>
+<br>Device information such as IMEI, device model, system language, OS Version, screen resolution, and ROM version are also collected.<br>
+<br>You can exit this app to stop the information collected and upload activities described above.<br>
+    ]]>
+    </string>
+
+    <!-- Customer Satisfaction dialog -->
+    <string name="rate_your_experience">Rate your experience</string>
+    <string name="cust_satisfy_title">Customer Satisfaction</string>
+    <string name="cust_satisfy_msg">Please rate the instore experience service you recieved today</string>
+    <string name="agent_satisfy_title">Movistar Agent Satisfaction</string>
+    <string name="agent_satisfy_msg">Please hand over the device to the Store Agent to assess their experience with the service</string>
+    <string name="reason_for_rating">Reason for dissatisfaction</string>
+    <string-array name="wds_reasons_list">
+        <item>Not happy with the result.</item>
+        <item>Contents hasn\´t been transfered successfully</item>
+        <item>The application has restarted one or more times.</item>
+        <item>The process has not completed successfully</item>
+        <item>Problems downloading the APP.</item>
+        <item>Devices cannot be paired</item>
+        <item>The process didn\'t work on the first attempt</item>
+        <item>The transfer time is too high</item>
+    </string-array>
+
+    <string name="network_msz">Please check your internet connection and try again.</string>
+    <string name="email_summary">Email Summary</string>
+    <string name="back_to_summary">Back to Summary</string>
+    <string name="wds_send_email_summary">Send email</string>
+    <string name="enter_valid_email">Please enter a valid email address</string>
+    <string name="enter_email_address">Enter your email address</string>
+    <string name="plz_enter_email">Please Enter Email Address</string>
+    <string name="sending_email_summary">Sending email summary</string>
+    <string name="email_sent_success">Email sent successfully</string>
+    <string name="saving_summary_image">Saving Summary Image</string>
+    <string name="saved_summary_image">An image of the current diagnostic session result has been saved on the device in Gallery</string>
+    <string name="unable_to_save_denied">Error, unable to save the image, permission denied.</string>
+    <string name="unable_to_save">Error, unable to save the image.</string>
+    <string name="store_email_address">Store Email Address</string>
+    <string name="central_email_address">Central Location Email Address</string>
+
+    <string name="email_summary_statement1">*Customer\'s email address will not be stored.</string>
+    <string name="email_summary_statement2">A copy of the email will be sent to the following addresses:</string>
+    <string name="customer_email_address">Customer Email Address</string>
+    <string name="enter_cust_email_address">Enter customer email address</string>
+    <!-- IMEI Capturing-->
+
+    <string name="imei_steps_heading">Please capture the device IMEI by following the steps below:</string>
+    <string name="imei_read_instructions_10_step_1">1. This is ORU Assistant. It will guide you step-by-step to capture IMEI</string>
+    <string name="imei_read_instructions_10_step_2">2. Press on the Start button and follow ORU Assistant</string>
+    <string name="imei_read_instructions_10_bubble_message">Dial *#06#. You will see IMEI popup. \nPlease wait for the countdown \ntimer to appear</string>
+    <string name="imei_search_time_out">You have not entered the secret code *#06#. You can reprocess the IMEI by clicking on Start button.</string>
+    <string name="permission_show_over_other_apps">Please enable \"Display over other apps\" permission to continue diagnostics.</string>
+    <string name="permission_show_over_other_apps_xiaomi">Please enable below permissions to continue diagnostics \n\n <font fgcolor='#FF8E8E93'>1. Display pop-up windows while running in the background</font> \n <font fgcolor='#FF8E8E93'>2. Display pop-up windows </font></string>
+
+    <string name="imei_capture_title">Capture IMEI</string>
+    <string name="capturing_imei">Capturing IMEI</string>
+    <string name="imei_read_manual_instructions_10"><![CDATA[<div style="text-align: center"><strong>Please capture the device IMEI by following the steps below:</strong></div><br>
+        1. Touch the Start button to open the phone dialer. <br>
+        2. Enter the code *#06#. <br>
+        3. Take a screenshot of IMEI by holding down <font color="#009BDF">Power</font> button and <font color="#009BDF">Volume Down</font> key at the same time. <br>
+        4. Hold them down until you hear an audible click or a screenshot sound. <br>
+        5. Tap <font color="#009BDF">OK</font> on the IMEI popup. <br>
+        6. Press the <font color="#009BDF">Back Key</font>. <br>
+        7. Continue with the Wireless Content Transfer.]]></string>
+
+    <string name="start">Start</string>
+    <string name="imei_capture_success_msg">IMEI was captured successfully.</string>
+    <string name="imei_capture_fail_msg">IMEI capture was  unsuccessfull. \nTap OK to try again.</string>
+    <string name="str_ok">OK</string>
+
+    <string name="turn_off_hotspot_title">Turn Off Mobile HotSpot</string>
+    <string name="turn_off_hotspot_message">Please click on OK to turn off mobile hotspot</string>
+    <string name="turn_on_wifi_title">Turn On WiFi</string>
+    <string name="turn_on_wifi_message">Please click on OK to turn on WiFi</string>
+
+    <string name="str_google_signin_alert_title">Google Account Sign-in for Applications Installation</string>
+
+    <string name="str_google_signin_alert_message">Please sign-in to google account for installing applications from google playstore ...</string>
+
+    <!-- App Installation -->
+    <string name="app_install_applications_title_str">Install Applications</string>
+    <string name="app_install_pending_apps_title_str">Installation \nPending</string>
+    <string name="app_install_failed_apps_title_str">Installation \nFailed</string>
+    <string name="app_install_installed_apps_title_str">Installed \napps</string>
+    <string name="app_install_pending_apps_suggestion_str">Click on Install app icon beside each app to install them on this device.</string>
+    <!--    <string name="app_install_failed_apps_suggestion_str">These apps have failed to install. You can also download and install them using PlayStore by clicking on the icon beside each app.
+\n*This action will require Sign-In to your Google account(if not signed in already)</string> -->
+    <string name="app_install_failed_apps_suggestion_str">Apps which have failed to install can also be downloaded from PlayStore.</string>
+    <string name="app_install_installed_apps_suggestion_str">These apps have been successfully installed on this device.</string>
+    <string name="select_all_apps">Select All</string>
+    <string name="app_install_str">Install</string>
+
+</resources>

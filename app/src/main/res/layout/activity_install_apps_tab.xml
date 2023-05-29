@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.pervacio.wds.custom.appsinstall.AppsInstallTabActivity">
+<!--
+    <include
+        android:id="@+id/custom_toolbar"
+        layout="@layout/custom_shadow_toolbar" />-->
+
+<!--    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@+id/custom_toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:elevation="25dp"
+        android:minHeight="?attr/actionBarSize"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@color/blue"
+        app:tabIndicatorHeight="5dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/textStyle_subheading"
+        app:tabTextColor="@color/thick_grey" />-->
+
+    <!--<com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_below="@+id/custom_toolbar"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp"
+        android:background="@color/white"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:elevation="25dp"
+        android:minHeight="?attr/actionBarSize"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@color/titleBarBackgroundColor"
+        app:tabIndicatorHeight="5dp"
+        app:tabSelectedTextColor="@color/titleBarBackgroundColor"
+        app:tabTextAppearance="@style/TabLayoutStyle"
+        app:tabTextColor="@color/black" />-->
+
+    <!--<com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/custom_toolbar"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:elevation="25dp"
+
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@color/blue"
+        app:tabIndicatorHeight="3dp"
+        app:tabSelectedTextColor="@color/black"
+        app:tabTextAppearance="@style/CustomTextStyle"
+        app:tabTextColor="@color/thick_grey" />-->
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/white"
+        android:clickable="true"
+        android:contextClickable="true"
+        android:minHeight="?attr/actionBarSize"
+        app:tabBackground="@color/white"
+        app:tabIndicatorColor="@color/titleBarBackgroundColor"
+        app:tabIndicatorHeight="6dp"
+        app:tabSelectedTextColor="@color/titleBarBackgroundColor"
+        app:tabTextAppearance="@style/textStyle_heading_tab"
+        app:tabTextColor="@color/black"
+        />
+
+    <FrameLayout
+        android:layout_alignParentBottom="true"
+        android:id="@+id/framelayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/main_bg_gray"
+      >
+
+        <com.pervacio.wds.custom.appsinstall.CustomViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+
+
+            android:background="@color/main_bg_gray"></com.pervacio.wds.custom.appsinstall.CustomViewPager>
+
+    </FrameLayout>
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:layout_above="@+id/tab_layout"
+        android:background="@drawable/bottom_shadow" />
+
+
+
+</LinearLayout>

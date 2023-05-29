@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/imageandtitle"/>
+
+    <TextView
+        android:id="@+id/CloudBackupAndRestoreOptionsText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:textAppearance="@style/BasicText"
+        android:text="@string/cmd_google_drive_options_text" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+ 
+        
+        <Button
+            android:id="@+id/cloudBackupButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@drawable/action_button"
+            android:textAllCaps="false"
+            android:text="@string/cmd_google_drive_backup_button_text" />
+
+        <Button
+            android:id="@+id/cloudRestoreButton"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginLeft="16dp"
+            android:layout_marginRight="16dp"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:background="@drawable/action_button"
+            android:textAllCaps="false"
+            android:text="@string/cmd_google_drive_restore_button_text" />
+        
+
+</LinearLayout>

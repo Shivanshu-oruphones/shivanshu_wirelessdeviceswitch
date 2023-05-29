@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">Sprint Content Transfer</string>
+    <string name="welcome_screen_title">Welcome to Sprint \n Content Transfer</string>
+    <string name="terms_and_conditions_text_more">Sprint Content Transfer is an application you can use to transfer your data from one device to another device.  With Sprint Content Transfer, you can transfer multiple data types, such as contacts, calendar entries, messages, photos, videos, and audio to a second device by providing Sprint Content Transfer access to the device (\"SCT\" or \"SCT Service\").  These SCT Terms and Conditions apply to your use of and access to the SCT Service (\"SCT Terms\"). In addition to the SCT Terms, your use of and access to the SCT Service is governed by Sprint\'s General Terms and Conditions of Service <a href="http://www.sprint.com/termsandconditions">(<b>\"Ts&amp;Cs\"</b>)</a>, as well as any other documents or materials that we provide or refer you to as described in the Ts&amp;Cs (collectively, \"Agreement\").  By using the SCT Service, you are agreeing to or accepting these SCT Terms and you acknowledge that you have read and understand this Agreement and agree to its terms.
+\n\t \t For purposes of interpreting these SCT Terms and the Ts&amp;Cs with respect to the SCT Service, the SCT Service is included in the definition of \"Services\" in the Ts&amp;Cs.  Capitalized terms used and not defined in these SCT Terms are used as defined in the Ts&amp;Cs.
+\n\t \t Sprint may modify the SCT Service, the SCT Terms, and the Ts&amp;Cs at any time in its sole discretion. When and how Sprint will provide you notice of these changes is contained in the Ts&amp;Cs or will otherwise be communicated to you. Your continued use of the SCT Service following any change will constitute your acceptance of and agreement to be bound by the modified Agreement. If you do not agree with the modifications, your sole and exclusive remedy is to stop using the SCT Service.
+ \n \n <b>1.	Mandatory Arbitration.</b> As detailed in the Ts&amp;Cs, you and Sprint agree to a mandatory arbitration provision that provides that (except for matters properly brought to small claims court) any claim, controversy, or dispute of any kind between you and must be resolved by final and binding arbitration on an individual and not a class-wide or consolidated basis.
+ \n \n <b>2.	Electronic Signature and Disclosure Consent Notice.</b> You agree to the use of electronic documents and records in connection with your registration for the SCT Service and all future documents and records in connection with the SCT Service—including without limitation this electronic signature and disclosure notice—and that this use satisfies any requirement that we provide you these documents and their content in writing. If you do not agree, do not accept this Agreement. You have the right to receive a paper copy of all documents and records. You may (i) obtain a paper copy of any document or record (free of charge), (ii) withdraw your consent to the use of electronic documents and records, or (iii) update your contact information by calling Customer Care at <a href="tel:866-275-1411">866-275-1411</a> or at <a href="http://www.sprint.com">sprint.com </a>. Your clicking on the \"I agree\" button indicates your signature and your acceptance of this notice.
+ \n \n <b>3.	Privacy Policy. </b> You agree to the terms of Sprint\'s <a href="http://www.sprint.com/privacypolicy">Privacy Policy</a>.
+ \n \n <b>4.	SCT Service Access.</b>  You acknowledge and agree that the SCT Service will have access to your data, including your contacts, calendar entries, messages, photos, videos, and audio.
+    </string>
+
+
+    <string name="read_more">Read the Sprint\'s <a href="http://www.sprint.com/privacypolicy">Privacy Policy</a>.</string>
+    <string name="text_message">Sprint Content Transfer quickly and easily allows you to transfer data between devices.</string>
+    <string name="app_created">This app was created for Sprint by Pervacio, Inc.</string>
+    <string name="selecting_submit_message">By selecting submit, you agree that Sprint can collect information about your device.</string>
+    <string name="read_more_ts_and_cs_text">\nRead more to see the full terms and conditions.</string>
+    <string name="terms_and_conditions_text">Sprint Content Transfer is an application you can use to transfer your data from one device to another device.  With Sprint Content Transfer, you can transfer multiple data types, such as contacts, calendar entries, messages, photos, videos, and audio to a second device by providing Sprint Content Transfer access to the device.</string>
+    <string name="str_rateapp_msg">Enjoying Sprint Content Transfer ?</string>
+    <string name="str_tap_a_star">Tap a star to rate it on the Play Store.</string>
+    <string name="quick_transfer_steps">
+        1. Please keep both phones within 3 feet of each other at all times.
+   <!-- \n\n2. Make sure the phone charge is more than 50% on both devices before you start the transfer.-->
+    \n\n2. It’s OK to take incoming calls during the transfer process. The transfer will just slow down until you’re done.</string>
+    <string name="estimated_transfer_time_suggestion">Actual transfer times may vary based on the specific content in your phone and your phone model.</string>
+    <string name="large_text_msg_maynot_transfer">* Large text messages with attached photos/videos or more than 120 characters may not be transferred for some phone models.</string>
+    <string name="ept_page_title_scan_barcode">Content Transfer</string>
+    <string name="ept_connected_title">Select Content</string>
+</resources>

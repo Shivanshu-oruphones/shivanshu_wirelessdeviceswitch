@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/text_not_transfer"
+        style="@style/textStyle_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/em_padding_top"
+        android:layout_marginLeft="@dimen/em_margin_top"
+        android:layout_marginRight="@dimen/em_margin_top"
+        android:layout_marginTop="@dimen/em_padding_top"
+        android:text="@string/str_data_types_not_transferred"
+        android:visibility="visible" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/denied_perm_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/text_not_transfer"
+        android:layout_above="@+id/grant_perm_tv"
+        android:background="@color/white"
+        android:fadeScrollbars="false"
+        android:scrollbarSize="5dp"
+        android:scrollbarThumbVertical="@color/black_overlay"
+        android:scrollbars="vertical" />
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/grant_perm_tv"
+        style="@style/textStyle_body"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/skip_tv"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:text="@string/str_grant_permission"
+        android:visibility="visible" />
+
+    <com.pervacio.wds.CustomButton
+        android:id="@+id/skip_tv"
+        android:layout_alignParentBottom="true"
+        style="@style/primary_button_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/str_skip"/>
+
+</RelativeLayout>

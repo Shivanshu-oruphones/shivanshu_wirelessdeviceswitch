@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <include layout="@layout/imageandtitle"/>
+
+    <TextView
+        android:id="@+id/LocalOrCloudText1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="3sp"
+        android:paddingBottom="3sp"
+        android:textAppearance="@style/BasicText"
+        android:text="@string/cmd_local_wifi_or_cloud_text" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/localCopyLANorDirectButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@drawable/action_button"
+        android:onClick="actionButtonClicked"
+        android:textAllCaps="false"
+        android:text="@string/cmd_local_wifi_lan_or_direct_button_text"
+        />
+
+    <Button
+        android:id="@+id/googleDriveButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:onClick="actionButtonClicked"
+        android:textAllCaps="false"
+        android:text="@string/cmd_google_drive_button_text"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:background="@drawable/action_button"/>
+
+    <Button
+        android:id="@+id/sdCardButton"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:text="@string/cmd_sd_card_button_text"
+        android:textSize="14sp"
+        android:visibility="gone"/>
+
+</LinearLayout>

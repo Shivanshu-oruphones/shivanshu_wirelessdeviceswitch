@@ -1,0 +1,388 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="wdsTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/wds_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/wds_colorPrimaryDark</item>
+        <item name="colorAccent">@color/wds_colorAccent</item>
+        <item name="android:actionBarStyle">@style/CustomActionBarStyle</item>
+        <!-- Support library compatibility -->
+        <item name="actionBarStyle">@style/CustomActionBarStyle</item>
+        <item name="android:actionOverflowButtonStyle">@style/MyActionButtonOverflow</item>
+        <item name="actionOverflowMenuStyle">@style/OverflowMenu</item>
+        <item name="android:windowAnimationStyle">@null</item>
+        <item name="buttonsTestPositiveStyle">@style/buttonTestPositive</item>
+    </style>
+
+    <style name="ratingBarStyle" parent="android:style/Widget.Material.RatingBar">
+        <item name="colorControlNormal">@color/black_overlay</item>
+        <item name="colorControlActivated">@color/yellow</item>
+        <!--  <item name="colorControlActivated">@color/yellow</item>-->
+    </style>
+
+
+    <style name="CustomActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
+        <item name="android:background">@color/toolbar_background</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>
+        <item name="android:homeAsUpIndicator">@drawable/back</item>
+        <item name="background">@color/toolbar_background</item>
+        <item name="titleTextStyle">@style/MyActionBarTitleText</item>
+    </style>
+
+    <style name="MyActionBarTitleText" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/toolbar_titleColor</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:fontFamily">@string/font_regular</item>
+    </style>
+
+    <style name="OverflowMenu" parent="Widget.AppCompat.PopupMenu.Overflow">
+        <item name="overlapAnchor">false</item>
+        <item name="android:src">@drawable/menu</item>
+    </style>
+
+
+    <style name="MyActionButtonOverflow" parent="android:style/Widget.Holo.Light.ActionButton.Overflow">
+        <item name="android:src">@drawable/menu</item>
+        <item name="android:background">?android:attr/actionBarItemBackground</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowDisablePreview">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="android:windowIsTranslucent">false</item>
+        <item name="colorPrimary">@color/wds_colorPrimary</item>
+        <item name="colorPrimaryDark">@color/wds_colorPrimaryDark</item>
+        <item name="colorAccent">@color/wds_colorAccent</item>
+    </style>
+
+    <style name="AppTheme.NoActionBar1" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">false</item>
+    </style>
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@anim/slide_up</item>
+        <item name="android:windowExitAnimation">@anim/slide_down</item>
+    </style>
+
+    <style name="AppTheme.AppBarOverlay" parent="Base.Theme.AppCompat.Light.DarkActionBar" />
+
+    <style name="AppTheme.PopupOverlay" parent="Base.Theme.AppCompat.Light.DarkActionBar" />
+
+    <style name="AppTheme.Translucent">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:colorBackgroundCacheHint">@null</item>
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowAnimationStyle">@android:style/Animation</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="BasicText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/basic_textsize</item>
+    </style>
+
+    <style name="BasicTitle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/wds_colorPrimary</item>
+        <item name="android:textSize">@dimen/basictitle_textsize</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <!-- TODO - set light font - fontFamily requires API > 16 (current min = 14) -->
+    <style name="LightText" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">@dimen/light_textsize</item>
+    </style>
+
+
+    <style name="textStyle_body" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/light_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_bold</item>
+    </style>
+
+    <style name="textStyle_bodyHeading" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/light_textsize</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_bold</item>
+    </style>
+
+
+    <style name="appname_title" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/apptitle_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_light</item>
+        <item name="android:typeface">normal</item>
+    </style>
+
+    <style name="textStyle_title" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/title_textsize</item>
+        <item name="android:fontFamily">@string/font_regular</item>
+    </style>
+
+    <style name="textStyle_button" parent="android:Widget.TextView">
+        <item name="android:textColor">@color/wds_button_color</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+    </style>
+
+    <style name="buttonStyle" parent="android:Widget.Button">
+        <item name="android:textColor">@color/primary_btn_textcolor</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+        <item name="android:background">@color/primary_btn_bg</item>
+    </style>
+
+    <style name="textStyle_heading" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/heading_textsize</item>
+        <item name="android:fontFamily">@string/font_bold</item>
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+    <style name="textStyle_heading_tab" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/heading_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:fontFamily">@string/roboto_bold</item>
+    </style>
+
+    <style name="textStyle_subheading" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/subheading_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_regular</item>
+    </style>
+
+    <style name="CustomTextStyle" parent="@android:style/TextAppearance.Widget.TabWidget">
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="textStyle_subheading_bold" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/subheading_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_regular</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+
+
+    <style name="textStyle_small" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/small_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_regular</item>
+    </style>
+
+    <style name="textStyle_smaller" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_regular</item>
+    </style>
+
+    <style name="FullscreenTheme" parent="AppTheme">
+        <item name="android:actionBarStyle">@style/FullscreenActionBarStyle</item>
+        <item name="android:windowActionBarOverlay">true</item>
+        <item name="android:windowBackground">@null</item>
+        <item name="metaButtonBarStyle">?android:attr/buttonBarStyle</item>
+        <item name="metaButtonBarButtonStyle">?android:attr/buttonBarButtonStyle</item>
+    </style>
+
+    <style name="FullscreenActionBarStyle" parent="Widget.AppCompat.ActionBar">
+        <item name="android:background">@color/black_overlay</item>
+    </style>
+
+    <style name="textHintstyle" parent="TextAppearance.Design.Hint">
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="primary_button" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/primary_btn_textcolor</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:background">@drawable/primary_button</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+    </style>
+
+    <style name="secondary_button" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/secondary_btn_textcolor</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:padding">@dimen/default_padding</item>
+        <item name="android:background">@drawable/secondary_button</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+    </style>
+
+
+    <style name="primary_button_default" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/wds_colorPrimary</item>
+    </style>
+
+
+    <style name="primary_button_right" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/primary_btn_textcolor</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:padding">@dimen/fab_margin</item>
+        <item name="android:background">@color/primary_btn_bg</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_gravity">right|center_vertical|end</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+    </style>
+
+
+    <style name="secondary_button_left" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/secondary_btn_textcolor</item>
+        <item name="android:minWidth">64dp</item>
+        <item name="android:padding">@dimen/fab_margin</item>
+        <item name="android:background">@color/secondary_btn_bg</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:layout_gravity">right|center_vertical|end</item>
+        <item name="android:layout_alignParentLeft">true</item>
+        <item name="android:textSize">@dimen/button_textsize</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:fontFamily">@string/font_medium</item>
+    </style>
+
+    <style name="textStyle_subheading_light" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/subheading_textsize</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/font_light</item>
+    </style>
+
+    <style name="Manualtest_description" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:lineSpacingExtra">2dp</item>
+        <item name="android:fontFamily">@string/roboto_light</item>
+    </style>
+    <style name="noTitleDialog" parent="@style/Theme.AppCompat.Light.Dialog">
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!--MEXICO STYLES-->
+
+    <style name="appBarOverlay_mexico" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:textColorPrimary">@color/white</item>
+        <item name="android:textColorSecondary">@color/black</item>
+    </style>
+
+    <style name="popupOverlay_mexico" parent="ThemeOverlay.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="android:textColorSecondary">@color/white</item>
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <style name="buttonTestPositive_mexico">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="buttonTestNegative_mexico">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="alertDialog_mexico" parent="ThemeOverlay.AppCompat.Dialog.Alert">
+        <!-- Used for the buttons -->
+        <item name="colorAccent">@color/backgroundColor_mexico</item>
+        <!-- Used for the title and text -->
+        <item name="android:textColorPrimary">@color/black</item>
+        <!-- Used for the background -->
+        <item name="android:background">@color/white</item>
+    </style>
+
+    <!--MAXICO THEME-->
+
+    <style name="Theme.mexico" parent="AppTheme">
+        <item name="colorPrimary">@color/wds_button_color</item>
+        <item name="colorPrimaryDark">#2C2F44</item>
+        <item name="colorAccent">@color/wds_button_color</item>
+
+      <!--  <item name="appBarOverlayStyle">@style/appBarOverlay_mexico</item>
+        <item name="popupOverlayStyle">@style/popupOverlay_mexico</item>
+
+        <item name="android:textColorSecondary">@color/colorPrimaryDark</item>
+        <item name="backgroundColor">@color/backgroundColor_mexico</item>
+        <item name="disabledBackgroundColor">#A25BC500</item>
+
+        <item name="toolbarColor">@color/backgroundColor</item>
+        <item name="toolbarTextColor">@color/white</item>
+        <item name="buttonsTestPositiveStyle">@style/buttonTestPositive_mexico</item>
+        <item name="buttonTestNegativeStyle">@style/buttonTestNegative_mexico</item>-->
+
+        <!--Alert-->
+        <item name="c_alertDialogTheme">@style/alertDialog_mexico</item>
+    </style>
+
+    <style name="phy_dmg_body_style" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <style name="textStyle_options" parent="android:Widget.TextView">
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="android:fontFamily">@string/roboto_light</item>
+    </style>
+
+    <style name="buttonTestPositive">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/button_selector</item>
+        <item name="android:fontFamily">@font/roboto_light</item>
+    </style>
+
+    <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">30sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:fontFamily">@font/roboto_bold</item>
+
+
+    </style>
+
+</resources>

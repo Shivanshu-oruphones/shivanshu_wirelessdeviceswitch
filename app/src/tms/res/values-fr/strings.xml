@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?><!-- Copyright (C) 2007 The Android Open Source Project
+
+     Licensed under the Apache License, Version 2.0 (the "License");
+     you may not use this file except in compliance with the License.
+     You may obtain a copy of the License at
+  
+          http://www.apache.org/licenses/LICENSE-2.0
+  
+     Unless required by applicable law or agreed to in writing, software
+     distributed under the License is distributed on an "AS IS" BASIS,
+     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+     See the License for the specific language governing permissions and
+     limitations under the License.
+-->
+
+<resources>
+    <string name="app_name">TMS Content Transfer</string>
+    <string name="welcome_screen_title">Bienvenue dans TMS Content Transfer</string>
+    <string name="terms_and_conditions_text"> En téléchargeant et en utilisant l’application The Mobile Shop TMS Content Transfer App, les présents termes s’appliqueront automatiquement à vous. Veuillez les lire attentivement avant d’utiliser l’application. Soyez conscient que vous ne pouvez l’envoyer à personne, ni copier ou modifier d’une manière quelconque l’application entière, sa partie ou nos marques de commerce. Vous n’êtes pas autorisé à essayer d’accéder au code source de l’application, ni de traduire l’application ou de créer des versions dérivées. L’application elle-même, ainsi que toutes les marques de commerce, les droits d’auteur, les droits des bases de données et les droits de propriété qui y sont liés, appartiennent toujours à Pervacio Inc.</string>
+    <string name="str_write_permission"><![CDATA[Autoriser <b>TMS Content Transfer</b> à accès les paramètres de l\'appareil.<br/>(Fond d\'écran,Veille de l\'écran,Luminosité,Le volume)]]></string>
+    <string name="permissions_policy_header">Bienvenue dans TMS Content Transfer</string>
+    <string name="permissions_policy_body">
+    <![CDATA[
+<p>TMS Content Transfer vous permet de transf&eacute;rer des donn&eacute;es de votre ancien appareil vers un nouvel appareil. Pendant l\'utilisation, cette application a besoin des autorisations suivantes pour fournir des services de transfert de donn&eacute;es.<br /><br /><strong>Contacts</strong><br /> Utilis&eacute; pour transf&eacute;rer des contacts<br>
+<!--<br><strong>Historique des appels</strong>
+<br>Utilis&eacute; pour transf&eacute;rer l\'historique des appels<br>
+<br><strong>SMS</strong>
+<br>Utilis&eacute; pour transf&eacute;rer des donn&eacute;es SMS<br>-->
+<br><strong>Localisation</strong>
+<br>Utilis&eacute; pour obtenir la localisation de l\'appareil<br>
+<br><strong>Param&egrave;tres</strong>
+<br>Utilis&eacute; pour transf&eacute;rer les param&egrave;tres
+<br><br /><strong>Calendriers</strong><br /> Utilis&eacute; pour transf&eacute;rer des donn&eacute;es de calendrier<br />
+<br /><strong>Espace de Stockage</strong><br /> Utilis&eacute; pour transf&eacute;rer des images, des m&eacute;dias et des fichiers<br />
+<br /><strong>Cam&eacute;ra</strong><br /> Utilis&eacute; pour lire le code QR<br /><br /> Des informations sur l\'appareil telles que IMEI, le mod&egrave;le d\'appareil, la langue du syst&egrave;me, la version du syst&egrave;me d\'exploitation, la r&eacute;solution d\'&eacute;cran et la version de la ROM sont &eacute;galement collect&eacute;es.<br /><br /> Vous pouvez quitter cette application pour arr&ecirc;ter les informations collect&eacute;es et t&eacute;l&eacute;charger les activit&eacute;s d&eacute;crites ci-dessus.<br /><br /> En appuyant sur J\'ACCEPTE, vous reconnaissez et acceptez le contenu ci-dessus et indiquez que vous avez lu les <strong><u>conditions g&eacute;n&eacute;rales</u></strong> et la <strong><u>d&eacute;claration de confidentialit&eacute;</u></strong>.
+        ]]>
+    </string>
+    <string name="privacy_policy">
+     <![CDATA[
+<p><strong>TMS Content Transfert de contenu POLITIQUE CONFIDENTIALIT&Eacute;</strong></p>
+<p>Pervacio Inc., cr&eacute;ateur de TMS Content Transfer, reconna&icirc;t que votre vie priv&eacute;e est importante et que vos renseignements personnels doivent &ecirc;tre prot&eacute;g&eacute;s. Cette politique de confidentialit&eacute; d&eacute;crit les informations que nous recueillons aupr&egrave;s de vous, comment nous les utilisons et ce que nous faisons pour le prot&eacute;ger.</p>
+<p>Merci de lire attentivement cette politique et p&eacute;riodiquement. Merci de nous contacter &agrave; support@pervacio.com si vous avez des questions sur le contenu de cette politique.</p>
+<p><strong>Les informations que nous recueillons est n&eacute;cessaire pour fournir nos services.</strong></p>
+<p>Nous ne collectons aucune information &agrave; votre sujet qui n\'a rien &agrave; voir avec les services fournis par notre application. Toute information que nous recueillons aupr&egrave;s de vous est stock&eacute; comme seul &ecirc;tre connect&eacute; &agrave; votre compte &agrave; moins qu\'il ne soit par ailleurs not&eacute; sur l\'application. Nous prenons votre vie priv&eacute;e au s&eacute;rieux et n\'utilisons ni ne communiquons des informations que si elles sont align&eacute;es avec les conditions &eacute;nonc&eacute;es ci-dessous.</p>
+<p><strong>Nous ne recueillons pas de renseignements personnels.</strong></p>
+<p>En aucun cas, nous ne recueillons et stockons des renseignements personnels &agrave; votre sujet. Les renseignements personnels sont toute information qui vous identifie ou une autre personne, comme votre nom et pr&eacute;nom, adresses physiques, adresses e-mail, num&eacute;ros de t&eacute;l&eacute;phone, num&eacute;ros de fax, ou toute information qui vous est propre qui est stock&eacute; dans votre appareil. Notre fonctionnalit&eacute; de transfert de donn&eacute;es stocke uniquement les donn&eacute;es de votre ancien appareil sur le nouveau dispositif. Tout au long de l\'ensemble du processus, le serveur de transfert de contenu n\'est pas accessible afin que nous ne voyions pas vos informations personnelles. En d\'autres termes, vous pouvez &ecirc;tre assur&eacute; qu\'il n\'y a aucun moyen pour nous de recueillir vos informations si vous utilisez notre application pour copier les donn&eacute;es d\'un t&eacute;l&eacute;phone &agrave; un autre.</p>
+<p><strong>Nous ne recueillons que des informations non personnelles.</strong></p>
+<p>Afin d\'assurer que votre exp&eacute;rience tout en utilisant nos applications est &agrave; l\'aise, nous recueillons des informations non personnelles pour mieux comprendre le comportement des utilisateurs, d&eacute;couvrir les probl&egrave;mes avec les applications, et d\'am&eacute;liorer nos produits. Les informations non personnelles sont des donn&eacute;es qui ne permettent pas d\'association directe avec une personne sp&eacute;cifique. Des exemples de renseignements non personnels sont les suivants : ID de l\'appareil, le num&eacute;ro de t&eacute;l&eacute;phone IMEI, mod&egrave;le de t&eacute;l&eacute;phone, rom, op&eacute;rateur t&eacute;l&eacute;phonique, l\'emplacement, le syst&egrave;me d\'exploitation, les journaux de transfert, etc.</p>
+<p><strong>Les autorisations requises par nos applications ont tous une raison valable.</strong></p>
+<p>Nos demandes d\'application pour certaines autorisations d\'acc&egrave;s qui sont consid&eacute;r&eacute;s comme l\'acc&egrave;s aux donn&eacute;es sensibles et dangereuses sur les appareils Android. Vous trouverez des explications d&eacute;taill&eacute;es pour lesquelles nous demandons chaque autorisation dans la section annexe de la pr&eacute;sente politique.</p>
+<p>Les autorisations demand&eacute;es pour nos applications sont :</p>
+<p>Prenez des photos et des vid&eacute;os (CAMERA)</p>
+<p>Lire vos contacts (READ_CONTACTS)</p>
+<p>Modifier vos contacts (WRITE_CONTACTS)</p>
+<p>Lecture Calendrier (READ_CALENDAR)</p>
+<p>Ecrire Calendrier (WRITE_CALENDAR)</p>
+<!--
+<p>Lire vor SMS (READ_SMS)</p>
+-->
+<p>Lire le contenu de votre stockage externe (READ_EXTERNAL_STORAGE)</p>
+<p>Modifier ou supprimer le contenu de votre stockage (WRITE_ EXTERNAL_STORAGE)</p>
+<p>Paramètres d\'écriture (WRITE_SETTINGS)</p>
+<p><strong>La s&eacute;curit&eacute; est importante pour nous.</strong></p>
+<p>Le transfert de contenu est tr&egrave;s pr&eacute;occup&eacute; par la sauvegarde de la confidentialit&eacute; de vos informations. Comme indiqu&eacute; pr&eacute;c&eacute;demment, nous ne recueillons pas de renseignements personnels. Afin de prot&eacute;ger les informations non personnelles, nous recueillons des acc&egrave;s non autoris&eacute;s et d\'utilisation, nous employons des mesures administratives, physiques et &eacute;lectroniques. Transfert de contenu est bien &eacute;quip&eacute; pour traiter les donn&eacute;es personnelles de l\'utilisateur ou sensibles en toute s&eacute;curit&eacute;, y compris la transmission des donn&eacute;es au serveur principal en utilisant la cryptographie moderne via HTTPS.</p>
+<p>Merci d&rsquo;&ecirc;tre conscient que les mesures de s&eacute;curit&eacute; que nous prenons pour prot&eacute;ger vos informations ne sont pas une garantie absolue pour lutter contre l\'acc&egrave;s non autoris&eacute; ou de l\'utilisation de votre non-Information.</p>
+<p><strong>Enfants</strong></p>
+<p>Nous ne fournissons pas le focus de service sur les enfants. Si vous avez moins de 13ans, Merci de demander la permission de votre parent ou d\'un tuteur avant d\'utiliser notre application. Il est conseill&eacute; d&rsquo;&ecirc;tre sous la surveillance des parents.</p>
+<p><strong>Nous contacter</strong></p>
+<p>Si vous avez des questions ou des commentaires au sujet de cette politique ou nos pratiques en mati&egrave;re de confidentialit&eacute;, ou pour signaler toute violation de la politique ou l&rsquo;abus des Services ou du site, Merci de nous contactez &agrave; support@pervacio.com</p>
+<p><strong>Nous mettrons &agrave; jour cette politique de confidentialit&eacute; pour garantir vos droits.</strong></p>
+<p>Pour assurer la qualit&eacute; de votre exp&eacute;rience et votre s&eacute;curit&eacute;, nous mettrons &agrave; jour notre politique de confidentialit&eacute; au besoin. Toute modification apport&eacute;e &agrave; cette politique ne r&eacute;duira pas vos droits de toute fa&ccedil;on. Si les modifications apport&eacute;es &agrave; cette politique sont importantes, une notification sera affich&eacute;e sur l\'application. Toutefois, les petits changements peuvent &ecirc;tre apport&eacute;s si Merci de revoir r&eacute;guli&egrave;rement. Si vous n\'&ecirc;tes pas d\'accord toute modification apport&eacute;e &agrave; cette politique, vous devez cesser imm&eacute;diatement d\'utiliser l\'un des services que nous offrons et contactez-nous. Votre utilisation continue de nos services apr&egrave;s modification de cette politique signifie que vous avez accept&eacute; les termes de la Politique r&eacute;vis&eacute;e. Merci de noter qu\'aucun de nos employ&eacute;s ou agents n&rsquo;a le pouvoir de violer aucun des droits qui ont &eacute;t&eacute; &eacute;nonc&eacute;s dans la pr&eacute;sente politique.</p>
+<p><strong>&nbsp;</strong></p>
+<p><strong>Appendice</strong></p>
+<p><strong>Autorisations Android demand&eacute;es par notre application</strong></p>
+<p>Utilis&eacute; pour les autorisations qui sont associ&eacute;es &agrave; l\'acc&egrave;s &agrave; l\'appareil photo ou la capture d\'images et / ou des vid&eacute;os de l\'appareil.</p>
+<p>Cette autorisation permet &agrave; cette application d&rsquo;obtenir la fonction suivante relative &agrave; la cam&eacute;ra de t&eacute;l&eacute;phone :</p>
+<ul>
+<li>Scanner le code QR pour &eacute;tablir une connexion sans fil entre deux appareils</li>
+</ul>
+<p><strong>READ_CONTACTS</strong></p>
+<p>Utilis&eacute; pour les autorisations qui permettent l&rsquo;application de lire les donn&eacute;es de contacts de l\'utilisateur. Le but est de r&eacute;cup&eacute;rer les contacts de l\'utilisateur (par exemple, num&eacute;ro de t&eacute;l&eacute;phone, le nom de contact, email, etc.) &agrave; partir d\'un ancien t&eacute;l&eacute;phone et transf&eacute;rer vers un nouveau t&eacute;l&eacute;phone.</p>
+<p><strong>WRITE_CONTACTS</strong></p>
+<p>Utilis&eacute; pour les autorisations qui permettent &agrave; une application d\'&eacute;crire les donn&eacute;es de contacts de l\'utilisateur. Le but est d&rsquo;&eacute;crire les contacts utilisateur (num&eacute;ro de t&eacute;l&eacute;phone, le nom de contact, email, etc.), qui sont re&ccedil;us &agrave; partir d\'un ancien t&eacute;l&eacute;phone sur un nouveau t&eacute;l&eacute;phone.</p>
+<p><strong>READ_CALENDARS</strong></p>
+<p>Utilis&eacute; pour les autorisations qui permettent &agrave; une application de lire le calendrier de l\'utilisateur. Le but est de r&eacute;cup&eacute;rer le calendrier de l\'utilisateur &agrave; partir d\'un ancien t&eacute;l&eacute;phone et transf&eacute;rer vers un nouveau t&eacute;l&eacute;phone.</p>
+<p><strong>WRITE_CALENDARS</strong></p>
+<p>Utilis&eacute; pour les autorisations qui permettent une application d\'&eacute;crire (mais pas lire) l\'utilisateur \ \'des donn&eacute;es de calendrier. Le but est d&rsquo;&eacute;crire le calendrier utilisateur, qui est r&eacute;cup&eacute;r&eacute; &agrave; partir d\'un ancien t&eacute;l&eacute;phone, vers un nouveau t&eacute;l&eacute;phone.</p>
+<!--<p><strong>READ_SMS</strong></p>
+<p>Utilisé pour les autorisations qui permettent à une application de lire des messages SMS. Cette autorisation permet à l\'application de transférer des messages SMS dans le cadre de la fonction de réplication téléphonique. Le but est de récupérer les messages SMS de l\'utilisateur à partir d\'un ancien téléphone et de les transférer vers et d\'enregistrer sur un nouveau téléphone. </p></p>-->
+<p><strong>READ_EXTERNAL_STORAGE</strong></p>
+<p>Utilis&eacute; pour les autorisations qui permettent &agrave; une application de lire &agrave; partir du stockage externe. L\'utilisateur peut s&eacute;lectionner les fichiers &agrave; transf&eacute;rer et envoyer sur la connexion sans fil cr&eacute;&eacute; par l\'application.</p>
+<p><strong>WRITE_EXTERNAL_STORAGE</strong></p>
+<p>Utilis&eacute; pour les autorisations qui permettent &agrave; une application de stockage externe. L\'utilisateur peut choisir d\'enregistrer les fichiers re&ccedil;us qui sont transf&eacute;r&eacute;s via la connexion sans fil dans le stockage interne ou stockage externe. L\'utilisateur doit choisir d\'enregistrer en m&eacute;moire externe dans les param&egrave;tres de l\'application.</p>
+<p><strong>WRITE_SETTINGS</strong></p>
+<p>Utilisé pour les autorisations qui permettent à l\'application de copier les paramètres. Le but est de copier les paramètres utilisateur, qui sont récupérés à partir d\'un ancien téléphone, vers les paramètres désignés sur un nouveau téléphone.</p>
+<p>&nbsp;</p>
+]]>
+</string>
+
+</resources>

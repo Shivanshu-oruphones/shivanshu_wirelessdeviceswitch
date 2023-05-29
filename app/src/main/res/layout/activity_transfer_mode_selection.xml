@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.pervacio.wds.custom.TransferModeSelectionActivity">
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/heading"
+        style="@style/textStyle_heading"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/selection_margin_top"
+        android:layout_marginBottom="@dimen/margin_small"
+        android:gravity="center_horizontal"
+        android:padding="@dimen/padding_small"
+        android:text="@string/select_mode_msg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true">
+
+        <Button
+            android:id="@+id/wireless"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/default_padding"
+            android:text="Wireless Transfer" />
+
+        <Button
+            android:id="@+id/usb_transfer"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/wireless"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/default_padding"
+            android:text="USB Transfer" />
+
+        <Button
+            android:id="@+id/sdcarad_transfer"
+            style="@style/Base.Widget.AppCompat.Button.Colored"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/usb_transfer"
+            android:layout_centerHorizontal="true"
+            android:padding="@dimen/default_padding"
+            android:text="SDCARD Transfer" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

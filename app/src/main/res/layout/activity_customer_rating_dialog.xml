@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/cust_dialog_layout"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="15dp">
+
+    <TextView
+        android:id="@+id/rate_your_customer"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="@string/rate_your_experience"
+        android:textAppearance="@style/textStyle_subheading"
+        android:textColor="@color/backgroundColor"
+        android:textStyle="bold"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/cust_rate_head"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/cust_satisfy_title"
+        android:textAppearance="@style/textStyle_subheading"
+        android:textStyle="bold"
+        android:layout_marginTop="35dp"
+        android:visibility="visible" />
+
+    <TextView
+        android:id="@+id/cust_rate_msg"
+        android:layout_below="@+id/cust_rate_head"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="15dp"
+        android:text="@string/cust_satisfy_msg"
+        android:textAppearance="@style/textStyle_subheading"
+        android:visibility="visible" />
+
+    <RadioGroup
+        android:id="@+id/rating_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_below="@+id/cust_rate_msg" >
+        <RadioButton
+            android:id="@+id/excellent_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:button="@drawable/excellent_rating_radio_btn"/>
+        <RadioButton
+            android:id="@+id/good_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:layout_marginRight="15dp"
+            android:button="@drawable/good_rating_radio_btn"/>
+        <RadioButton
+            android:id="@+id/bad_rb"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:button="@drawable/bad_rating_radio_btn"/>
+    </RadioGroup>
+<!--    <android.support.v7.widget.AppCompatSpinner android:id="@+id/reason_spinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/rating_layout"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone"
+        />-->
+    <RelativeLayout
+        android:id="@+id/spinner_layout"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/rating_layout"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:background="@color/gray"
+        android:layout_centerHorizontal="true"
+        android:visibility="gone">
+
+        <FrameLayout
+            android:id="@+id/spinner_frame"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+            android:padding="2dp"
+            android:visibility="visible">
+            <androidx.appcompat.widget.AppCompatSpinner
+                android:id="@+id/reason_spinner"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="2dp"
+                android:popupBackground="@android:color/transparent"
+                android:spinnerMode="dropdown"
+                android:textSize="16sp"
+                android:visibility="visible" />
+            <TextView
+                android:id="@+id/txtSelectedItem"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@android:color/white"
+                android:clickable="false"
+                android:focusable="false"
+                android:layout_marginRight="2dp"
+                android:focusableInTouchMode="false"
+                android:gravity="center_vertical"
+                android:lines="1"
+                android:text="@string/reason_for_rating"
+                android:textColor="@android:color/darker_gray"
+                android:textSize="16sp" />
+        </FrameLayout>
+        <ImageView
+            android:id="@+id/imgdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignRight="@+id/spinner_frame"
+            android:layout_centerVertical="true"
+            android:src="@drawable/ic_dropdown" />
+    </RelativeLayout>
+    <Button
+        android:id="@+id/submit_btn"
+        android:layout_below="@+id/spinner_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="@string/submit"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:paddingBottom="@dimen/customer_rating_button_padding_bottom"
+        android:paddingTop="@dimen/customer_rating_button_padding_top"
+        android:paddingLeft="@dimen/customer_rating_button_padding_left"
+        android:paddingRight="@dimen/customer_rating_button_padding_right"
+        android:textColor="@color/textColor"
+        android:background="@drawable/button_selector"/>
+</RelativeLayout>
+

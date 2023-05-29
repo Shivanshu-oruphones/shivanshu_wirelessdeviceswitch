@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_bg_gray"
+    android:id="@+id/main_category_layout"
+    android:orientation="vertical"
+    tools:context="com.pervacio.wds.custom.appsinstall.InstallAppsFragment">
+
+    <!--<TextView
+        android:id="@+id/history_title"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="center"
+        android:background="@color/main_bg_gray"
+        android:padding="10dp"
+        android:text="Empty"
+        android:gravity="center_vertical"
+        android:visibility="visible"
+        android:textAppearance="@style/textStyle_heading" />
+    -->
+    <!--<TextView
+        android:id="@+id/suggestion_tv"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:layout_gravity="center"
+        android:background="@color/main_bg_gray"
+        android:padding="10dp"
+        android:text=""
+        android:gravity="center_vertical"
+        android:visibility="gone"
+        android:textAppearance="@style/textStyle_body" />-->
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/suggestion_tv"
+        android:padding="5dp"
+        android:layout_gravity="center_vertical"
+        style="@style/textStyle_subheading_light"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        />
+
+<!--    <TextView
+        android:id="@+id/center_tv"
+        android:layout_width="match_parent"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="10dp"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:textSize="20sp"
+        android:visibility="gone"/>-->
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/center_tv"
+        android:layout_gravity="center_vertical"
+        style="@style/textStyle_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="No Apps"
+        android:visibility="visible"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+       >
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/listview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white" />
+
+        <ProgressBar
+            android:id="@+id/historyLoadingProgress"
+            android:layout_width="90dp"
+            android:layout_height="90dp"
+            android:layout_centerInParent="true"
+            android:indeterminate="true"
+            android:indeterminateDrawable="@drawable/logo_rotating"
+            android:max="100"
+            android:padding="10dp"
+            android:progress="100"
+            android:visibility="gone" />
+    </RelativeLayout>
+</LinearLayout>
+
+

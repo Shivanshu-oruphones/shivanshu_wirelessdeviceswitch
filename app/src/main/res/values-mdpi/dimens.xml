@@ -1,0 +1,60 @@
+<resources>
+
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">10dp</dimen>
+    <dimen name="activity_vertical_margin">10dp</dimen>
+    <dimen name="fab_margin">10dp</dimen>
+    <dimen name="button_textsize">14sp</dimen>
+
+
+    <dimen name="text_padding_left">10dp</dimen>
+    <dimen name="elevation_padding">10dp</dimen>
+    <dimen name="text_padding">5dp</dimen>
+    <dimen name="terms_conditions_textsize">14sp</dimen>
+    <dimen name="text_size">12sp</dimen>
+    <dimen name="button_padding">8dp</dimen>
+    <dimen name="basic_textsize">12dp</dimen>
+    <dimen name="basictitle_textsize">16sp</dimen>
+    <dimen name="light_textsize">12sp</dimen>
+    <dimen name="apptitle_textsize">18sp</dimen>
+    <dimen name="title_textsize">14sp</dimen>
+    <dimen name="heading_textsize">18sp</dimen>
+    <dimen name="subheading_textsize">12sp</dimen>
+    <dimen name="small_textsize">10sp</dimen>
+
+
+    <dimen name="childview_padding">6dp</dimen>
+    <dimen name="default_margin">6dp</dimen>
+    <dimen name="default_padding">6dp</dimen>
+    <dimen name="progressbar_width">6dp</dimen>
+    <dimen name="content_padding">8dp</dimen>
+    <dimen name="content_image_margin">2dp</dimen>
+    <dimen name="content_text_margin">8dp</dimen>
+    <dimen name="content_text_margin_summary">5dp</dimen>
+
+
+    <dimen name="sc_progressbar_padding">2dp</dimen>
+    <dimen name="sc_margin">5dp</dimen>
+    <dimen name="sc_storage_textsize">10sp</dimen>
+    <dimen name="storage_progressbar_width">6dp</dimen>
+
+    <dimen name="margin_connected">8dp</dimen>
+    <dimen name="padding_small">2dp</dimen>
+    <dimen name="margin_small">2dp</dimen>
+
+    <dimen name="connecting_image_topmargin">15dp</dimen>
+    <dimen name="connecting_image_leftmargin">10dp</dimen>
+    <dimen name="connecting_image_rightmargin">8dp</dimen>
+
+    <dimen name="selection_margin_top">10dp</dimen>
+    <dimen name="selection_margin">10dp</dimen>
+
+    <!--email, comment & feedback-->
+    <dimen name="em_margin_top">10dp</dimen>
+    <dimen name="em_padding_top">10dp</dimen>
+    <dimen name="em_padding">10dp</dimen>
+    <dimen name="em_layout_margin">5dp</dimen>
+    <dimen name="em_margin_left">10dp</dimen>
+    <dimen name="em_text_box">20dp</dimen>
+
+</resources>

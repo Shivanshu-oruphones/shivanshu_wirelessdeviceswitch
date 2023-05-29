@@ -1,0 +1,83 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ConnectedPageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/wds_main_bg_gray"
+    android:orientation="vertical">
+
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/connected"
+        style="@style/textStyle_heading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_gravity="center|top"
+        android:layout_marginTop="@dimen/margin_connected"
+        android:gravity="center_horizontal"
+        android:paddingBottom="@dimen/padding_small"
+        android:paddingTop="@dimen/padding_small"
+        android:text="@string/str_connected" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/connectedImage"
+        android:layout_gravity="center"
+        android:layout_marginEnd="@dimen/connecting_image_rightmargin"
+        android:layout_marginRight="@dimen/connecting_image_rightmargin"
+        android:layout_toLeftOf="@+id/connectedImage"
+        android:layout_toStartOf="@+id/connectedImage"
+        android:background="@drawable/phone_connected" />
+
+    <ImageView
+        android:id="@+id/connectedImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/imageView"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center"
+        android:background="@drawable/ic_connected" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/connected"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/connecting_image_rightmargin"
+        android:layout_marginStart="@dimen/connecting_image_rightmargin"
+        android:layout_marginTop="@dimen/connecting_image_topmargin"
+        android:layout_toEndOf="@+id/connectedImage"
+        android:layout_toRightOf="@+id/connectedImage"
+        android:background="@drawable/phone_connected" />
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/WelcomeBottomText"
+        style="@style/textStyle_body"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/connectedSessionId"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/imageView2"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_gravity="center_vertical"
+        android:gravity="center"
+        android:lineSpacingExtra="2dp"
+        android:text="@string/ept_connected_text" />
+
+    <com.pervacio.wds.CustomTextView
+        android:id="@+id/connectedSessionId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:paddingBottom="@dimen/default_margin"
+        android:text="" />
+
+</RelativeLayout>

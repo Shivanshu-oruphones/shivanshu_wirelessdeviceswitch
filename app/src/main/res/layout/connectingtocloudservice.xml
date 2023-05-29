@@ -1,0 +1,51 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/WelcomePageLayout"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="35sp" />
+
+    <TextView
+        android:id="@+id/ConnectingToCloudTopText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/BasicTitle"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:paddingTop="5sp"
+        android:paddingBottom="5sp"
+        android:text="@string/cmd_connecting_to_cloud_title"
+        android:textSize="20sp" >
+    </TextView>
+
+     <TextView
+     android:id="@+id/blankLine"
+     android:layout_width="wrap_content"
+     android:layout_height="wrap_content"
+     android:text="" />
+
+    <ProgressBar
+        android:id="@+id/progressBar1"
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal" />
+
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="35sp" />
+    
+    <TextView
+        android:id="@+id/ConnectingToCloudBottomText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:gravity="center_horizontal"
+        android:textAppearance="@style/BasicText"
+        android:text="@string/cmd_connecting_to_google_body" >
+    </TextView>
+
+</LinearLayout>

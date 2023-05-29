@@ -1,0 +1,85 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/cloudpairing_qr"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/scan_suggesion"
+                style="@style/textStyle_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="start"
+                android:padding="@dimen/content_padding"
+                android:text="@string/cmd_display_qr_code_text" />
+
+            <ImageView
+                android:id="@+id/cp_qr_code_image_view"
+                android:layout_width="180sp"
+                android:layout_height="180sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="@dimen/default_margin" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/session_pin"
+                style="@style/textStyle_body"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:gravity="center_horizontal"
+                android:paddingBottom="3sp"
+                android:paddingTop="3sp"
+                android:text=""
+                android:visibility="visible" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/cloudpairing_scanner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <com.pervacio.wds.CustomTextView
+                style="@style/textStyle_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center|top"
+                android:gravity="start"
+                android:padding="@dimen/content_padding"
+                android:text="@string/cmd_scan_qr_code_text" />
+
+            <com.journeyapps.barcodescanner.DecoratedBarcodeView
+                android:id="@+id/cp_barcode_scanner"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="@dimen/selection_margin"
+                android:padding="@dimen/default_padding" />
+
+            <com.pervacio.wds.CustomTextView
+                android:id="@+id/cameraproblem"
+                style="@style/textStyle_body"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:autoLink="none"
+                android:gravity="center"
+                android:padding="@dimen/content_padding"
+                android:text="@string/faulty_camera_suggestion"
+                android:textColor="@color/black"
+                android:visibility="visible" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

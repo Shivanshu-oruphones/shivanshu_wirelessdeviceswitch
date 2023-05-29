@@ -1,0 +1,53 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/QuickTransferTipsLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/tips_btn_layout"
+        android:orientation="vertical">
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/WelcomeTopText"
+            style="@style/textStyle_heading"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/wds_main_bg_gray"
+            android:padding="@dimen/fab_margin"
+            android:text="@string/quick_transfer_tips" />
+
+        <com.pervacio.wds.CustomTextView
+            android:id="@+id/quickTransferSteps"
+            style="@style/textStyle_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/WelcomeTopText"
+            android:layout_marginTop="10dp"
+            android:lineSpacingExtra="3dp"
+            android:paddingLeft="@dimen/text_padding_left"
+            android:paddingRight="@dimen/text_padding_left"
+            android:text="@string/quick_transfer_steps" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:id="@+id/tips_btn_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/wds_main_bg_gray">
+
+        <com.pervacio.wds.CustomButton
+            android:id="@+id/done_tv"
+            style="@style/primary_button_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ept_next_button" />
+    </RelativeLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/login_rootView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:orientation="vertical">
+
+        <RadioButton
+            android:id="@+id/simple_transfer"
+            style="@style/textStyle_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:lineSpacingExtra="2dp"
+            android:padding="@dimen/fab_margin"
+            android:text="Simple Transfer \nContacts and calendar" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/gray" />
+
+        <RadioButton
+            android:id="@+id/complete_transfer"
+            style="@style/textStyle_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/default_margin"
+            android:layout_marginTop="@dimen/default_margin"
+            android:lineSpacingExtra="2dp"
+            android:padding="@dimen/fab_margin"
+            android:text="Complete Transfer \nComplete phone copy" />
+
+    </RadioGroup>
+
+    <com.pervacio.wds.CustomButton
+        android:id="@+id/next_button_transfertypes"
+        style="@style/primary_button_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="@string/ept_next_button" />
+</RelativeLayout>
