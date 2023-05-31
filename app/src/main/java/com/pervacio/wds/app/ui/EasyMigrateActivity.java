@@ -243,7 +243,6 @@ import com.pervacio.wds.custom.utils.PreferenceHelper;
 import com.pervacio.wds.custom.utils.SelectedAppsDetailsAdapter;
 import com.pervacio.wds.custom.utils.SelectedDataTypeDetailsAdapter;
 import com.pervacio.wds.custom.utils.startLocationAlert;
-import com.pervacio.wds.datawipe.RestrictionCheckActivity;
 import com.pervacio.wds.sdk.CMDBackupAndRestoreEngine;
 import com.pervacio.wds.sdk.CMDBackupAndRestoreServiceType;
 import com.pervacio.wds.sdk.CMDError;
@@ -746,19 +745,16 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
 
     private void setWakeLock(boolean aOn) {
         try {
-
             if (aOn) {
                 if (mWakeLock != null) {
                     mWakeLock.release();
                     mWakeLock = null;
                 }
-
                 getWindow().addFlags(WindowManager.LayoutParams.FLAG_SHOW_WHEN_LOCKED
                         | WindowManager.LayoutParams.FLAG_DISMISS_KEYGUARD
                         // | WindowManager.LayoutParams.FLAG_FULLSCREEN
                         | WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON
                         | WindowManager.LayoutParams.FLAG_TURN_SCREEN_ON);
-
                 getWindow().setStatusBarColor(getResources().getColor(R.color.wds_colorPrimary));
 
                 mPowerManager = (PowerManager) getSystemService(Context.POWER_SERVICE);
@@ -1376,21 +1372,12 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
 
                 EasyMigrateService.LocalBinder binder = (EasyMigrateService.LocalBinder) service;
                 EasyMigrateService easyMigrateService = binder.getService();
-
                 if (mRemoteDeviceManager != null) {
-                    try {
-                        mRemoteDeviceManager = easyMigrateService.getRemoteDeviceManager();
-                        mRemoteDeviceManager.resetDeviceList();
-                        mRemoteDeviceManager.setDelegate(thisActivity);
-                        mRemoteDeviceManager.mRemoteDeviceList.setDelegate(thisActivity);
-                        deviceListChanged();
-
-                    }
-                    catch (Exception e){
-                        Log.d(TAG, "Exception Occured -> : "+e.toString());
-
-                    }
-
+                    mRemoteDeviceManager = easyMigrateService.getRemoteDeviceManager();
+                    mRemoteDeviceManager.resetDeviceList();
+                    mRemoteDeviceManager.setDelegate(thisActivity);
+                    mRemoteDeviceManager.mRemoteDeviceList.setDelegate(thisActivity);
+                    deviceListChanged();
                 } // Force a refresh of the device list
             }
 
@@ -1443,7 +1430,6 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
         }
 
         Button localCopyButton = (Button) this.findViewById(R.id.localCopyButton);
-
         localCopyButton.setOnClickListener(new OnClickListener() {
             // @Override
             public void onClick(View v) {
@@ -1723,17 +1709,6 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
         new_device = (ImageView) findViewById(R.id.new_device_image);
 
         thisIsDestinationDeviceButton = (Button) findViewById(R.id.new_device_button);
-
-        Button DataWipeButton = (Button) findViewById(R.id.datawipebutton);
-
-        DataWipeButton.setOnClickListener(new OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                showWipeConfirmDialog();
-              //  Toast.makeText(thisActivity, "Data Wipe Button Clicked!", Toast.LENGTH_SHORT).show();
-            }
-        });
-
         if (Constants.PLATFORM.equalsIgnoreCase(PLATFORM_BLACKBERRY)) {
             thisIsDestinationDeviceButton.setEnabled(false);
             thisIsDestinationDeviceButton.setAlpha(0.5f);
@@ -1788,7 +1763,6 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
         otherDeviceIsIOSButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-
 //                iosQRCodeInfo1.setVisibility(View.VISIBLE);
 //                iosQRCodeInfo2.setVisibility(View.VISIBLE);
 ////                btn_switch_scan.setVisibility(View.GONE);
@@ -3677,45 +3651,25 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
                 DashboardLog.getInstance().geteDeviceSwitchSession().setCancellationReason(Constants.CANCEL_REASON.NO_ERROR.value());
                 /*** Once the transaction is complete, let's log it to Dashboard ***/
                 if (mRole == THIS_DEVICE_IS_TARGET) {
-
                     mRestoreEndTime = System.currentTimeMillis();
                     mTransferTotalTime = elapsedTimeInsec * 1000;//((mRestoreEndTime - Long.parseLong(DashboardLog.getInstance().geteDeviceSwitchSession().getStartDateTime())));
-
-                    try{
-                        updateTransactionStatus(true);
-
+                    updateTransactionStatus(true);
+                    String mTransfertime = EMUtility.getReadableTime(EasyMigrateActivity.this, mTransferTotalTime, false);
+                    if (mTransfertime.isEmpty()) {
+                        mTransfertime = String.format("1 %s", getString(R.string.sec));
                     }
-                    catch (Exception e){
-                        Log.d(TAG, "progressUpdate: "+e.toString());
+                    mTotalTransferTime.setVisibility(View.VISIBLE);
+                    DLog.log("Transfer time : " + mTransfertime);
+                    String sourceString = getResources().getString(R.string.transfer_completed_in) + "<b>" + " " + mTransfertime + "</b>";
+                    mTotalTransferTime.setText(Html.fromHtml(sourceString));
+                    //session id need to be displayed in destination
+                    String sessionId = DashboardLog.getInstance().geteDeviceSwitchSession().getDeviceSwitchSessionId();
+                    if (sessionId != null && !sessionId.isEmpty()) {
+                        DLog.log("Transaction id " + sessionId);
+                        String mTrasnactionId = getResources().getString(R.string.uniqueTransactionId) + "<b>" + " " + sessionId + "</b>";
+                        mUniqueTransactionId.setText(Html.fromHtml(mTrasnactionId));
                     }
-
-                    try{
-
-                        String mTransfertime = EMUtility.getReadableTime(EasyMigrateActivity.this, mTransferTotalTime, false);
-                        if (mTransfertime.isEmpty()) {
-                            mTransfertime = String.format("1 %s", getString(R.string.sec));
-                        }
-                        mTotalTransferTime.setVisibility(View.VISIBLE);
-                        DLog.log("Transfer time : " + mTransfertime);
-                        String sourceString = getResources().getString(R.string.transfer_completed_in) + "<b>" + " " + mTransfertime + "</b>";
-                        mTotalTransferTime.setText(Html.fromHtml(sourceString));
-                        //session id need to be displayed in destination
-                        String sessionId = DashboardLog.getInstance().geteDeviceSwitchSession().getDeviceSwitchSessionId();
-                        if (sessionId != null && !sessionId.isEmpty()) {
-                            DLog.log("Transaction id " + sessionId);
-                            String mTrasnactionId = getResources().getString(R.string.uniqueTransactionId) + "<b>" + " " + sessionId + "</b>";
-                            mUniqueTransactionId.setText(Html.fromHtml(mTrasnactionId));
-                        }
-
-                    }
-                    catch (Exception e){
-                        Log.d(TAG, "progressUpdate: "+e.toString());
-                    }
-
-                }
-
-                else {
-
+                } else {
                     mTotalTransferTime.setVisibility(View.GONE);
                     mUniqueTransactionId.setVisibility(View.GONE);
 //                    if (BuildConfig.FLAVOR.equalsIgnoreCase(FLAVOUR_SPRINT) && contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SMS_MESSAGES).isSelected()) {
@@ -5378,39 +5332,38 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
 //        wipeConfirmDialog.show();
 //    }
 //
-    private void showWipeConfirmDialog() {
-        //Toast.makeText(this, "In showWipeConfirmDialog", Toast.LENGTH_SHORT).show();
-        if (wipeConfirmDialog != null) {
-            wipeConfirmDialog.dismiss();
-        }
-        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-        alertDialogBuilder.setTitle(getString(R.string.proceed_to_wipe_title));
-        alertDialogBuilder
-                .setMessage(getString(R.string.proceed_to_wipe_msg))
-                .setCancelable(false)
-                .setPositiveButton(getString(R.string.ept_ok), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
-                        Intent dataWipe = new Intent(EasyMigrateActivity.this, RestrictionCheckActivity.class);
-                        startActivity(dataWipe);
-                        finish();
-                    }
-                })
-                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int id) {
-                        dialog.dismiss();
-                        if (FeatureConfig.getInstance().getProductConfig().isUninstallRequired() ||
-                                (!Constants.IS_MMDS && !BuildConfig.FLAVOR.equalsIgnoreCase(Constants.FLAVOUR_SPRINT))) {
-                            UninstallBroadcastReceiver.startUninstallAlarm(context);
-                        }
-                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
-                        forceCloseApp();
-                    }
-                });
-        wipeConfirmDialog = alertDialogBuilder.create();
-        wipeConfirmDialog.show();
-    }
+//    private void showWipeConfirmDialog() {
+//        if (wipeConfirmDialog != null) {
+//            wipeConfirmDialog.dismiss();
+//        }
+//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+//        alertDialogBuilder.setTitle(getString(R.string.proceed_to_wipe_title));
+//        alertDialogBuilder
+//                .setMessage(getString(R.string.proceed_to_wipe_msg))
+//                .setCancelable(false)
+//                .setPositiveButton(getString(R.string.ept_ok), new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        dialog.dismiss();
+//                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
+//                        Intent dataWipe = new Intent(EasyMigrateActivity.this, RestrictionCheckActivity.class);
+//                        startActivity(dataWipe);
+//                        finish();
+//                    }
+//                })
+//                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+//                    public void onClick(DialogInterface dialog, int id) {
+//                        dialog.dismiss();
+//                        if (FeatureConfig.getInstance().getProductConfig().isUninstallRequired() ||
+//                                (!Constants.IS_MMDS && !BuildConfig.FLAVOR.equalsIgnoreCase(Constants.FLAVOUR_SPRINT))) {
+//                            UninstallBroadcastReceiver.startUninstallAlarm(context);
+//                        }
+//                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
+//                        forceCloseApp();
+//                    }
+//                });
+//        wipeConfirmDialog = alertDialogBuilder.create();
+//        wipeConfirmDialog.show();
+//    }
 
     private void showFailDialog() {
         DLog.log("Displaying connection lost dialog");
@@ -5956,18 +5909,9 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
                             mManager.requestDeviceInfo(mChannel, new WifiP2pManager.DeviceInfoListener() {
                                 @Override
                                 public void onDeviceInfoAvailable(@Nullable WifiP2pDevice wifiP2pDevice) {
-
-                                    try{
-                                    DLog.log("requestDeviceInfo This device wifiP2pDevice info : " + wifiP2pDevice.toString());
-                                    DLog.log("requestDeviceInfo This device wifiDirect address: " + wifiP2pDevice.deviceAddress);
-                                    DLog.log("requestDeviceInfo This device wifiDirect name: " + wifiP2pDevice.deviceName);
+                                    //TODO
                                     CommonUtil.getInstance().setDeviceAddress(wifiP2pDevice.deviceAddress);
                                     CommonUtil.getInstance().setDeviceNameP2P(wifiP2pDevice.deviceName);
-                                    }
-                                    catch (Exception e){
-                                        Log.d(TAG, "onDeviceInfoAvailable: "+e.toString());
-                                    }
-
                                 }
                             });
                         }
@@ -6039,14 +5983,7 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
                                             CommonUtil.getInstance().setAutoPairingStatus(false);
                                             if (CommonUtil.getInstance().isMigrationInterrupted()) {
                                                 if (mRole == THIS_DEVICE_IS_TARGET) {
-
-                                                    try{
-                                                        mRemoteDeviceManager.reconnectToRemoteDevice();
-                                                    }
-                                                    catch (Exception e){
-                                                        Log.d(TAG, "onGroupInfoAvailable: "+e.toString());
-                                                    }
-
+                                                    mRemoteDeviceManager.reconnectToRemoteDevice();
                                                 }
                                                 CommonUtil.getInstance().setMigrationStatus(Constants.MIGRATION_INPROGRESS);
                                                 CommonUtil.getInstance().setMigrationInterrupted(false);
@@ -6331,203 +6268,97 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
     }
 
     private void updateTransactionStatus(boolean isSuccess) {
-
         DLog.log("In updateTransactionStatus. isSuccess is: " + isSuccess);
 
         Constants.TRANSFER_STATE transferState = Constants.TRANSFER_STATE.IN_PROGRESS;
         Constants.TRANSFER_STATUS transferStatus = Constants.TRANSFER_STATUS.FAILED;
-
-        try{
-
-            if (isSuccess) {
-                DashboardLog.getInstance().geteDeviceSwitchSession().setCancellationReason(Constants.CANCEL_REASON.NO_ERROR.value());
-                transferState = Constants.TRANSFER_STATE.COMPLETED;
-                transferStatus = Constants.TRANSFER_STATUS.SUCCESS;
-            }
-
+        if (isSuccess) {
+            DashboardLog.getInstance().geteDeviceSwitchSession().setCancellationReason(Constants.CANCEL_REASON.NO_ERROR.value());
+            transferState = Constants.TRANSFER_STATE.COMPLETED;
+            transferStatus = Constants.TRANSFER_STATUS.SUCCESS;
         }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CONTACTS).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CONTACT, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CONTACTS).getTotalCount(), -1, transferStatus, transferState, false);
+
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CONTACT, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_CONTACTS), -1, transferStatus, transferState, false, true);
         }
 
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALENDAR).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALENDAR, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALENDAR).getTotalCount(), -1, transferStatus, transferState, false);
 
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CONTACTS).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CONTACT, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CONTACTS).getTotalCount(), -1, transferStatus, transferState, false);
-
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CONTACT, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_CONTACTS), -1, transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALENDAR, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_CALENDAR), -1, transferStatus, transferState, false, true);
         }
 
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SMS_MESSAGES).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.MESSAGE, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SMS_MESSAGES).getTotalCount(), -1, transferStatus, transferState, false);
 
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALENDAR).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALENDAR, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALENDAR).getTotalCount(), -1, transferStatus, transferState, false);
-
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALENDAR, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_CALENDAR), -1, transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.MESSAGE, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_SMS_MESSAGES), -1, transferStatus, transferState, false, true);
         }
 
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALL_LOGS).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALLLOG, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALL_LOGS).getTotalCount(), -1, transferStatus, transferState, false);
 
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SMS_MESSAGES).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.MESSAGE, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SMS_MESSAGES).getTotalCount(), -1, transferStatus, transferState, false);
-
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.MESSAGE, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_SMS_MESSAGES), -1, transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALLLOG, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_CALL_LOGS), -1, transferStatus, transferState, false, true);
         }
 
-
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALL_LOGS).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALLLOG, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_CALL_LOGS).getTotalCount(), -1, transferStatus, transferState, false);
-
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.CALLLOG, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_CALL_LOGS), -1, transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SETTINGS).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.SETTINGS, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SETTINGS).getTotalCount(), -1, transferStatus, transferState, false);
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.SETTINGS, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_SETTINGS), -1, transferStatus, transferState, false, true);
         }
 
-
-
-
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SETTINGS).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.SETTINGS, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_SETTINGS).getTotalCount(), -1, transferStatus, transferState, false);
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.SETTINGS, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_SETTINGS), -1, transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_PHOTOS).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.IMAGE, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_PHOTOS).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_PHOTOS).getTotalSizeOfEntries(), transferStatus, transferState, false);
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.IMAGE, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_PHOTOS), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_PHOTOS), transferStatus, transferState, false, true);
         }
 
-
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_PHOTOS).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.IMAGE, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_PHOTOS).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_PHOTOS).getTotalSizeOfEntries(), transferStatus, transferState, false);
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.IMAGE, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_PHOTOS), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_PHOTOS), transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_VIDEO).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.VIDEO, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_VIDEO).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_VIDEO).getTotalSizeOfEntries(), transferStatus, transferState, false);
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.VIDEO, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_VIDEO), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_VIDEO), transferStatus, transferState, false, true);
         }
 
-
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_VIDEO).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.VIDEO, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_VIDEO).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_VIDEO).getTotalSizeOfEntries(), transferStatus, transferState, false);
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.VIDEO, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_VIDEO), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_VIDEO), transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_MUSIC).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.AUDIO, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_MUSIC).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_MUSIC).getTotalSizeOfEntries(), transferStatus, transferState, false);
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.AUDIO, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_MUSIC), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_MUSIC), transferStatus, transferState, false, true);
         }
 
-
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_MUSIC).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.AUDIO, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_MUSIC).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_MUSIC).getTotalSizeOfEntries(), transferStatus, transferState, false);
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.AUDIO, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_MUSIC), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_MUSIC), transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
+        if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_APP).isSelected()) {
+            DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.APP, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_APP).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_APP).getTotalSizeOfEntries(), transferStatus, transferState, false);
+            if (!isSuccess)
+                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.APP, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_APP), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_APP), transferStatus, transferState, false, true);
         }
 
-
-        try{
-
-            if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_APP).isSelected()) {
-                DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.APP, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_APP).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_APP).getTotalSizeOfEntries(), transferStatus, transferState, false);
-                if (!isSuccess)
-                    DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.APP, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_APP), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_APP), transferStatus, transferState, false, true);
-            }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
-        }
-
-
-        try{
-
+        //TODO
+        if(contentDetailsMap.containsValue(EMDataType.EM_DATA_TYPE_DOCUMENTS)){
             if (contentDetailsMap.get(EMDataType.EM_DATA_TYPE_DOCUMENTS).isSelected()) {
                 DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.DOCUMENTS, contentDetailsMap.get(EMDataType.EM_DATA_TYPE_DOCUMENTS).getTotalCount(), contentDetailsMap.get(EMDataType.EM_DATA_TYPE_DOCUMENTS).getTotalSizeOfEntries(), transferStatus, transferState, false);
                 if (!isSuccess)
                     DashboardLog.getInstance().addOrUpdateContentTransferDetail(Constants.DATATYPE.DOCUMENTS, EMMigrateStatus.getItemsTransferred(EMDataType.EM_DATA_TYPE_DOCUMENTS), EMMigrateStatus.getTransferedFilesSize(EMDataType.EM_DATA_TYPE_DOCUMENTS), transferStatus, transferState, false, true);
             }
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
         }
 
+        DashboardLog.getInstance().geteDeviceSwitchSession().setEndDateTime(String.valueOf(System.currentTimeMillis()));
 
-        try{
-
-            DashboardLog.getInstance().geteDeviceSwitchSession().setEndDateTime(String.valueOf(System.currentTimeMillis()));
-
-        }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
-        }
-
-        try{
-
-            if (isSuccess) {
-                if (mTransferTotalTime == 0) {
-                    mRestoreEndTime = System.currentTimeMillis();
-                    mTransferTotalTime = ((mRestoreEndTime - mBackupStartTime));
-                }
-                DashboardLog.getInstance().geteDeviceSwitchSession().setActualTimeInMS(String.valueOf(mTransferTotalTime));
-                DashboardLog.getInstance().updateSessionStatus(Constants.SESSION_STATUS.SUCCESS);
-            } else {
-                if (mBackupStartTime != 0) {
-                    DashboardLog.getInstance().geteDeviceSwitchSession().setActualTimeInMS(
-                            String.valueOf(System.currentTimeMillis() - mBackupStartTime));
-                }
+        if (isSuccess) {
+            if (mTransferTotalTime == 0) {
+                mRestoreEndTime = System.currentTimeMillis();
+                mTransferTotalTime = ((mRestoreEndTime - mBackupStartTime));
             }
-            CommonUtil.getInstance().setMigrationDone(true);
-
+            DashboardLog.getInstance().geteDeviceSwitchSession().setActualTimeInMS(String.valueOf(mTransferTotalTime));
+            DashboardLog.getInstance().updateSessionStatus(Constants.SESSION_STATUS.SUCCESS);
+        } else {
+            if (mBackupStartTime != 0) {
+                DashboardLog.getInstance().geteDeviceSwitchSession().setActualTimeInMS(
+                        String.valueOf(System.currentTimeMillis() - mBackupStartTime));
+            }
         }
-        catch (Exception e){
-            Log.d(TAG, "updateTransactionStatus: "+e.toString());
-        }
-
-
+        CommonUtil.getInstance().setMigrationDone(true);
     }
 
 
@@ -7023,14 +6854,7 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
                     handler.removeMessages(DISPLAY_FINAL_SUMMERY_SCREEN);
                     EMProgressInfo progressInfo = new EMProgressInfo();
                     progressInfo.mOperationType = EMProgressInfo.EMOperationType.EM_QUIT_COMMAND_SENT;
-
-                    try{
-                        progressUpdate(progressInfo);
-                    }
-                    catch (Exception e){
-                        Log.d(TAG, "handleMessage: "+e.toString());
-                    }
-
+                    progressUpdate(progressInfo);
                     hideProgressDialog();
                     break;
                 case NOTIFICATION_MESSAGE:
@@ -8642,8 +8466,7 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
             //startActivity(intent);
             //finish();
         } else if (isTransferSuccess && CommonUtil.getInstance().isSource() && FeatureConfig.getInstance().getProductConfig().isDataWipeEnabled()) {
-            Toast.makeText(this, "In proceedWithTheFeature", Toast.LENGTH_SHORT).show();
-            showWipeConfirmDialog();
+//            showWipeConfirmDialog();
         } else if ((CommonUtil.getInstance().isSource()) && isTransferSuccess && FeatureConfig.getInstance().getProductConfig().isAccAndPinRemovalEnabled()) {
 //            showAccLockConfirmDialog();
         } else if (isDefaultSMSApp()) {
