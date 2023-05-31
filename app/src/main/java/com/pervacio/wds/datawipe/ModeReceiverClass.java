@@ -14,6 +14,7 @@ import android.provider.Settings;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.pervacio.wds.R;
 
@@ -56,16 +57,19 @@ public class ModeReceiverClass extends BroadcastReceiver {
 
         }
 
-
     }
 
 
 
     private void updateSymbolBattery(float batteryPercentage) {
+        TextView batteryIMG_text = activity.findViewById(R.id.battery_txt);
+
         ImageView batteryIMG = activity.findViewById(R.id.battery_img);
         if (batteryPercentage<20) {
+            batteryIMG_text.setText("Battery Charge Below 20%!");
             batteryIMG.setImageResource(R.drawable.ic_fail);
         } else {
+            batteryIMG_text.setText("Minimum 20% Battery Charge Available");
             batteryIMG.setImageResource(R.drawable.ic_pass);
         }
     }
@@ -73,9 +77,12 @@ public class ModeReceiverClass extends BroadcastReceiver {
 
     private void updateSymbolAirplane(boolean isAirplaneModeOn) {
         ImageView airplane = activity.findViewById(R.id.airplane_img);
+        TextView airplane_text = activity.findViewById(R.id.airplane_txt);
         if (isAirplaneModeOn) {
             airplane.setImageResource(R.drawable.ic_fail);
+            airplane_text.setText("Airplane Mode ON!");
         } else {
+            airplane_text.setText("Airplane Mode OFF");
             airplane.setImageResource(R.drawable.ic_pass);
         }
     }

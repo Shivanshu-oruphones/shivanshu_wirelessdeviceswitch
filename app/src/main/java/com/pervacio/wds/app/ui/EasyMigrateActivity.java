@@ -1730,7 +1730,7 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
             @Override
             public void onClick(View view) {
                 showWipeConfirmDialog();
-                Toast.makeText(thisActivity, "Data Wipe Button Clicked!", Toast.LENGTH_SHORT).show();
+              //  Toast.makeText(thisActivity, "Data Wipe Button Clicked!", Toast.LENGTH_SHORT).show();
             }
         });
 

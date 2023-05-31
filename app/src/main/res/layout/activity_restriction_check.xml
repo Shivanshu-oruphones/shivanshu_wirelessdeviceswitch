@@ -8,6 +8,7 @@
     android:orientation="vertical"
     tools:context=".datawipe.RestrictionCheckActivity">
 
+
     <ScrollView
         app:layout_constraintBottom_toTopOf="@+id/continue_ll"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,6 +38,9 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_gravity="center"
+                android:gravity="center"
+
                 android:id="@+id/rooted_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -44,6 +48,9 @@
                 android:src="@drawable/ic_fail"/>
 
             <TextView
+
+                android:layout_gravity="center"
+                android:gravity="center"
 
                 android:id="@+id/rooted_txt"
                 android:layout_width="wrap_content"
@@ -62,6 +69,9 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_gravity="center"
+                android:gravity="center"
+
                 android:id="@+id/airplane_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -69,7 +79,8 @@
                 android:src="@drawable/ic_fail"/>
 
             <TextView
-
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/airplane_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -87,6 +98,8 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/factory_protection_off_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -94,7 +107,8 @@
                 android:src="@drawable/ic_fail"/>
 
             <TextView
-
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/factory_protection_off_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -112,6 +126,8 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/battery_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -119,7 +135,8 @@
                 android:src="@drawable/ic_fail"/>
 
             <TextView
-
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/battery_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -137,6 +154,8 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/sim_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -144,7 +163,8 @@
                 android:src="@drawable/ic_fail"/>
 
             <TextView
-
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/sim_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -163,6 +183,8 @@
             android:orientation="horizontal">
 
             <ImageView
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/sd_img"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -170,7 +192,8 @@
                 android:src="@drawable/ic_fail"/>
 
             <TextView
-
+                android:layout_gravity="center"
+                android:gravity="center"
                 android:id="@+id/sd_txt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -405,18 +428,9 @@
             android:textSize="18sp"
             android:paddingBottom="40dp"
             android:paddingHorizontal="40dp"/>
-
-
-
-
     </LinearLayout>
 
     </ScrollView>
-
-
-
-
-
     <LinearLayout
         app:layout_constraintTop_toBottomOf="@+id/scroll_view"
         app:layout_constraintStart_toStartOf="parent"
@@ -431,32 +445,38 @@
         android:paddingVertical="10dp"
         android:orientation="horizontal">
 
-        <org.pervacio.wirelessdatawipe.common.CustomButton
-            android:id="@+id/cancel_tv"
+        <Button
+            android:id="@+id/goBack_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:minWidth="64dp"
             android:padding="@dimen/button_padding"
+            android:textColor="@color/backgroundColor"
+            android:textSize="16sp"
             android:layout_marginLeft="15dp"
             android:layout_marginRight="@dimen/custom_btn_rt_margin"
-            android:background="@drawable/grey_rounded_corner"
-            android:text="@string/exit"
-            style="@style/textStyle_blue_button_wdw"
+
+            android:background="@drawable/grey_rounded_corner_new"
+
+            android:text="@string/go_back"
             android:layout_weight="1"/>
 
-        <org.pervacio.wirelessdatawipe.common.CustomButton
-            android:id="@+id/confirm_tv"
+        <Button
+            android:id="@+id/confirm_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="15dp"
             android:minWidth="64dp"
             android:layout_marginLeft="7dp"
-            android:background="@drawable/blue_rounded_corners"
+
+            android:background="@drawable/blue_rounded_corners_new"
+
+            android:textColor="@color/white"
+            android:textSize="16sp"
             android:padding="@dimen/button_padding"
             android:text="@string/confirm"
-            style="@style/textStyle_button_wdw"
             android:layout_weight="1"/>
 
     </LinearLayout>

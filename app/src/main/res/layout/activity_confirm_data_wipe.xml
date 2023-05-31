@@ -1,0 +1,85 @@
+<RelativeLayout
+tools:context=".datawipe.ConfirmDataWipeActivity"
+xmlns:android="http://schemas.android.com/apk/res/android"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_width="match_parent"
+android:layout_height="match_parent"
+android:orientation="vertical">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_centerInParent="true">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_warning"
+        android:layout_margin="20dp" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/ConfirmText"
+        android:layout_margin="20dp"
+        android:textSize="18sp"
+        android:gravity="center"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="20dp"
+        android:text="@string/DeviceRebootText"
+        android:textSize="18sp"
+        android:gravity="center"/>
+</LinearLayout>
+
+<LinearLayout
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="right"
+    android:background="@color/white"
+    android:gravity="center"
+    android:id="@+id/continue_ll"
+    android:paddingVertical="10dp"
+    android:orientation="horizontal">
+
+    <Button
+        android:id="@+id/goBack_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:minWidth="64dp"
+        android:padding="@dimen/button_padding"
+        android:textColor="@color/backgroundColor"
+        android:textSize="16sp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="@dimen/custom_btn_rt_margin"
+
+        android:background="@drawable/grey_rounded_corner_new"
+
+        android:text="@string/go_back"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/confirm_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_marginRight="15dp"
+        android:minWidth="64dp"
+        android:layout_marginLeft="7dp"
+
+        android:background="@drawable/blue_rounded_corners_new"
+
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:padding="@dimen/button_padding"
+        android:text="@string/confirm"
+        android:layout_weight="1"/>
+
+</LinearLayout>
+
+</RelativeLayout>

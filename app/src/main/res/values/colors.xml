@@ -6,6 +6,10 @@
     <color name="fixGeniusBlue">#2C2F44</color>
     <color name="fixGeniusDarkBlue">#2C2F44</color>
 
+    <color name="backgroundColor">#009bdf</color>
+
+    <color name="backgroundColor_NotClickable">#013D57</color>
+
     <color name="areaHeading">#2C2F44</color>
     <color name="areaSubHeading">#000000</color>
 

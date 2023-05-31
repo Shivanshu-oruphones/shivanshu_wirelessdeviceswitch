@@ -22,6 +22,8 @@
     </style>
 
 
+
+
     <style name="CustomActionBarStyle" parent="@style/Widget.AppCompat.Light.ActionBar">
         <item name="android:background">@color/toolbar_background</item>
         <item name="android:titleTextStyle">@style/MyActionBarTitleText</item>

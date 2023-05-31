@@ -6,14 +6,23 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.provider.Settings;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.pervacio.wds.R;
@@ -26,6 +35,8 @@ import java.io.File;
 import java.io.InputStreamReader;
 import java.util.Timer;
 import java.util.TimerTask;
+
+import okio.Timeout;
 
 public class RestrictionCheckActivity extends AppCompatActivity {
 
@@ -48,6 +59,20 @@ public class RestrictionCheckActivity extends AppCompatActivity {
     private ModeReceiverClass modeReceiverClass;
     public AccountManager accountManager;
 
+    Button GoBack;
+    Button Confirm;
+    private AlertDialog alertDialog;
+
+    Drawable decideRoot_img_current ;
+    Drawable AirplaneMode_img_current ;
+    Drawable Factory_img_current ;
+    Drawable Battery_img_current ;
+    Drawable SIM_img_current;
+    Drawable SD_img_current ;
+
+    Handler handler;
+
+
     @RequiresApi(api = Build.VERSION_CODES.S)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,21 +82,8 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         //Getting ID's
         getIDs();
 
-        //Check if rooted
-        if (!isDeviceRooted()) {
-            DeviceRooted.setImageResource(R.drawable.ic_pass);
-        }
-
-        //Mode Receiver Class Checking for AIRPLANE_MODE
-        modeReceiverClass = new ModeReceiverClass(this); // Pass the activity reference
-        IntentFilter filter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
-        registerReceiver(modeReceiverClass, filter);
-
-
-        //Mode Receiver Class Checking for BATTERY_CHANGED
-        IntentFilter filter2 = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
-        registerReceiver(modeReceiverClass, filter2);
-
+        //Creating ConfirmDialog While Checking
+        createConfirmLoadingDialog();
 
         //Initiating TestSim Class
         testSim = new TestSim();
@@ -79,11 +91,15 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         //Initiating SdCardInsertionTest Class
         sdCardInsertionTest = new SdCardInsertionTest();
 
-        //Google accounts fetching
-        accountManager= AccountManager.get(this);
+        //performing All the checks
+        performChecks();
 
-        //Check few settings few 1 second
-        startUpdatingTextView();
+        //For delaying time to display user the dialog
+        handler = new Handler(Looper.getMainLooper());
+
+        //Return boolean values of whether all checks are green or not.
+        getStatusOfAllChecks();
+
 
         //When Google Accounts are not logged out you can click the given TEXT and it will redirect to google account settings.
         FactoryResetText.setOnClickListener(new View.OnClickListener() {
@@ -104,7 +120,116 @@ public class RestrictionCheckActivity extends AppCompatActivity {
             }
         });
 
+        //Go_Back Button Logic
+        GoBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                finish();
+
+            }
+        });
+
+        //Confirm Button Logic
+        Confirm.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                ConfirmButtonClicked();
+            }
+        });
+
     }
+
+    private Boolean getStatusOfAllChecks() {
+
+        @SuppressLint("UseCompatLoadingForDrawables")
+        Drawable pass_img = getResources().getDrawable(R.drawable.ic_pass);
+        @SuppressLint("UseCompatLoadingForDrawables")
+        Drawable fail_img = getResources().getDrawable(R.drawable.ic_fail);
+
+        decideRoot_img_current = DeviceRooted.getDrawable();
+        AirplaneMode_img_current = Airplane.getDrawable();
+        Factory_img_current = FactoryReset.getDrawable();
+        Battery_img_current = battery_percent.getDrawable();
+        SIM_img_current = SIM_present.getDrawable();
+        SD_img_current = SD_present.getDrawable();
+
+        return decideRoot_img_current.getConstantState().equals(pass_img.getConstantState()) &&
+                AirplaneMode_img_current.getConstantState().equals(pass_img.getConstantState()) &&
+                Factory_img_current.getConstantState().equals(pass_img.getConstantState()) &&
+                Battery_img_current.getConstantState().equals(pass_img.getConstantState()) &&
+                SIM_img_current.getConstantState().equals(pass_img.getConstantState()) && ///////////////TESTING SIM AS FAIL ICON
+                SD_img_current.getConstantState().equals(pass_img.getConstantState());
+
+    }
+
+    private void createConfirmLoadingDialog() {
+
+        AlertDialog.Builder builder = new androidx.appcompat.app.AlertDialog.Builder(this);
+        LayoutInflater inflater = this.getLayoutInflater();
+        builder.setView(inflater.inflate(R.layout.datawipeconfirmprogressdialog,null));
+        builder.setCancelable(false);
+        alertDialog = builder.create();
+
+    }
+
+    private void ConfirmButtonClicked() {
+        alertDialog.show();
+
+        performChecks();
+
+        if(getStatusOfAllChecks())
+        {
+            handler.postDelayed(new Runnable() {
+                @Override
+                public void run() {
+                    alertDialog.hide();
+
+                    Intent myIntent = new Intent(getApplicationContext(), ConfirmDataWipeActivity.class);
+                    startActivity(myIntent);
+
+                }
+            }, 1200);
+
+        }
+        else {
+            alertDialog.hide();
+            Toast.makeText(getApplicationContext(), "Check all the Validations!", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+    private void performChecks() {
+
+        //Check if rooted
+        if (!isDeviceRooted()) {
+            DeviceRooted.setImageResource(R.drawable.ic_pass);
+            DeviceRootedText.setText("Device Not Rooted");
+
+        }
+        else {
+            DeviceRooted.setImageResource(R.drawable.ic_fail);
+            DeviceRootedText.setText("Device Rooted!");
+        }
+
+        //Mode Receiver Class Checking for AIRPLANE_MODE
+        modeReceiverClass = new ModeReceiverClass(this); // Pass the activity reference
+        IntentFilter filter = new IntentFilter(Intent.ACTION_AIRPLANE_MODE_CHANGED);
+        registerReceiver(modeReceiverClass, filter);
+
+
+        //Mode Receiver Class Checking for BATTERY_CHANGED
+        IntentFilter filter2 = new IntentFilter(Intent.ACTION_BATTERY_CHANGED);
+        registerReceiver(modeReceiverClass, filter2);
+
+        //Google accounts fetching
+        accountManager= AccountManager.get(this);
+
+        //Check few settings few 1 second
+        startUpdatingTextView();
+
+    }
+
+
 
     public boolean isGoogleAccountSignedIn() {
         Account[] accounts = accountManager.getAccountsByType(GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE);
@@ -126,8 +251,10 @@ public class RestrictionCheckActivity extends AppCompatActivity {
                         testResult = testSim.checkCurrentSimState();
                         if (testResult.getResultCode() == 0) {
                             SIM_present.setImageResource(R.drawable.ic_fail);
+                            SIM_presentText.setText("SIM Card Present!");
                         } else {
                             SIM_present.setImageResource(R.drawable.ic_pass);
+                            SIM_presentText.setText("SIM Card Not Present");
                         }
 
                         //SD fetching
@@ -135,9 +262,12 @@ public class RestrictionCheckActivity extends AppCompatActivity {
                         if (testSdCardResult.getResultCode() == 512) {
                             //var2 = "PASS";
                             SD_present.setImageResource(R.drawable.ic_pass);
+                            SD_presentText.setText("SD Card Not Present");
                         } else {
                             //var2 = "FAIL";
                             SD_present.setImageResource(R.drawable.ic_fail);
+                            SD_presentText.setText("SD Card Present!");
+
 
                         }
 
@@ -145,9 +275,38 @@ public class RestrictionCheckActivity extends AppCompatActivity {
                         if(isGoogleAccountSignedIn())
                         {
                             FactoryReset.setImageResource(R.drawable.ic_fail);
+                            FactoryResetText.setText("Factory Reset Protection ON!");
+                            FactoryResetText.setEnabled(true);
+                            FactoryResetText.setClickable(true);
+
                         }
                         else {
                             FactoryReset.setImageResource(R.drawable.ic_pass);
+                            FactoryResetText.setText("Factory Reset Protection OFF");
+                            FactoryResetText.setEnabled(false);
+                            FactoryResetText.setClickable(false);
+
+                        }
+
+                        //Setting COMFIRM Button
+                        if(getStatusOfAllChecks())
+                        {
+                            Confirm.setClickable(true);
+                            Confirm.setEnabled(true);
+                            //Confirm.setBackgroundColor(getResources().getColor(R.color.backgroundColor));
+                            Confirm.setAlpha(1);
+                            Confirm.setBackgroundResource(R.color.backgroundColor);
+
+
+                        }
+                        else{
+                            Confirm.setClickable(false);
+                            Confirm.setEnabled(false);
+
+                            Confirm.setBackgroundResource(R.color.backgroundColor_NotClickable);
+                            Confirm.setAlpha(0.6f); // Set the transparency of the button to 60%
+
+
                         }
 
 
@@ -190,6 +349,9 @@ public class RestrictionCheckActivity extends AppCompatActivity {
 
         SD_present = findViewById(R.id.sd_img);
         SD_presentText=findViewById(R.id.sd_txt);
+
+        GoBack = findViewById(R.id.goBack_button);
+        Confirm = findViewById(R.id.confirm_button);
     }
     public static boolean isDeviceRooted() {
         return checkRootMethod1() || checkRootMethod2() || checkRootMethod3();
