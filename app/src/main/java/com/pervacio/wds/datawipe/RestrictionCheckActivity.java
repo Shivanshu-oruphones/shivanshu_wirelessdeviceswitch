@@ -79,6 +79,18 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restriction_check);
 
+        /*
+
+        USED EXTERNAL LIBRARY AND IT'S CLASSES ONLY FOR TESTING SIM AND SD CARD
+
+        TestResult testResult;
+        TestSim testSim;
+        SdCardInsertionTest sdCardInsertionTest;
+        TestSdCardResult testSdCardResult;
+
+        */
+
+
         //Getting ID's
         getIDs();
 
