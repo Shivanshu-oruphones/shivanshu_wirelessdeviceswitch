@@ -120,6 +120,16 @@ public class RestrictionCheckActivity extends AppCompatActivity {
             }
         });
 
+        //Setting Airplane Mode for 1st time
+        if(isAirplaneModeOn(this)){
+            Airplane.setImageResource(R.drawable.ic_fail);
+            AirplaneText.setText("Airplane Mode ON!");
+        }
+        else {
+            AirplaneText.setText("Airplane Mode OFF");
+            Airplane.setImageResource(R.drawable.ic_pass);
+
+        }
         //Go_Back Button Logic
         GoBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -230,6 +240,13 @@ public class RestrictionCheckActivity extends AppCompatActivity {
     }
 
 
+    public static boolean isAirplaneModeOn(Context context) {
+        if (android.os.Build.VERSION.SDK_INT < android.os.Build.VERSION_CODES.JELLY_BEAN_MR1) {
+            return Settings.System.getInt(context.getContentResolver(), Settings.System.AIRPLANE_MODE_ON, 0) != 0;
+        } else {
+            return Settings.Global.getInt(context.getContentResolver(), Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
+        }
+    }
 
     public boolean isGoogleAccountSignedIn() {
         Account[] accounts = accountManager.getAccountsByType(GoogleAuthUtil.GOOGLE_ACCOUNT_TYPE);

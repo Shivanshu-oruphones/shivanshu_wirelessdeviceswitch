@@ -243,6 +243,7 @@ import com.pervacio.wds.custom.utils.PreferenceHelper;
 import com.pervacio.wds.custom.utils.SelectedAppsDetailsAdapter;
 import com.pervacio.wds.custom.utils.SelectedDataTypeDetailsAdapter;
 import com.pervacio.wds.custom.utils.startLocationAlert;
+import com.pervacio.wds.datawipe.RestrictionCheckActivity;
 import com.pervacio.wds.sdk.CMDBackupAndRestoreEngine;
 import com.pervacio.wds.sdk.CMDBackupAndRestoreServiceType;
 import com.pervacio.wds.sdk.CMDError;
@@ -406,6 +407,8 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
     private int mCallLogsCount = 0;
     private int mSettingsCount = 0;
     private int mDocumentsCount = 0;
+
+    private Button DataWipeButton;
 
     private boolean mContactsSelected = false;
     private boolean mCalendarsSelected = false;
@@ -742,6 +745,8 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
     PowerManager.WakeLock mWakeLock = null;
     PowerManager mPowerManager = null;
     WifiManager.WifiLock mWiFiLock = null;
+
+
 
     private void setWakeLock(boolean aOn) {
         try {
@@ -1172,6 +1177,50 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
             }
         };
 
+
+
+
+
+
+
+
+
+
+
+        //
+        // /*
+
+
+
+        DataWipeButton=findViewById(R.id.datawipebutton);
+        DataWipeButton.setOnClickListener(new OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                showWipeConfirmDialog();
+
+            }
+        });
+
+
+
+        //
+        // */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         OnClickListener finishButtonOnClickListener = new OnClickListener() {
             // @Override
             public void onClick(View v) {
@@ -1339,6 +1388,7 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
         estimationTime = (TextView) findViewById(R.id.estimationTime);
         grantPermission = (TextView) findViewById(R.id.grant_perm_tv);
         skip = (Button) findViewById(R.id.skip_tv);
+
         grantPermission.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -1373,11 +1423,38 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
                 EasyMigrateService.LocalBinder binder = (EasyMigrateService.LocalBinder) service;
                 EasyMigrateService easyMigrateService = binder.getService();
                 if (mRemoteDeviceManager != null) {
+
                     mRemoteDeviceManager = easyMigrateService.getRemoteDeviceManager();
-                    mRemoteDeviceManager.resetDeviceList();
-                    mRemoteDeviceManager.setDelegate(thisActivity);
-                    mRemoteDeviceManager.mRemoteDeviceList.setDelegate(thisActivity);
-                    deviceListChanged();
+
+                    try {
+                        mRemoteDeviceManager.resetDeviceList();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.d(TAG, "onServiceConnected: "+e.toString());
+                    }
+                    try {
+                        mRemoteDeviceManager.setDelegate(thisActivity);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.d(TAG, "onServiceConnected: "+e.toString());
+                    }
+                    try {
+                        mRemoteDeviceManager.mRemoteDeviceList.setDelegate(thisActivity);
+                    }
+                    catch (Exception e)
+                    {
+                        Log.d(TAG, "onServiceConnected: "+e.toString());
+                    }
+                    try {
+                        deviceListChanged();
+                    }
+                    catch (Exception e)
+                    {
+                        Log.d(TAG, "onServiceConnected: "+e.toString());
+                    }
+
                 } // Force a refresh of the device list
             }
 
@@ -5332,38 +5409,40 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
 //        wipeConfirmDialog.show();
 //    }
 //
-//    private void showWipeConfirmDialog() {
-//        if (wipeConfirmDialog != null) {
-//            wipeConfirmDialog.dismiss();
-//        }
-//        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
-//        alertDialogBuilder.setTitle(getString(R.string.proceed_to_wipe_title));
-//        alertDialogBuilder
-//                .setMessage(getString(R.string.proceed_to_wipe_msg))
-//                .setCancelable(false)
-//                .setPositiveButton(getString(R.string.ept_ok), new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        dialog.dismiss();
-//                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
-//                        Intent dataWipe = new Intent(EasyMigrateActivity.this, RestrictionCheckActivity.class);
-//                        startActivity(dataWipe);
-//                        finish();
-//                    }
-//                })
-//                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
-//                    public void onClick(DialogInterface dialog, int id) {
-//                        dialog.dismiss();
-//                        if (FeatureConfig.getInstance().getProductConfig().isUninstallRequired() ||
-//                                (!Constants.IS_MMDS && !BuildConfig.FLAVOR.equalsIgnoreCase(Constants.FLAVOUR_SPRINT))) {
-//                            UninstallBroadcastReceiver.startUninstallAlarm(context);
-//                        }
-//                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
-//                        forceCloseApp();
-//                    }
-//                });
-//        wipeConfirmDialog = alertDialogBuilder.create();
-//        wipeConfirmDialog.show();
-//    }
+    private void showWipeConfirmDialog() {
+
+        if (wipeConfirmDialog != null) {
+            wipeConfirmDialog.dismiss();
+        }
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(this);
+        alertDialogBuilder.setTitle(getString(R.string.proceed_to_wipe_title));
+        alertDialogBuilder
+                .setMessage(getString(R.string.proceed_to_wipe_msg))
+                .setCancelable(false)
+                .setPositiveButton(getString(R.string.ept_ok), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
+                        Intent dataWipe = new Intent(EasyMigrateActivity.this, RestrictionCheckActivity.class);
+                        startActivity(dataWipe);
+                        finish();
+                    }
+                })
+                .setNegativeButton(getString(R.string.cancel), new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        if (FeatureConfig.getInstance().getProductConfig().isUninstallRequired() ||
+                                (!Constants.IS_MMDS && !BuildConfig.FLAVOR.equalsIgnoreCase(Constants.FLAVOUR_SPRINT))) {
+                            UninstallBroadcastReceiver.startUninstallAlarm(context);
+                        }
+                        PreferenceHelper.getInstance(context).putBooleanItem(Constants.PREF_FINISH_CLICKED, true);
+                        forceCloseApp();
+                    }
+                });
+        wipeConfirmDialog = alertDialogBuilder.create();
+        wipeConfirmDialog.show();
+    }
 
     private void showFailDialog() {
         DLog.log("Displaying connection lost dialog");
@@ -5910,8 +5989,11 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
                                 @Override
                                 public void onDeviceInfoAvailable(@Nullable WifiP2pDevice wifiP2pDevice) {
                                     //TODO
-                                    CommonUtil.getInstance().setDeviceAddress(wifiP2pDevice.deviceAddress);
-                                    CommonUtil.getInstance().setDeviceNameP2P(wifiP2pDevice.deviceName);
+                                    try{CommonUtil.getInstance().setDeviceAddress(wifiP2pDevice.deviceAddress);
+                                    CommonUtil.getInstance().setDeviceNameP2P(wifiP2pDevice.deviceName);}
+                                    catch (Exception e){
+                                        Log.d(TAG, "onDeviceInfoAvailable: "+e.toString());
+                                    }
                                 }
                             });
                         }

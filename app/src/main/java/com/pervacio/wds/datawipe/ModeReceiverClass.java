@@ -33,13 +33,6 @@ public class ModeReceiverClass extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
 
-        //Initiating Airplane Mode For 1st Time only
-        if(ii==1)
-        {
-            boolean isAirplaneModeOn = isAirplaneModeOn(activity);
-            updateSymbolAirplane(isAirplaneModeOn);
-            ii=2;
-        }
 
         //Checking Airplane Mode For n Times
         if (intent.getAction().equals(Intent.ACTION_AIRPLANE_MODE_CHANGED)) {
@@ -84,18 +77,6 @@ public class ModeReceiverClass extends BroadcastReceiver {
         } else {
             airplane_text.setText("Airplane Mode OFF");
             airplane.setImageResource(R.drawable.ic_pass);
-        }
-    }
-
-    public static boolean isAirplaneModeOn(Context context) {
-        if (Build.VERSION.SDK_INT < Build.VERSION_CODES.JELLY_BEAN_MR1) {
-            // Prior to Jelly Bean MR1, airplane mode setting was stored in Settings.System
-            return Settings.System.getInt(context.getContentResolver(),
-                    Settings.System.AIRPLANE_MODE_ON, 0) != 0;
-        } else {
-            // On Jelly Bean MR1 and above, airplane mode setting is stored in Settings.Global
-            return Settings.Global.getInt(context.getContentResolver(),
-                    Settings.Global.AIRPLANE_MODE_ON, 0) != 0;
         }
     }
 

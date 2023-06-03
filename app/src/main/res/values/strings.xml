@@ -988,6 +988,7 @@ ORU Content Transfer lets you transfer data from your old device to a new device
     <string name="confirm">Confirm</string>
     <string name="ConfirmText">Click “Confirm” to start Data Wipe.\nData once wiped cannot be recovered.</string>
     <string name="DeviceRebootText">Device will reboot after wipe.</string>
+    <string name="check_error_red">Please check the errors in Red to resolve</string>
 
 
 </resources>
