@@ -13,7 +13,6 @@
  * is strictly forbidden unless prior written permission is obtained
  * from Media Mushroom Limited.
  */
-
 package com.pervacio.wds.app;
 
 import android.util.Log;
