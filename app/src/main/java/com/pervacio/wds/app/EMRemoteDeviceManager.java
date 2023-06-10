@@ -20,7 +20,7 @@ import android.content.Context;
 import android.net.wifi.WifiManager;
 import android.os.AsyncTask;
 import android.os.Build;
-import android.util.Log;
+import android.widget.Toast;
 
 import com.pervacio.wds.BuildConfig;
 import com.pervacio.wds.custom.utils.Constants;
@@ -42,7 +42,6 @@ import static android.content.Context.WIFI_SERVICE;
 
 public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegate
 {
-	public String TAG = "EMRemoteDeviceManager";
 	public EMRemoteDeviceList mRemoteDeviceList;
 	public EMDeviceInfo mSelectedDevice;
 	static EMGlobals emGlobals = new EMGlobals();
@@ -250,157 +249,10 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 					DLog.log("EMRemoteDeviceManager", e);
 				}
 			}
-
-			/*
-			// Publish and listen using jmDNS
-			if (EMConfig.USE_JMDNS_DISCOVERY) {
-				try {
-					WifiInfo wifiInfo = wifi.getConnectionInfo();
-					InetAddress inetAddress = null;
-
-					try {
-						inetAddress = wifiInetAddress(wifi);
-						mJmDNS = JmDNS.create(inetAddress);
-					} catch (Exception ex) {
-						int ip = wifiInfo.getIpAddress();
-
-						String ipString = String.format(
-								"%d.%d.%d.%d",
-								(ip & 0xff),
-								(ip >> 8 & 0xff),
-								(ip >> 16 & 0xff),
-								(ip >> 24 & 0xff));
-
-						mJmDNS = JmDNS.create(ipString);
-
-						DLog.log("EMRemoteDeviceManager", ex);
-					}
-
-					serviceInfo = ServiceInfo.create("_easymigrate._tcp.local.", aName[0], mServer.mPort, "info");
-					//	            serviceInfo = ServiceInfo.create("_easymigrate._tcp.", aName[0], mPort, "info");
-					mJmDNS.registerService(serviceInfo);
-
-					DLog.log("EMRemoteDeviceManager: registered service: " + aName[0]);
-
-					//	            ServiceListener listener;
-					mJmDNS.addServiceListener("_easymigrate._tcp.local.", new ServiceListener() {
-						public void serviceResolved(ServiceEvent ev) {
-							//notifyUser("Service resolved: "
-							//         + ev.getInfo().getQualifiedName()
-							//         + " port:" + ev.getInfo().getPort());
-							ServiceInfo resolvedServiceInfo = ev.getInfo();
-							InetAddress[] serviceAddresses = resolvedServiceInfo.getInetAddresses();
-
-							String discoveredServiceName = resolvedServiceInfo.getName();
-
-							if (serviceNames.contains(discoveredServiceName)) {
-								DLog.log("Found my own service - ignore it");
-							} else {
-								for (InetAddress address : serviceAddresses) {
-
-									//	                		// handshakeWithResolvedService(address, resolvedServiceInfo.getPort());
-									EMPublishServerTaskUpdate discoveredServiceInfo = new EMPublishServerTaskUpdate();
-									discoveredServiceInfo.mDiscoveredServiceAddress = address;
-									discoveredServiceInfo.mDiscoveredServicePort = resolvedServiceInfo.getPort();
-									discoveredServiceInfo.mDiscoveredServiceName = resolvedServiceInfo.getName();
-									publishProgress(discoveredServiceInfo);
-									DLog.log("EMRemoteDeviceManager: Service resolved @ " + address.toString());
-									DLog.log("EMRemoteDeviceManager: Resolved name: " + resolvedServiceInfo.getName());
-									DLog.log("EMRemoteDeviceManager: Resolved port: " + resolvedServiceInfo.getPort());
-								}
-							}
-
-							DLog.log("Service resolved");
-						}
-
-						public void serviceRemoved(ServiceEvent ev) {
-							DLog.log("Service removed");
-						}
-
-						public void serviceAdded(ServiceEvent event) {
-							// Required to force serviceResolved to be called again
-							// (after the first search)
-							DLog.log("EMRemoteDeviceManager: Service added: name: " + event.getName());
-							DLog.log("EMRemoteDeviceManager: Service added: type: " + event.getType());
-							mJmDNS.requestServiceInfo(event.getType(), event.getName(), 1);
-						}
-					});
-
-				} catch (IOException e) {
-					// TODO Auto-generated catch block
-					e.printStackTrace();
-					DLog.log("EMRemoteDeviceManager", e);
-				}
-			}
-			*/
 	        
 			return null;
 		}
     }
-
-    void doNsdPublishAndDiscovery(String aName)
-	{
-		/*
-		ServiceInfo serviceInfo;
-		WifiManager wifi = (WifiManager) mContext.getSystemService(WIFI_SERVICE);
-		WifiManager.MulticastLock lock = wifi.createMulticastLock("CMD_MULTICAST_LOCK"); // TODO: release this lock when we're done
-		lock.setReferenceCounted(true);
-		lock.acquire();
-
-		// final String serviceName = aName[0];
-
-		final Set<String> serviceNames = new HashSet<>();
-		serviceNames.add(aName);
-
-		// Publish and listen using EMBonjourController
-		if (EMConfig.USE_NSD_DISCOVERY) {
-			try {
-				// WifiInfo wifiInfo = wifi.getConnectionInfo();
-				DLog.log("EMRemoteDeviceManager: about to publish and listen using EMBonjourController");
-				InetAddress wifiInetAddress = wifiInetAddress(wifi);
-				try {
-					if (wifiInetAddress == null) {
-						DLog.log("EMRemoteDeviceManager: no WiFi address");
-					} else {
-						mBonjourController = new EMBonjourControllerNsd(wifiInetAddress.toString(), mContext);
-						mBonjourController.setDelegate(new EMBonjourController.Observer() {
-							@Override
-							public void onServiceFound(String aServiceName, InetAddress aHost, int aPort) {
-								if (serviceNames.contains(aServiceName)) {
-									DLog.log("EMBonjourController: Found my own service - ignore it");
-								} else {
-
-									DLog.log("EMRemoteDeviceManager: found service with EMBonjourController");
-									DLog.log("EMRemoteDeviceManager: EMBonjourController: aServiceName:" + aServiceName);
-									DLog.log("EMRemoteDeviceManager: EMBonjourController: aHost:" + aHost.toString());
-									DLog.log("EMRemoteDeviceManager: EMBonjourController: aPort: " + aPort);
-									EMPublishServerTaskUpdate discoveredServiceInfo = new EMPublishServerTaskUpdate();
-									discoveredServiceInfo.mDiscoveredServiceAddress = aHost;
-									discoveredServiceInfo.mDiscoveredServicePort = aPort;
-									discoveredServiceInfo.mDiscoveredServiceName = aServiceName;
-									publishProgress(discoveredServiceInfo);
-								}
-							}
-
-							@Override
-							public void onServiceRegistered(String aServiceName) {
-								serviceNames.add(aServiceName);
-							}
-						});
-						mBonjourController.publishService(aName[0], mServer.mPort);
-						mBonjourController.listenForService();
-					}
-				} catch (Exception ex) {
-					DLog.log("EMRemoteDeviceManager: EMBonjourController exception", ex);
-				}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-				DLog.log("EMRemoteDeviceManager", e);
-			}
-		}
-		*/
-	}
 
 	private boolean publishService(String aName) {
 		DLog.log(">> EMRemoteDeviceManager: publishService");
@@ -461,20 +313,15 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	}
 
 	public void reconnectToRemoteDevice(){
-
-		try{
-
+		//TODO FIXED BUG
+		if(mSelectedDevice.mIpV4Address != null){
 			mMainSession = new EMSession(mSelectedDevice.mIpV4Address, EMConfig.FIXED_PORT_NUMBER, this, emGlobals.getmContext(), mPreviouslyTransferredContentRegistry, true);
 			mMainSession.startFileServer();
 			mMainSession.reCreateConnection();
 			sendTextCommand(Constants.RECOVERED);
-
+		}else {
+			Toast.makeText(mContext, "Something Went wrong!", Toast.LENGTH_SHORT).show();
 		}
-		catch (Exception e){
-
-			Log.d(TAG, "reconnectToRemoteDevice: "+e.toString());
-		}
-
 	}
 
 	// The connected remote device should become the source (and this device becomes the target)
@@ -707,7 +554,12 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	// END – Pervacio
 
 	public boolean setCryptoPassword(String aPassword) {
-		return mMainSession.setCryptoPassword(aPassword);
+		if (aPassword.isEmpty()){
+			return  false;
+		}else {
+			return mMainSession.setCryptoPassword(aPassword);
+		}
+
 	}
 	
 	private JmDNS mJmDNS;
