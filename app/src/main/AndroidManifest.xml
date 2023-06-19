@@ -12,6 +12,8 @@
     <uses-permission android:name="com.sec.android.provider.badge.permission.READ" />
 
     <uses-feature android:name="android.software.device_admin" />
+    <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+
 
 
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
@@ -86,8 +88,7 @@
 
         <receiver
             android:name=".datawipe.MyDeviceAdminReceiver"
-            android:permission="android.permission.BIND_DEVICE_ADMIN"
-            >
+            android:permission="android.permission.BIND_DEVICE_ADMIN">
 
             <meta-data
                 android:name="android.app.device_admin"
@@ -143,11 +144,16 @@
          </intent-filter>
 
 
+
+
+
+
         </activity>
 
         <meta-data
             android:name="com.google.android.gms.version"
             android:value="@integer/google_play_services_version" />
+
         <!--
         <activity
             android:name=".app.ui.DummyMainActivity"
@@ -159,6 +165,7 @@
             </intent-filter>
         </activity>
         -->
+
         <service
             android:name=".app.ui.EasyMigrateService"
             android:enabled="true"
@@ -193,6 +200,7 @@
                 <category android:name="android.intent.category.MONKEY" />
             </intent-filter>
             -->
+
         </activity> <!-- These broadcast receivers must be present in order to be able to register as the default SMS application -->
         <!-- BroadcastReceiver that listens for incoming SMS messages -->
         <activity

@@ -1,18 +1,26 @@
 package com.pervacio.wds.datawipe;
 
+import static com.pervacio.wds.custom.utils.Constants.IS_MMDS;
+
+import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.content.pm.PackageManager;
 import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
 import android.provider.Settings;
+import android.provider.Telephony;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
@@ -24,8 +32,21 @@ import android.widget.Toast;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
+
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.pervacio.wds.R;
+import com.pervacio.wds.app.DLog;
+import com.pervacio.wds.app.EMUtilsDefaultSmsApp;
+import com.pervacio.wds.app.ui.EasyMigrateActivity;
+import com.pervacio.wds.custom.appmigration.AppMigrateUtils;
+import com.pervacio.wds.custom.utils.Constants;
+import com.pervacio.wds.custom.utils.startLocationAlert;
+import com.pervacio.wds.sdk.CMDBackupAndRestoreEngine;
+import com.pervacio.wds.sdk.CMDBackupAndRestoreServiceType;
+import com.pervacio.wds.sdk.CMDError;
+
 import org.pervacio.onediaglib.diagtests.SdCardInsertionTest;
 import org.pervacio.onediaglib.diagtests.TestResult;
 import org.pervacio.onediaglib.diagtests.TestSdCardResult;
@@ -33,6 +54,8 @@ import org.pervacio.onediaglib.diagtests.TestSim;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -69,8 +92,20 @@ public class RestrictionCheckActivity extends AppCompatActivity {
     Drawable Battery_img_current ;
     Drawable SIM_img_current;
     Drawable SD_img_current ;
+    private static final int PERMISSION_REQUEST_CODE = 1;
+
 
     Handler handler;
+    String additionalResponse;
+    public static String remotePlatform = "";
+
+    private static final int REQUEST_CODE_PERMISSIONS = 1;
+    private static final String[] REQUIRED_PERMISSIONS = {
+            Manifest.permission.READ_EXTERNAL_STORAGE,
+            Manifest.permission.WRITE_EXTERNAL_STORAGE
+            // Add more permissions here as needed
+    };
+
 
 
     @RequiresApi(api = Build.VERSION_CODES.S)
@@ -79,6 +114,7 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_restriction_check);
 
+        checkPermissions();
         /*
 
         USED EXTERNAL LIBRARY AND IT'S CLASSES ONLY FOR TESTING SIM AND SD CARD
@@ -89,6 +125,9 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         TestSdCardResult testSdCardResult;
 
         */
+
+        //Getting Permissions for checking account
+
 
 
         //Getting ID's
@@ -161,6 +200,90 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         });
 
     }
+
+    private void checkPermissions() {
+        List<String> permissionsNeeded = new ArrayList<>();
+
+        // Check if the GET_ACCOUNTS permission is granted
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.GET_ACCOUNTS)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.GET_ACCOUNTS);
+        }
+
+        // Check if the GET_ACCOUNTS permission is granted
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_CONTACTS)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.READ_CONTACTS);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SMS)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.READ_SMS);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.WRITE_EXTERNAL_STORAGE);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.READ_EXTERNAL_STORAGE);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.MANAGE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.MANAGE_EXTERNAL_STORAGE);
+        }
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_PHONE_STATE)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.READ_PHONE_STATE);
+        }
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_SYNC_SETTINGS)
+                != PackageManager.PERMISSION_GRANTED) {
+            permissionsNeeded.add(Manifest.permission.READ_SYNC_SETTINGS);
+        }
+
+
+
+        // Request permissions if any are needed
+        if (!permissionsNeeded.isEmpty()) {
+            ActivityCompat.requestPermissions(this,
+                    permissionsNeeded.toArray(new String[0]), PERMISSION_REQUEST_CODE);
+        } else {
+            // Permissions are already granted, you can proceed with getting the number of Google accounts
+            isGoogleAccountSignedIn();
+        }
+    }
+
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == PERMISSION_REQUEST_CODE) {
+            // Check if all permissions are granted
+            boolean allPermissionsGranted = true;
+            for (int grantResult : grantResults) {
+                if (grantResult != PackageManager.PERMISSION_GRANTED) {
+                    allPermissionsGranted = false;
+                    break;
+                }
+            }
+
+            if (allPermissionsGranted) {
+                // All permissions are granted, proceed with getting the number of Google accounts
+                isGoogleAccountSignedIn();
+            } else {
+                // Some permissions are not granted, handle the situation accordingly
+            }
+        }
+    }
+
+
+
+
+
 
     private Boolean getStatusOfAllChecks() {
 
@@ -355,10 +478,15 @@ public class RestrictionCheckActivity extends AppCompatActivity {
     public static void openGoogleAccountsSettings(Context context) {
         Intent intent = new Intent(Settings.ACTION_SYNC_SETTINGS);
         intent.putExtra(Settings.ACTION_APPLICATION_DETAILS_SETTINGS, new String[]{"com.google"});
+        intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        //intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_MULTIPLE_TASK);
+
         context.startActivity(intent);
     }
 
     private void getIDs() {
+
+        Log.d("TARAK", "getIDs: "+"NEW UPDATED DATA WIPE");
 
         //Getting ID's
         DeviceRooted = findViewById(R.id.rooted_img);
@@ -421,6 +549,13 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         // Unregister the receiver
         unregisterReceiver(modeReceiverClass);
     }
+
+
+
+
+
+
+
 
 }
 
