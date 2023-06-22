@@ -1,31 +1,27 @@
 package com.pervacio.wds.datawipe;
 
-import static com.pervacio.wds.custom.utils.Constants.IS_MMDS;
-
 import android.Manifest;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.content.pm.PackageManager;
-import android.content.res.ColorStateList;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Looper;
+import android.os.storage.StorageManager;
 import android.provider.Settings;
-import android.provider.Telephony;
+import android.telephony.TelephonyManager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
-import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -37,15 +33,8 @@ import androidx.core.content.ContextCompat;
 
 import com.google.android.gms.auth.GoogleAuthUtil;
 import com.pervacio.wds.R;
-import com.pervacio.wds.app.DLog;
-import com.pervacio.wds.app.EMUtilsDefaultSmsApp;
-import com.pervacio.wds.app.ui.EasyMigrateActivity;
-import com.pervacio.wds.custom.appmigration.AppMigrateUtils;
-import com.pervacio.wds.custom.utils.Constants;
-import com.pervacio.wds.custom.utils.startLocationAlert;
-import com.pervacio.wds.sdk.CMDBackupAndRestoreEngine;
-import com.pervacio.wds.sdk.CMDBackupAndRestoreServiceType;
-import com.pervacio.wds.sdk.CMDError;
+
+
 
 import org.pervacio.onediaglib.diagtests.SdCardInsertionTest;
 import org.pervacio.onediaglib.diagtests.TestResult;
@@ -58,8 +47,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
-
-import okio.Timeout;
 
 public class RestrictionCheckActivity extends AppCompatActivity {
 
@@ -77,7 +64,7 @@ public class RestrictionCheckActivity extends AppCompatActivity {
     TextView SD_presentText;
     TestResult testResult;
     TestSim testSim;
-    SdCardInsertionTest sdCardInsertionTest;
+    // SdCardInsertionTest sdCardInsertionTest;
     TestSdCardResult testSdCardResult;
     private ModeReceiverClass modeReceiverClass;
     public AccountManager accountManager;
@@ -140,7 +127,7 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         testSim = new TestSim();
 
         //Initiating SdCardInsertionTest Class
-        sdCardInsertionTest = new SdCardInsertionTest();
+        // sdCardInsertionTest = new SdCardInsertionTest();
 
         //performing All the checks
         performChecks();
@@ -388,6 +375,21 @@ public class RestrictionCheckActivity extends AppCompatActivity {
         return accounts.length > 0;
 
     }
+
+    public static boolean isSdCardPresent(Context context) {
+        File[] externalStoragePaths = new File[0];
+        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.KITKAT) {
+            externalStoragePaths = context.getExternalFilesDirs(null);
+        }
+        for (File path : externalStoragePaths) {
+            if (path != null && !path.toString().equals(context.getExternalFilesDir(null).getAbsolutePath())) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
     private void startUpdatingTextView() {
 
         // Create a periodic task to update the TextView at a desired interval
@@ -410,18 +412,21 @@ public class RestrictionCheckActivity extends AppCompatActivity {
                         }
 
                         //SD fetching
-                        testSdCardResult = sdCardInsertionTest.performSdCardInsertionTest();
-                        if (testSdCardResult.getResultCode() == 512) {
-                            //var2 = "PASS";
-                            SD_present.setImageResource(R.drawable.ic_pass);
-                            SD_presentText.setText("SD Card Not Present");
-                        } else {
-                            //var2 = "FAIL";
+                        // testSdCardResult = sdCardInsertionTest.performSdCardInsertionTest();
+
+                        if (isSdCardPresent(getApplicationContext())) {
+                            // SD card is present
+                            // Perform your desired operations
+                            Log.d("TARAKK", "run: "+"YOOOOOOOOOOOO");
                             SD_present.setImageResource(R.drawable.ic_fail);
                             SD_presentText.setText("SD Card Present!");
-
-
+                        } else {
+                            // SD card is not present
+                            // Handle the absence of SD card
+                            SD_present.setImageResource(R.drawable.ic_pass);
+                            SD_presentText.setText("SD Card Not Present");
                         }
+
 
                         //CheckAccounts
                         if(isGoogleAccountSignedIn())
