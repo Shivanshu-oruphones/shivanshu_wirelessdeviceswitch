@@ -1,18 +1,3 @@
-/*************************************************************************
- *
- * Media Mushroom Limited CONFIDENTIAL
- * __________________
- *
- *  Copyright 2017 Media Mushroom Limited
- *  All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains
- * the property of Media Mushroom Limited.
- *
- * Dissemination of this information or reproduction of this material
- * is strictly forbidden unless prior written permission is obtained
- * from Media Mushroom Limited.
- */
 
 package com.pervacio.wds.app;
 
@@ -82,16 +67,16 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	public void sendQuit(){
 		mMainSession.sendQuit();
 	}
-	
+
 	// Start listening for new connections and scanning for new devices
 	public void start()
 	{
 		mServer.setDelegate(this);
-	    mServer.start();
+		mServer.start();
 
 		if (!EMMigrateStatus.qrCodeWifiDirectMode()) { // Don't do device discovery in QR code mode
-            boolean result = publishService(mServer.mName);
-        }
+			boolean result = publishService(mServer.mName);
+		}
 	/*
 			mCustomDiscoveryListener = new EMCustomDiscoveryListener(mContext);
 
@@ -122,7 +107,7 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 		unpublishService();
 		// TODO: when (if?) we add support for service publishing then unpublish here
 	}
-	
+
 	AsyncTask<String, EMPublishServerTaskUpdate, Void> mPublishServerTask;
 
 	private InetAddress mThisDeviceIpV4Address = null;
@@ -138,13 +123,13 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	// EMCustomDiscoveryListener mCustomDiscoveryListener;
 
 	// TODO: this is now a bad name for the class as we're discovering services as well as publishing our service
-    private class PublishServerTask extends AsyncTask<String, EMPublishServerTaskUpdate, Void> {
-    	@Override
-    	protected void onProgressUpdate (EMPublishServerTaskUpdate... values)
-    	{
+	private class PublishServerTask extends AsyncTask<String, EMPublishServerTaskUpdate, Void> {
+		@Override
+		protected void onProgressUpdate (EMPublishServerTaskUpdate... values)
+		{
 			try {
 				if (!values[0].mDiscoveredServiceName.equals(mServer.mName)) // Check that we haven't discovered ourselves before handshaking
-                        handshakeWithResolvedService(values[0].mDiscoveredServiceAddress, values[0].mDiscoveredServicePort, values[0].mDiscoveredServiceName);
+					handshakeWithResolvedService(values[0].mDiscoveredServiceAddress, values[0].mDiscoveredServicePort, values[0].mDiscoveredServiceName);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
@@ -188,14 +173,14 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 
 			return inetAddress;
 		}
-    	
+
 		@Override
 		protected Void doInBackground(String... aName) {
-	    	ServiceInfo serviceInfo;
-	    	WifiManager wifi = (WifiManager) emGlobals.getmContext().getSystemService(WIFI_SERVICE);
-	    	WifiManager.MulticastLock lock = wifi.createMulticastLock("CMD_MULTICAST_LOCK"); // TODO: release this lock when we're done
-	    	lock.setReferenceCounted(true);
-	    	lock.acquire();
+			ServiceInfo serviceInfo;
+			WifiManager wifi = (WifiManager) emGlobals.getmContext().getSystemService(WIFI_SERVICE);
+			WifiManager.MulticastLock lock = wifi.createMulticastLock("CMD_MULTICAST_LOCK"); // TODO: release this lock when we're done
+			lock.setReferenceCounted(true);
+			lock.acquire();
 
 			// final String serviceName = aName[0];
 
@@ -216,7 +201,7 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 							mBonjourController.setDelegate(new EMBonjourController.Observer() {
 								@Override
 								public void onServiceFound(String aServiceName, InetAddress aHost, int aPort) {
-                                    if (serviceNames.contains(aServiceName)|| aHost.toString().contentEquals(wifiInetAddress.toString())) {
+									if (serviceNames.contains(aServiceName)|| aHost.toString().contentEquals(wifiInetAddress.toString())) {
 										DLog.log("EMBonjourController: Found my own service - ignore it");
 									} else {
 
@@ -249,28 +234,28 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 					DLog.log("EMRemoteDeviceManager", e);
 				}
 			}
-	        
+
 			return null;
 		}
-    }
+	}
 
 	private boolean publishService(String aName) {
 		DLog.log(">> EMRemoteDeviceManager: publishService");
 
 		mPublishServerTask = new PublishServerTask();
-		
+
 		if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.HONEYCOMB)
 			mPublishServerTask.executeOnExecutor(AsyncTask.THREAD_POOL_EXECUTOR, aName);
 		else
 			mPublishServerTask.execute(aName);
-		
+
 		// mPublishServerTask.execute(aName);
 
 		DLog.log("<< EMRemoteDeviceManager: publishService");
 
 		return true;
 	}
-	
+
 	private void unpublishService() {
 		if (EMConfig.USE_NSD_DISCOVERY) {
 			if (mBonjourController != null) {
@@ -307,9 +292,9 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 		if (mSelectedDevice.mThisDeviceIsTargetAutoConnect)
 			bindToWiFiLan = false; // Don't bind to the Wi-Fi lan - we assume an auto connect request has come from an iOS device connected to our hosted Wi-Fi Direct interface
 
-	    mMainSession = new EMSession(mSelectedDevice.mIpV4Address, EMConfig.FIXED_PORT_NUMBER, this, emGlobals.getmContext(), mPreviouslyTransferredContentRegistry, bindToWiFiLan);
-	    // mMainSession.setDelegate(this);
-	    mSessionList.add(mMainSession);
+		mMainSession = new EMSession(mSelectedDevice.mIpV4Address, EMConfig.FIXED_PORT_NUMBER, this, emGlobals.getmContext(), mPreviouslyTransferredContentRegistry, bindToWiFiLan);
+		// mMainSession.setDelegate(this);
+		mSessionList.add(mMainSession);
 	}
 
 	public void reconnectToRemoteDevice(){
@@ -328,8 +313,8 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	// Must only be called when this device is the client (and the remote device is the server)
 	public void remoteToBecomeSource()
 	{
-	    stop();
-	    mMainSession.remoteToBecomeSource();
+		stop();
+		mMainSession.remoteToBecomeSource();
 	}
 
 	// The connected remote device should become the target (and this device becomes the source)
@@ -337,7 +322,7 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	public void remoteToBecomeTarget()
 	{
 //	    stop();
-	    mMainSession.remoteToBecomeTarget();
+		mMainSession.remoteToBecomeTarget();
 	}
 
 	// Send the selected data to the other device
@@ -345,7 +330,7 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	// Asynchronous operation - Notifies the delegate of progress
 	public void sendData(int aDataTypes)
 	{
-	    mMainSession.sendData(aDataTypes);
+		mMainSession.sendData(aDataTypes);
 	}
 
 	public boolean anyItemsPreviouslyTransferred() {
@@ -364,67 +349,67 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 
 	public void setDelegate(EMRemoteDeviceManagerDelegate aDelegate)
 	{
-	    mDelegate = aDelegate;
+		mDelegate = aDelegate;
 	}
-	
 
- 	// TODO: not needed for now as we don't resolve services (other devices look for us)
- 	 
+
+	// TODO: not needed for now as we don't resolve services (other devices look for us)
+
 	public void handshakeWithResolvedService(InetAddress aResolvedServiceAddress, int aPort, String aServiceId)
 	{
-	    // Create a session with the server and save it on the session list
-	    EMSession newSession = new EMSession(aResolvedServiceAddress, aPort, this, emGlobals.getmContext(), null, true);
-	    mSessionList.add(newSession);
-	    newSession.handshakeWithServer();
+		// Create a session with the server and save it on the session list
+		EMSession newSession = new EMSession(aResolvedServiceAddress, aPort, this, emGlobals.getmContext(), null, true);
+		mSessionList.add(newSession);
+		newSession.handshakeWithServer();
 	}
 
 	// Notification that the PIN is okay (either the entered PIN or the pin received from the remote device, depending on the context)
 	public void pinOk()
 	{
-	    mDelegate.pinOk();
+		mDelegate.pinOk();
 	}
-	
-    private ArrayList<EMSession> mSessionList;
-    private EMSession mMainSession;
-    private EMRemoteDeviceManagerDelegate mDelegate;
-    private EMServer mServer;
 
-    // From EMServerDelegate
+	private ArrayList<EMSession> mSessionList;
+	private EMSession mMainSession;
+	private EMRemoteDeviceManagerDelegate mDelegate;
+	private EMServer mServer;
+
+	// From EMServerDelegate
 	@Override
 	public void clientConnected(EMConnection aIncomingConnection) {
-	    // State a new server session - wait for commands from the client
+		// State a new server session - wait for commands from the client
 		DLog.log(">> EMserver::clientConnected");
 		InetAddress remoteAddress = aIncomingConnection.mRemoteIpAddress;
 //		if (remoteAddress != null)
 //			DLog.log(remoteAddress.toString());
 //		else
 //			DLog.log("mRemoteIpAddress is null");
-	    EMSession newSession = new EMSession(aIncomingConnection, this, emGlobals.getmContext());
+		EMSession newSession = new EMSession(aIncomingConnection, this, emGlobals.getmContext());
 //	    newSession.setDelegate(this);
-	    mSessionList.add(newSession);
+		mSessionList.add(newSession);
 
 		DLog.log("<< EMserver::clientConnected");
 	}
-	
-    // From EMServerDelegate
+
+	// From EMServerDelegate
 	@Override
 	public void serverError(int aError) {
 		// TODO Auto-generated method stub
-		
+
 	}
-	
+
 //	private Context mContext;
 
 	@Override
 	public void disconnected(EMSession aSession) {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
 	public void progressUpdate(EMProgressInfo aProgressInfo) {
 		// TODO Auto-generated method stub
-	    mDelegate.progressUpdate(aProgressInfo);
+		mDelegate.progressUpdate(aProgressInfo);
 	}
 
 	@Override
@@ -443,7 +428,7 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 
 	@Override
 	public void haveBecomeSource(EMSession aMainSession) {
-	    mMainSession = aMainSession;
+		mMainSession = aMainSession;
 
 		// mMainSession.setMainSession();
 
@@ -459,15 +444,15 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 			}
 		}
 		*/
-		
-	    mDelegate.haveBecomeSource();
+
+		mDelegate.haveBecomeSource();
 	}
 
 	@Override
 	public void haveBecomeTarget(EMSession aMainSession) {
-	    mMainSession = aMainSession;
+		mMainSession = aMainSession;
 		// mMainSession.setMainSession();
-	    mDelegate.haveBecomeTarget();
+		mDelegate.haveBecomeTarget();
 	}
 
 	@Override
@@ -491,46 +476,46 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 	public EMDeviceInfo getDeviceInfo(boolean isSource) {
 		DLog.log("getDeviceInfo of RemoteDeviceManager helper called. is Source: " + isSource);
 
-        EMDeviceInfo deviceInfo = null;
-        try {
-            deviceInfo = new EMDeviceInfo();
-            DeviceInfo mDeviceInfo= DeviceInfo.getInstance();
-            if (!Build.MANUFACTURER.isEmpty()) {
-                deviceInfo.mDeviceName = Build.MANUFACTURER + " " + Build.MODEL;
-            }
-            else
-                deviceInfo.mDeviceName = Build.MODEL;
+		EMDeviceInfo deviceInfo = null;
+		try {
+			deviceInfo = new EMDeviceInfo();
+			DeviceInfo mDeviceInfo= DeviceInfo.getInstance();
+			if (!Build.MANUFACTURER.isEmpty()) {
+				deviceInfo.mDeviceName = Build.MANUFACTURER + " " + Build.MODEL;
+			}
+			else
+				deviceInfo.mDeviceName = Build.MODEL;
 
-            deviceInfo.mIpV4Address = mThisDeviceIpV4Address;
-            deviceInfo.mPort = mServer.mPort;
-            deviceInfo.mCapabilities = EMConfig.DEVICE_CAPABILITIES;
-            deviceInfo.mRoles = EMConfig.SUPPORTED_ROLES;
-            deviceInfo.mServiceName = mServer.mName;
-            deviceInfo.mKeyboardShortcutImporterAvailable = false;
-            deviceInfo.mDeviceUniqueId = mDeviceInfo.get_serialnumber();
+			deviceInfo.mIpV4Address = mThisDeviceIpV4Address;
+			deviceInfo.mPort = mServer.mPort;
+			deviceInfo.mCapabilities = EMConfig.DEVICE_CAPABILITIES;
+			deviceInfo.mRoles = EMConfig.SUPPORTED_ROLES;
+			deviceInfo.mServiceName = mServer.mName;
+			deviceInfo.mKeyboardShortcutImporterAvailable = false;
+			deviceInfo.mDeviceUniqueId = mDeviceInfo.get_serialnumber();
 
-            /* Set fields required for Dashboard Logging */
-            deviceInfo.dbDeviceBuildNumber = mDeviceInfo.getBuildNumber();
-            deviceInfo.dbDeviceFirmware = mDeviceInfo.getFirmwareVersion();
-            deviceInfo.dbDeviceMake = Build.MANUFACTURER;
-            deviceInfo.dbDeviceModel = Build.MODEL;
-            deviceInfo.dbDeviceOSVersion = mDeviceInfo.getOSversion();
-            deviceInfo.dbDevicePlatform = Constants.PLATFORM;
-            deviceInfo.dbDeviceIMEI = mDeviceInfo.get_imei();
-            deviceInfo.dbDeviceTotalStorage = mDeviceInfo.getTotalInternalStroage();
-            deviceInfo.dbDeviceFreeStorage = mDeviceInfo.getAvailableInternalStorage();
-            deviceInfo.appVersion= BuildConfig.VERSION_NAME;
-            if(DashboardLog.getInstance().isThisDest()) {
-                deviceInfo.dbOperationType = Constants.OPERATION_TYPE.RESTORE.value();
-            }
-            else {
-                deviceInfo.dbOperationType = Constants.OPERATION_TYPE.BACKUP.value();
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
+			/* Set fields required for Dashboard Logging */
+			deviceInfo.dbDeviceBuildNumber = mDeviceInfo.getBuildNumber();
+			deviceInfo.dbDeviceFirmware = mDeviceInfo.getFirmwareVersion();
+			deviceInfo.dbDeviceMake = Build.MANUFACTURER;
+			deviceInfo.dbDeviceModel = Build.MODEL;
+			deviceInfo.dbDeviceOSVersion = mDeviceInfo.getOSversion();
+			deviceInfo.dbDevicePlatform = Constants.PLATFORM;
+			deviceInfo.dbDeviceIMEI = mDeviceInfo.get_imei();
+			deviceInfo.dbDeviceTotalStorage = mDeviceInfo.getTotalInternalStroage();
+			deviceInfo.dbDeviceFreeStorage = mDeviceInfo.getAvailableInternalStorage();
+			deviceInfo.appVersion= BuildConfig.VERSION_NAME;
+			if(DashboardLog.getInstance().isThisDest()) {
+				deviceInfo.dbOperationType = Constants.OPERATION_TYPE.RESTORE.value();
+			}
+			else {
+				deviceInfo.dbOperationType = Constants.OPERATION_TYPE.BACKUP.value();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 
-        return deviceInfo;
+		return deviceInfo;
 	}
 
 	@Override
@@ -561,7 +546,7 @@ public class EMRemoteDeviceManager implements EMServerDelegate, EMSessionDelegat
 		}
 
 	}
-	
+
 	private JmDNS mJmDNS;
 	private EMBonjourController mBonjourController = null;
 

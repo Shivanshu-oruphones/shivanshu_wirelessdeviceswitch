@@ -1,6 +1,6 @@
 //apply plugin: 'com.preemptive.dasho.android'
-//apply plugin: 'com.android.library'
-apply plugin: 'com.android.application'
+apply plugin: 'com.android.library'
+//apply plugin: 'com.android.application'
 //apply from: 'dasho.gradle'
 
 android {
@@ -20,7 +20,7 @@ android {
     buildToolsVersion '30.0.2'
     flavorDimensions "default"
     defaultConfig {
-        applicationId "com.pervacio.wds"
+        //applicationId "com.pervacio.wds"
         minSdkVersion 26
 
         targetSdkVersion 30
@@ -50,30 +50,30 @@ android {
 
     productFlavors {
         pervacio {
-           applicationId "com.pervacio.wds"
+           //applicationId "com.pervacio.wds"
          manifestPlaceholders = [appLabel: "Content Transfer"]
          dimension "default"
      }
      sprint {
-           applicationId "com.sprint.contenttransfer"
+          // applicationId "com.sprint.contenttransfer"
          manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
          dimension "default"
          targetSdkVersion 26
      }
      sprintMSDS {
-           applicationId "com.pervacio.wds"
+           //applicationId "com.pervacio.wds"
          manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
          dimension "default"
          targetSdkVersion 26
      }
      pervacioMSDS {
-           applicationId "com.pervacio.wds"
+          // applicationId "com.pervacio.wds"
          manifestPlaceholders = [appLabel: "Content Transfer"]
          dimension "default"
          targetSdkVersion 26
      }
      tms {
-           applicationId "com.pervacio.tms"
+          // applicationId "com.pervacio.tms"
          manifestPlaceholders = [appLabel: "TMS Content Transfer"]
          dimension "default"
 			versionCode 11
@@ -81,7 +81,7 @@ android {
          targetSdkVersion 29
      }
      privatelabel {
-           applicationId "com.mobilecopy.transfer"
+           //applicationId "com.mobilecopy.transfer"
          manifestPlaceholders = [appLabel: "MobileCopy"]
          dimension "default"
          targetSdkVersion 26
@@ -93,7 +93,7 @@ android {
          targetSdkVersion 26
      }
      orange {
-           applicationId "com.pervacio.wds"
+          // applicationId "com.pervacio.wds"
          manifestPlaceholders = [appLabel: "Kopia Danych"]
          dimension "default"
          targetSdkVersion 22
@@ -105,7 +105,7 @@ android {
          targetSdkVersion 26
      }
      playstore {
-           applicationId "com.pervacio.wds"
+           //applicationId "com.pervacio.wds"
             manifestPlaceholders = [appLabel: "Pervacio Content Transfer"]
             dimension "default"
             targetSdkVersion 29

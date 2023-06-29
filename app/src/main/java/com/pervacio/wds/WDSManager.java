@@ -4,7 +4,6 @@ import android.content.Context;
 import android.content.Intent;
 
 import com.pervacio.wds.app.EMGlobals;
-import com.pervacio.wds.app.ui.EasyMigrateActivity;
 import com.pervacio.wds.custom.SplashActivity;
 import com.pervacio.wds.custom.utils.DashboardLog;
 

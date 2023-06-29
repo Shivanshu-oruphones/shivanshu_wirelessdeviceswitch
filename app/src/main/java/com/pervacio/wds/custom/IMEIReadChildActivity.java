@@ -2,7 +2,6 @@ package com.pervacio.wds.custom;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.util.Log;
 
 import com.pervacio.wds.app.DLog;
 import com.pervacio.wds.app.ui.EasyMigrateActivity;

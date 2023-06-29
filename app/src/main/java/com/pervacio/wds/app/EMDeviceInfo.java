@@ -1,18 +1,3 @@
-/*************************************************************************
- *
- * Media Mushroom Limited CONFIDENTIAL
- * __________________
- *
- *  Copyright 2017 Media Mushroom Limited
- *  All Rights Reserved.
- *
- * NOTICE:  All information contained herein is, and remains
- * the property of Media Mushroom Limited.
- *
- * Dissemination of this information or reproduction of this material
- * is strictly forbidden unless prior written permission is obtained
- * from Media Mushroom Limited.
- */
 package com.pervacio.wds.app;
 
 import android.util.Log;
@@ -36,13 +21,13 @@ public class EMDeviceInfo {
 
 	public final static int EM_SUPPORTS_ROLE_MIGRATION_SOURCE = 1;
 	public final static int EM_SUPPORTS_ROLE_MIGRATION_TARGET = 2;
-	
+
 	public String mDeviceName;
 	public String mDeviceUniqueId;
-//	public InetAddress mIpAddress;
+	//	public InetAddress mIpAddress;
 	public InetAddress mIpV6Address;
 	public InetAddress mIpV4Address;
-//	public String mHostName;
+	//	public String mHostName;
 	public int mPort;
 	public int mCapabilities;
 	public int mRoles;
@@ -66,10 +51,10 @@ public class EMDeviceInfo {
 	public String appVersion = Constants.UNKNOWN;
 	// END – Pervacio
 
-	
+
 	public EMDeviceInfo clone() {
 		EMDeviceInfo deviceInfoCopy = new EMDeviceInfo();
-		
+
 		deviceInfoCopy.mDeviceName = new String(mDeviceName);
 //		deviceInfoCopy.mIpAddress = new InetAddress(mIpAddress);
 //		deviceInfoCopy.mIpAddress = mIpAddress; // TODO: not copying this - assume no problem as it's immutable?
@@ -116,7 +101,7 @@ public class EMDeviceInfo {
 		DLog.log(String.format("    mThisDeviceIsTargetAutoConnect: %s", mThisDeviceIsTargetAutoConnect));
 
 		// START – Pervacio
-        DLog.log("dbDeviceMake : " + dbDeviceMake);
+		DLog.log("dbDeviceMake : " + dbDeviceMake);
 		DLog.log("dbDeviceModel : " + dbDeviceModel);
 		DLog.log("dbDeviceOSVersion : " + dbDeviceOSVersion);
 		DLog.log("dbDevicePlatform : " + dbDevicePlatform);
@@ -129,9 +114,9 @@ public class EMDeviceInfo {
 		DLog.log("dbAppVersion : " + appVersion);
 		// END – Pervacio
 	}
-	
-    @Override
-    public String toString() {
-        return new String(mDeviceName);
-    }
+
+	@Override
+	public String toString() {
+		return new String(mDeviceName);
+	}
 }

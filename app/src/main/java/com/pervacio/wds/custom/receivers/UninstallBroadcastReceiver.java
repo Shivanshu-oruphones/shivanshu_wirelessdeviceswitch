@@ -6,10 +6,7 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
-import android.os.Build;
-import android.os.SystemClock;
 
-import com.pervacio.wds.BuildConfig;
 import com.pervacio.wds.app.DLog;
 import com.pervacio.wds.app.EMUtility;
 import com.pervacio.wds.app.ui.EasyMigrateActivity;

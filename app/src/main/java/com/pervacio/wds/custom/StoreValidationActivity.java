@@ -1068,7 +1068,7 @@ public class StoreValidationActivity extends AppCompatActivity implements suppor
                         }else{
                             isStoreValidation = mAuthorizedStore = true;
                             if(proceedOnValidation){
-                                startActivity(new Intent(this,EasyMigrateActivity.class));
+                                startActivity(new Intent(this, EasyMigrateActivity.class));
                                 finish();
                             }
                         }
