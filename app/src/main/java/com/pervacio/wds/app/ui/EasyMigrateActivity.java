@@ -123,6 +123,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.View.OnClickListener;
+import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.view.animation.AccelerateInterpolator;
@@ -171,9 +172,11 @@ import com.amazonaws.mobileconnectors.s3.transferutility.TransferUtility;
 import com.amazonaws.services.s3.AmazonS3Client;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GooglePlayServicesUtil;
+import com.google.android.material.snackbar.Snackbar;
 import com.google.gson.Gson;
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.ResultPoint;
+import com.iceteck.silicompressorr.SiliCompressor;
 import com.journeyapps.barcodescanner.BarcodeCallback;
 import com.journeyapps.barcodescanner.BarcodeEncoder;
 import com.journeyapps.barcodescanner.BarcodeResult;
@@ -271,6 +274,7 @@ import java.math.BigDecimal;
 import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.net.URISyntaxException;
 import java.security.SecureRandom;
 import java.text.MessageFormat;
 import java.text.SimpleDateFormat;
@@ -303,6 +307,12 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
     static EMGlobals emGlobals = new EMGlobals();
     private boolean connectionInfoAvailable = false;
     private boolean wifiP2PInitDone = false;
+
+
+    private ProgressBar mmmProgressBar;
+    private int mCurrentFileNumber;
+    private ProgressDialog mmmProgressDialog;
+    private static final int PROGRESS_BAR_MAX = 60;
 
     // Enums MUST match the order in which they occur in the main layout
     enum EPTWizardPage {
@@ -3382,9 +3392,53 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
         mCloudService.startUserLoginAsync(this);
     }
 
+
     @Override
     public void progressUpdate(EMProgressInfo aProgressInfo) {
 
+//        // Define the timer duration in milliseconds
+//        long timerDuration = 60 * 100 * mVideoSize;
+//
+//// Create a CountDownTimer with the specified duration
+//        CountDownTimer countDownTimer = new CountDownTimer(timerDuration, 60 * 100) {
+//            @Override
+//            public void onTick(long millisUntilFinished) {
+//                if(mVideosSelected){
+//                    Toast.makeText(context, "One minute passed!", Toast.LENGTH_SHORT).show();
+//                }
+//                // Display a toast message every minute
+//
+//            }
+//
+//            @Override
+//            public void onFinish() {
+//                // When the timer finishes, call the sendFile() function
+//
+//            }
+//        };
+//
+//// Start the timer
+//        countDownTimer.start();
+
+//        // Create the progress bar programmatically
+//        mmmProgressBar = new ProgressBar(this, null, android.R.attr.progressBarStyleHorizontal);
+//        mmmProgressBar.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
+//                ViewGroup.LayoutParams.WRAP_CONTENT));
+//        mmmProgressBar.setMax(PROGRESS_BAR_MAX);
+//        setContentView(mmmProgressBar);
+//
+//        // Show the progress dialog
+//        mmmProgressDialog = new ProgressDialog(EasyMigrateActivity.this);
+//        mmmProgressDialog.setMessage("Compressing files...");
+//        mmmProgressDialog.show();
+
+        // Start the background task
+//        if(mVideosSelected){
+//            Toast.makeText(EasyMigrateActivity.this, "Compressing...", Toast.LENGTH_LONG).show();
+//        }
+//
+//        Toast.makeText(EasyMigrateActivity.this, "Compressing files...", Toast.LENGTH_LONG).show();
+        Snackbar.make(mNextButton, "Compressing files..", Snackbar.LENGTH_LONG).show();
         // START - Pervacio
         if (aProgressInfo.mOperationType == EMProgressInfo.EMOperationType.EM_TEXT_COMMAND_RECEIVED) {
             // Will Enter into this loop When text command is received from source.
@@ -3839,6 +3893,41 @@ public class EasyMigrateActivity extends AppCompatActivity implements EMRemoteDe
             }
         }
     }
+
+
+//    private class ProcessFilesTask extends AsyncTask<Void, Integer, Void> {
+//
+//        @Override
+//        protected Void doInBackground(Void... voids) {
+//            while (mCurrentFileNumber < PROGRESS_BAR_MAX) {
+//                try {
+//                    // Simulate processing time
+//                    Thread.sleep(1000);
+//                    mCurrentFileNumber++;
+//
+//                    // Publish the progress
+//                    publishProgress(mCurrentFileNumber);
+//                } catch (InterruptedException e) {
+//                    e.printStackTrace();
+//                }
+//            }
+//            return null;
+//        }
+//
+//        @Override
+//        protected void onProgressUpdate(Integer... values) {
+//            super.onProgressUpdate(values);
+//            int progress = values[0];
+//            mProgressBar.setProgress(progress);
+//        }
+//
+//        @Override
+//        protected void onPostExecute(Void aVoid) {
+//            super.onPostExecute(aVoid);
+//            // Dismiss the progress dialog
+//            mProgressDialog.dismiss();
+//        }
+//    }
 
     @Override
     public void haveBecomeSource() {

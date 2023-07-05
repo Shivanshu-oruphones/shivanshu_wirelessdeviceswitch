@@ -16,10 +16,20 @@
 
 package com.pervacio.wds.app;
 
+import static com.pervacio.wds.custom.utils.Constants.EXCLUDE_SDCARD_MEDIA;
+import static com.pervacio.wds.custom.utils.Constants.EXCLUDE_WHATSAPP_MEDIA;
+
+import android.content.Context;
 import android.content.Intent;
+import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
+import android.widget.Toast;
 
+import com.iceteck.silicompressorr.SiliCompressor;
+import com.pervacio.wds.app.ui.EasyMigrateActivity;
 import com.pervacio.wds.custom.APPI;
 import com.pervacio.wds.custom.models.MigrationStats;
 import com.pervacio.wds.custom.utils.CommonUtil;
@@ -27,7 +37,9 @@ import com.pervacio.wds.custom.utils.Constants;
 import com.pervacio.wds.custom.utils.DashboardLog;
 import com.pervacio.wds.custom.utils.DeviceInfo;
 
+import java.io.File;
 import java.net.InetAddress;
+import java.net.URISyntaxException;
 import java.util.Arrays;
 
 public class EMMediaSenderNew implements EMCommandDelegate, EMCommandHandler {
@@ -35,6 +47,12 @@ public class EMMediaSenderNew implements EMCommandDelegate, EMCommandHandler {
 	EMMediaSenderNew(EMDataCommandDelegate aDataCommandDelegate, int aDataType) {
 		mDataCommandDelegate = aDataCommandDelegate;
 		mDataType = aDataType;
+	}
+
+	private Context context;
+
+	public EMMediaSenderNew(Context context) {
+		this.context = context;
 	}
 
 	private EMDataCommandDelegate mDataCommandDelegate;
@@ -70,8 +88,11 @@ public class EMMediaSenderNew implements EMCommandDelegate, EMCommandHandler {
 
 	@Override
 	public void sendFile(String aFilePath, boolean aDeleteFileWhenDone, EMFileSendingProgressDelegate aFileSendingProgressDelegate) {
-		if (!mCancelled)
+		Toast.makeText(context, "sendFile...", Toast.LENGTH_SHORT).show();
+		if (!mCancelled){
 			mDelegate.sendFile(aFilePath, aDeleteFileWhenDone, aFileSendingProgressDelegate);
+		}
+
 	}
 
 	@Override
@@ -146,7 +167,43 @@ public class EMMediaSenderNew implements EMCommandDelegate, EMCommandHandler {
 		return cleanName.toString();
 	}
 
-	private void sendFile() {
+		public Uri getUriFromFile(String filePath) {
+		// Convert file path to URI
+		Uri uri = Uri.fromFile(new File(filePath));
+		return uri;
+	}
+
+	private void compressVideo(final File aFilePath) {
+		final File file = new File(Environment.getExternalStorageDirectory().getAbsolutePath());
+		new CompressVideo().execute("false", getUriFromFile(aFilePath.getPath()).toString(), file.getPath());
+		nowSendFile(aFilePath);
+	}
+
+	private class CompressVideo extends AsyncTask<String,String,String> {
+
+		@Override
+		protected String doInBackground(String... strings) {
+			String videoPath = null;
+			try {
+				Uri mUri = Uri.parse(strings[1]);
+				videoPath = SiliCompressor.with(context)
+						.compressVideo(mUri,strings[2]);
+			} catch (URISyntaxException e) {
+				e.printStackTrace();
+			}
+			return videoPath;
+		}
+
+		@Override
+		protected void onPostExecute(String s) {
+			super.onPostExecute(s);
+			File file = new File(s);
+			nowSendFile(file);
+
+		}
+	}
+
+	private void nowSendFile(File file) {
 		if (mCancelled)
 			return;
 
@@ -160,6 +217,30 @@ public class EMMediaSenderNew implements EMCommandDelegate, EMCommandHandler {
 					mediaTransferHelper.init();
 				}
 				mediaTransferHelper.sendFile(fileMetaData);
+
+			} catch (Exception ex) {
+				DLog.log(ex);
+			}
+		}
+	}
+
+
+	private void sendFile() {
+		if (mCancelled)
+			return;
+
+		boolean go = true;
+		while (go) {
+			try {
+				go = false;
+				if (mediaTransferHelper == null) {
+					mediaTransferHelper = new EMDataTransferHelper(mHostName);
+					mediaTransferHelper.setCommandDelegate(this);
+					mediaTransferHelper.init();
+				}
+
+				File file = new File(fileMetaData.mSourceFilePath);
+				compressVideo(file);
 
 			} catch (Exception ex) {
 				DLog.log(ex);

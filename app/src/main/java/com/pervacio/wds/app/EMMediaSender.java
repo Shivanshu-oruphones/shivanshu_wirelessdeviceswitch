@@ -20,10 +20,17 @@ import java.io.File;
 import java.net.InetAddress;
 import java.util.Arrays;
 
+import android.app.ProgressDialog;
+import android.content.Context;
 import android.database.Cursor;
 import android.net.Uri;
+import android.os.AsyncTask;
+import android.os.CountDownTimer;
 import android.provider.MediaStore;
 import android.util.Log;
+import android.view.ViewGroup;
+import android.widget.ProgressBar;
+import android.widget.Toast;
 
 import com.pervacio.wds.custom.APPI;
 import com.pervacio.wds.sdk.internal.sdcard.CMDSDCardFileAccess;
@@ -35,9 +42,12 @@ public class EMMediaSender implements EMCommandDelegate, EMCommandHandler {
 
 	private static final String TAG = "EMMediaSender";
 	static EMGlobals emGlobals = new EMGlobals();
-	EMMediaSender(EMDataCommandDelegate aDataCommandDelegate, int aDataType) {
+Context context;
+
+	EMMediaSender(EMDataCommandDelegate aDataCommandDelegate, int aDataType, Context mContext) {
 		mDataCommandDelegate = aDataCommandDelegate;
 		mDataType = aDataType;
+		context = mContext;
 	}
 
 	private Cursor mCursor;
@@ -55,13 +65,18 @@ public class EMMediaSender implements EMCommandDelegate, EMCommandHandler {
 	boolean mCancelled = false;
 	private String mFilePath = null;
 	private int timeOutRetry = 0;
-
+	ProgressBar mProgressBar;
+	ProgressDialog mProgressDialog;
+	int PROGRESS_BAR_MAX = 60;
 	public InetAddress mHostName = null;
 	EMDataTransferHelper mediaTransferHelper = null;
 	private String mSdCardPath = null;
 
+
 	public void start(EMCommandDelegate aDelegate)
 	{
+
+
 		mCancelled = false;
 		mDelegate = aDelegate;
 		mTotalBytesSent = 0;
@@ -108,11 +123,15 @@ public class EMMediaSender implements EMCommandDelegate, EMCommandHandler {
 
 		if (!mCancelled) {
 			if ((mCursor != null) && (mCursor.moveToFirst()) && mTotalMediaCount != 0) {
+
+
 				sendFile();
 			}
 			else
 				mDelegate.commandComplete(true);
 		}
+
+
 	}
 
 	private EMCommandDelegate mDelegate;
@@ -206,6 +225,7 @@ public class EMMediaSender implements EMCommandDelegate, EMCommandHandler {
 		boolean go = true;
 		while (go) {
 			try {
+
 				String filePath = mCursor.getString(mFilePathColumn);
 				File file = new File(filePath);
 				if ((EXCLUDE_WHATSAPP_MEDIA && (filePath.toLowerCase().contains("whatsapp"))) || (EXCLUDE_SDCARD_MEDIA && (mSdCardPath!=null) && filePath.contains(mSdCardPath)))

@@ -1,6 +1,6 @@
 //apply plugin: 'com.preemptive.dasho.android'
-apply plugin: 'com.android.library'
-//apply plugin: 'com.android.application'
+//apply plugin: 'com.android.library'
+apply plugin: 'com.android.application'
 //apply from: 'dasho.gradle'
 
 android {
@@ -20,92 +20,86 @@ android {
     buildToolsVersion '30.0.2'
     flavorDimensions "default"
     defaultConfig {
-        //applicationId "com.pervacio.wds"
-        minSdkVersion 26
-
+        applicationId "com.pervacio.wds"
+        minSdkVersion 16
         targetSdkVersion 30
-
         versionCode 17
         versionName "V1.0.23"
         multiDexEnabled true
     }
-
-
-     buildTypes {
-           def BDATE =  new Date().format('MM.dd.yyyy')
-           debug {
-               buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
-                   minifyEnabled false
-           }
-           release {
-               buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
-               minifyEnabled true
-               debuggable false
-               proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-               zipAlignEnabled true
-           }
-       }
-
-
+    buildTypes {
+        def BDATE =  new Date().format('MM.dd.yyyy')
+        debug {
+            buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
+            minifyEnabled false
+        }
+        release {
+            buildConfigField "String", "BUILD_DATE", "\"$BDATE\""
+            minifyEnabled true
+            debuggable false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            zipAlignEnabled true
+        }
+    }
 
     productFlavors {
         pervacio {
-           //applicationId "com.pervacio.wds"
-         manifestPlaceholders = [appLabel: "Content Transfer"]
-         dimension "default"
-     }
-     sprint {
-          // applicationId "com.sprint.contenttransfer"
-         manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
-         dimension "default"
-         targetSdkVersion 26
-     }
-     sprintMSDS {
-           //applicationId "com.pervacio.wds"
-         manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
-         dimension "default"
-         targetSdkVersion 26
-     }
-     pervacioMSDS {
-          // applicationId "com.pervacio.wds"
-         manifestPlaceholders = [appLabel: "Content Transfer"]
-         dimension "default"
-         targetSdkVersion 26
-     }
-     tms {
-          // applicationId "com.pervacio.tms"
-         manifestPlaceholders = [appLabel: "TMS Content Transfer"]
-         dimension "default"
-			versionCode 11
-         versionName "TMS.A.1.0.2"
-         targetSdkVersion 29
-     }
-     privatelabel {
-           //applicationId "com.mobilecopy.transfer"
-         manifestPlaceholders = [appLabel: "MobileCopy"]
-         dimension "default"
-         targetSdkVersion 26
-     }
-     bell {
-           //applicationId "com.pervacio.wct"
-         manifestPlaceholders = [appLabel: "Content Transfer"]
-         dimension "default"
-         targetSdkVersion 26
-     }
-     orange {
-          // applicationId "com.pervacio.wds"
-         manifestPlaceholders = [appLabel: "Kopia Danych"]
-         dimension "default"
-         targetSdkVersion 22
-     }
-     o2 {
-         //  applicationId "com.pervacio.wct"
-         manifestPlaceholders = [appLabel: "Content Transfer"]
-         dimension "default"
-         targetSdkVersion 26
-     }
-     playstore {
-           //applicationId "com.pervacio.wds"
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+        }
+        sprint {
+            applicationId "com.sprint.contenttransfer"
+            manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        sprintMSDS {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Sprint Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        pervacioMSDS {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        tms {
+            applicationId "com.pervacio.tms"
+            manifestPlaceholders = [appLabel: "TMS Content Transfer"]
+            dimension "default"
+            versionCode 11
+            versionName "TMS.A.1.0.2"
+            targetSdkVersion 29
+        }
+        privatelabel {
+            applicationId "com.mobilecopy.transfer"
+            manifestPlaceholders = [appLabel: "MobileCopy"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        bell {
+            //applicationId "com.pervacio.wct"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        orange {
+            applicationId "com.pervacio.wds"
+            manifestPlaceholders = [appLabel: "Kopia Danych"]
+            dimension "default"
+            targetSdkVersion 22
+        }
+        o2 {
+            //applicationId "com.pervacio.wct"
+            manifestPlaceholders = [appLabel: "Content Transfer"]
+            dimension "default"
+            targetSdkVersion 26
+        }
+        playstore {
+            applicationId "com.pervacio.wds"
             manifestPlaceholders = [appLabel: "Pervacio Content Transfer"]
             dimension "default"
             targetSdkVersion 29
@@ -119,7 +113,11 @@ android {
             res.srcDirs = ['src/sprint/res']
         }
     }
- }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
 
 repositories {
     flatDir {
@@ -135,7 +133,7 @@ dependencies {
     implementation 'com.pervacio.crashreportlib:crashreportlib@aar'
     implementation 'org.pervacio.wirelessdatawipe:wirelessdatawipe@aar'
     implementation 'org.pervacio.onediaglib:onediaglib@aar'
-
+    implementation 'com.iceteck.silicompressorr:silicompressor:2.2.4'
     implementation 'androidx.appcompat:appcompat:1.0.0'
     implementation 'com.google.code.gson:gson:2.7'
     implementation 'com.google.android.gms:play-services-drive:7.0.0'

@@ -397,7 +397,7 @@ public class EMSession implements EMConnectionDelegate, EMCommandDelegate, EMHan
             if ((mDataTypesToSend & EMDataType.EM_DATA_TYPE_VIDEO) != 0) {
                 mDataTypesTransferStarted |= EMDataType.EM_DATA_TYPE_VIDEO;
                 DLog.log("EMSession::sendVideos START");
-                mVideoSender = new EMMediaSender(EMSession.this, EMDataType.EM_DATA_TYPE_VIDEO);
+                mVideoSender = new EMMediaSender(EMSession.this, EMDataType.EM_DATA_TYPE_VIDEO, mContext);
                 mState = EMSessionState.EM_SESSION_IN_COMMAND;
                 mCurrentCommandHandler = mVideoSender;
                 mVideoSender.mHostName = mHostName;
@@ -470,7 +470,7 @@ public class EMSession implements EMConnectionDelegate, EMCommandDelegate, EMHan
             if ((mDataTypesToSend & EMDataType.EM_DATA_TYPE_PHOTOS) != 0) {
                 mDataTypesTransferStarted |= EMDataType.EM_DATA_TYPE_PHOTOS;
                 DLog.log("EMSession::sendPhotos START");
-                mPhotoSender = new EMMediaSender(EMSession.this, EMDataType.EM_DATA_TYPE_PHOTOS);
+                mPhotoSender = new EMMediaSender(EMSession.this, EMDataType.EM_DATA_TYPE_PHOTOS, mContext);
                 mState = EMSessionState.EM_SESSION_IN_COMMAND;
                 mCurrentCommandHandler = mPhotoSender;
                 mPhotoSender.mHostName = mHostName;
@@ -543,7 +543,7 @@ public class EMSession implements EMConnectionDelegate, EMCommandDelegate, EMHan
             if ((mDataTypesToSend & EMDataType.EM_DATA_TYPE_MUSIC) != 0) {
                 mDataTypesTransferStarted |= EMDataType.EM_DATA_TYPE_MUSIC;
                 DLog.log("EMSession::send Audio START");
-                mMusicSender = new EMMediaSender(EMSession.this, EMDataType.EM_DATA_TYPE_MUSIC);
+                mMusicSender = new EMMediaSender(EMSession.this, EMDataType.EM_DATA_TYPE_MUSIC, mContext);
                 mState = EMSessionState.EM_SESSION_IN_COMMAND;
                 mCurrentCommandHandler = mMusicSender;
                 mMusicSender.mHostName = mHostName;
@@ -1697,7 +1697,7 @@ public class EMSession implements EMConnectionDelegate, EMCommandDelegate, EMHan
 
     void sendPhotos() {
         DLog.log("EMSession::sendPhotos START");
-        mPhotoSender = new EMMediaSender(this, EMDataType.EM_DATA_TYPE_PHOTOS);
+        mPhotoSender = new EMMediaSender(this, EMDataType.EM_DATA_TYPE_PHOTOS, mContext);
         mState = EMSessionState.EM_SESSION_IN_COMMAND;
         mCurrentCommandHandler = mPhotoSender;
         mPhotoSender.mHostName = mHostName;
@@ -1706,7 +1706,7 @@ public class EMSession implements EMConnectionDelegate, EMCommandDelegate, EMHan
 
     void sendVideo() {
         DLog.log("EMSession::sendVideo START");
-        mVideoSender = new EMMediaSender(this, EMDataType.EM_DATA_TYPE_VIDEO);
+        mVideoSender = new EMMediaSender(this, EMDataType.EM_DATA_TYPE_VIDEO, mContext);
         mState = EMSessionState.EM_SESSION_IN_COMMAND;
         mCurrentCommandHandler = mVideoSender;
         mVideoSender.mHostName = mHostName;
@@ -1714,7 +1714,7 @@ public class EMSession implements EMConnectionDelegate, EMCommandDelegate, EMHan
     }
 
     void sendMusic() {
-        mMusicSender = new EMMediaSender(this, EMDataType.EM_DATA_TYPE_MUSIC);
+        mMusicSender = new EMMediaSender(this, EMDataType.EM_DATA_TYPE_MUSIC, mContext);
         mState = EMSessionState.EM_SESSION_IN_COMMAND;
         mCurrentCommandHandler = mMusicSender;
         mMusicSender.start(this);
